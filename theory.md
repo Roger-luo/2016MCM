@@ -18,7 +18,7 @@ $$
 - $W_{ns}$: 自然水资源速率
 - $W_{rs}$: 技术回收速率
 - $W_{ps}$: 技术生产速率
-- $W_{fc}$: 工业用水速率
+- $W_{ic}$: 工业用水速率
 - $W_{ac}$: 农业用水速率
 - $W_{rc}$: 生活用水速率
 - $P$: 人口
@@ -27,12 +27,12 @@ $$
 W_s=W_{ns}+W_{rs}+W_{ps}\\
 W_c=W_{fc}+W_{ac}+W_{rc}\\
 W_{s}=W_{c}\\
-W_{rs}(W_{fc},W_{rc},A) = \alpha_{fc}\cdot W_{fc}+\alpha_{rc}\cdot W_{rc}\\
-W_{ps}(A)\\
-W_{ns}(W)\\
-W_{fc}(P,A)\\
-W_{ac}(P,A)\\
-W_{rc}(P,A)\\
-P(A,W)\\
+W_{rs}(W_{ic},W_{rc},A) = \alpha_{ic}\cdot W_{ic}+\alpha_{rc}\cdot W_{rc}\\
+W_{ps}(A) = const\\
+W_{ns}(W) = \omega_{max}(1-e^{-\frac{W}{W_{0}}})\\
+W_{ic}(P,A) = \alpha_{icp}\cdot P\\
+W_{ac}(P,A) = \alpha_{acp}\cdot P\\
+W_{rc}(P,A) = \alpha_{rcp}\cdot P\\
+\frac{dP}{dt} = \lambda P(1-\frac{P}{K(1-e^{-\frac{A}{A_{0}}})})\\
 \frac{dW}{dt}=ext-W_{ns}+\gamma\cdot W_{ac}\\
 $$
