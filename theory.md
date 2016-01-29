@@ -27,7 +27,7 @@ $$
 W_s=W_{ns}+W_{rs}+W_{ps}\\
 W_c=W_{fc}+W_{ac}+W_{rc}\\
 W_{s}=W_{c}\\
-W_{rs}(W_{fc},W_{rc},A)\\
+W_{rs}(W_{fc},W_{rc},A) = \alpha_{fc}\cdot W_{fc}+\alpha_{rc}\cdot W_{rc}\\
 W_{ps}(A)\\
 W_{ns}(W)\\
 W_{fc}(P,A)\\
