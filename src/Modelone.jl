@@ -85,7 +85,7 @@ NaturalSource(W::Real;Wo = 1)
 ```
 natural source
 """
-function NaturalSource(W::Real;Wo = 1)
+function NaturalSource(W::Real;Wo = 1e4)
     return nature_maxrate*(1-exp(-W/Wo))
 end
 
@@ -135,7 +135,7 @@ parameters
 - `PopulationIncreaseRate=1` population rate of pure increase
 - `max=1` maximum population
 """
-function EvoPop(region::Region;PopulationIncreaseRate=1,dt=1,max=1)
+function EvoPop(region::Region;PopulationIncreaseRate=0.05,dt=1,max=1)
     pop = region.population
     return pop+PopulationIncreaseRate*dt*pop*(1-pop/(max*(1-exp(-ability(region)/1))))
 end
@@ -156,7 +156,9 @@ parameter
 - `γ=0.2` percent conversion of argriculture water
 """
 function EvoWater(curWater::Real,curpop::Real;dt=1,ext=100,γ=0.2)
-    return curWater+dt*(ext-NaturalSource(curWater)+γ*AgriCost(curpop))
+    temp = dt*(ext-NaturalSource(curWater)+γ*AgriCost(curpop))
+    @show NaturalSource(curWater)
+    return curWater+temp
 end
 
 """
@@ -171,7 +173,7 @@ parameters
 - `region::Region` region object
 """
 function ability(region::Region;α=1,β=1,C=1)
-    Wco = 1;Wso = 1;
+    Wco = 100;Wso = 100;
     return β*exp(α*WaterCost(region.population)/Wco-WaterStorage(region.water,region.population)/Wso)+C
 end
 
@@ -190,19 +192,27 @@ parameters
 - `dt=1` time step
 - `max=200` maximum population
 """
-function EvoRegion(region::Region,time::Real;dt=1,max=200,PopulationIncreaseRate=0.5)
+function EvoRegion(region::Region,time::Real;dt=0.1,max=200,PopulationIncreaseRate=0.5)
     p = region.population
     water = region.water
+
+    pdata = Array(Float64,0)
+    wdata = Array(Float64,0)
+
+    push!(pdata,p)
+    push!(wdata,water)
     #evolute the population
     for i=1:dt:time
         p = EvoPop(region,PopulationIncreaseRate=PopulationIncreaseRate,dt=dt,max=max)
         water = EvoWater(water,p,dt=dt)
+        push!(pdata,p)
+        push!(wdata,water)
     end
 
     region.population = p
     region.water = water
 
-    return ability(region,α=region.α,β=region.β,C=region.C)
+    return ability(region,α=region.α,β=region.β,C=region.C),pdata,wdata
 end
 export Region,
     nature_maxrate,
@@ -222,8 +232,12 @@ export Region,
 end
 
 using Modelone
+using PyPlot
 
-testR = Region(100,10,1,2,3)
+fig = figure(1)
+testR = Region(10,10,1,2,3)
 
+ability,pdata,wdata = EvoRegion(testR,100,dt=0.1,PopulationIncreaseRate=0.05,max=400)
 
-@show EvoRegion(testR,10)
+plot(wdata)
+show()
