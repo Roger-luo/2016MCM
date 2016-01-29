@@ -1,126 +1,9 @@
 module Modelone
 
-const nature_maxrate = 1;
+include("base.jl")
+include("source.jl")
+include("cost.jl")
 
-"""
-Region descibe a region
-
-parameters
----
-- `population` current populatoin
-- `water` current water storage
-"""
-type Region
-    population::Real
-    water::Real
-    α::Real
-    β::Real
-    C::Real
-end
-
-"""
-WaterCost(population::Real)
-
-gross of water cost
-
-parameter
----
-- population
-"""
-function WaterCost(population::Real)
-    return IndustCost(population)+AgriCost(population)+ResidentCost(population)
-end
-
-"""
-`WaterStorage(W::Real,population::Real)`
-
-water storage
-
-parameter
----
-- `W::Real` current water
-- `population` population
-"""
-function WaterStorage(W::Real,population::Real)
-    return NaturalSource(W)+WaterRecycle(population)+WaterProduct()
-end
-
-"""
-```julia
-WaterRecycle(
-    population::Real;
-    indrate = 0.2,#industrial water recycle rate
-    resrate = 0.2#resident water recycle rate
-    )
-```
-
-water recycle rate
-
-parameter
----
-- `population` population
-- `indrate` rate of industrial water recycle
-- `resrate` rate of resident  water recycle
-"""
-function WaterRecycle(
-    population::Real;
-    indrate = 0.2,#industrial water recycle rate
-    resrate = 0.2#resident water recycle rate
-    )
-    return indrate*IndustCost(population)+resrate*ResidentCost(population)
-end
-
-"""
-```WaterProduct()```
-
-water produce
-"""
-function WaterProduct()
-    return 2
-end
-
-"""
-```julia
-NaturalSource(W::Real;Wo = 1)
-```
-natural source
-"""
-function NaturalSource(W::Real;Wo = 1e4)
-    return nature_maxrate*(1-exp(-W/Wo))
-end
-
-"""
-```
-IndustCost(population::Real;poprate = 1)
-```
-
-Industrial Cost
-"""
-function IndustCost(population::Real;poprate = 1)
-    return poprate*population
-end
-
-"""
-```
-AgriCost(population::Real;poprate = 1)
-```
-
-Agriculture water cost
-"""
-function AgriCost(population::Real;poprate = 1)
-    return poprate*population
-end
-
-"""
-```julia
-ResidentCost(population::Real;poprate = 1)
-```
-
-Resident water cost
-"""
-function ResidentCost(population::Real;poprate = 1)
-    return poprate*population
-end
 
 """
 ```julia
@@ -135,9 +18,10 @@ parameters
 - `PopulationIncreaseRate=1` population rate of pure increase
 - `max=1` maximum population
 """
-function EvoPop(region::Region;PopulationIncreaseRate=0.05,dt=1,max=1)
+function EvoPop(region::Region;PopulationIncreaseRate=0.15,dt=0.01)
     pop = region.population
-    return pop+PopulationIncreaseRate*dt*pop*(1-pop/(max*(1-exp(-ability(region)/1))))
+    maxpop = region.maxpop
+    return pop+PopulationIncreaseRate*dt*pop*(1-pop/(maxpop*(1-exp(-ability(region)/1))))
 end
 
 """
@@ -155,10 +39,8 @@ parameter
 - `ext=100` income water
 - `γ=0.2` percent conversion of argriculture water
 """
-function EvoWater(curWater::Real,curpop::Real;dt=1,ext=100,γ=0.2)
-    temp = dt*(ext-NaturalSource(curWater)+γ*AgriCost(curpop))
-    @show NaturalSource(curWater)
-    return curWater+temp
+function EvoWater(region::Region;dt=0.01,ext=0.1,γ=0.15)
+    return region.water+dt*(ext-NaturalSource(region)+γ*AgriCost(region))
 end
 
 """
@@ -172,14 +54,14 @@ parameters
 ---
 - `region::Region` region object
 """
-function ability(region::Region;α=1,β=1,C=1)
-    Wco = 100;Wso = 100;
-    return β*exp(α*WaterCost(region.population)/Wco-WaterStorage(region.water,region.population)/Wso)+C
+function ability(region::Region,curability::Real)
+    Wco = 1;Wso = 1;
+    return region.β*exp((WaterStorage(region)/Wso)-(WaterCost(region,curability)/Wco))+region.C
 end
 
 """
 ```
-EvoRegion(region::Region,time::Real;dt=1,max=200,PopulationIncreaseRate=0.5)
+EvoRegion(region::Region,time::Real;dt=1,maxpop=200,PopulationIncreaseRate=0.5)
 ```
 
 evolute region
@@ -192,27 +74,21 @@ parameters
 - `dt=1` time step
 - `max=200` maximum population
 """
-function EvoRegion(region::Region,time::Real;dt=0.1,max=200,PopulationIncreaseRate=0.5)
-    p = region.population
-    water = region.water
-
+function EvoRegion(region::Region,time::Real;dt=0.01,PopulationIncreaseRate=0.15)
     pdata = Array(Float64,0)
     wdata = Array(Float64,0)
 
-    push!(pdata,p)
-    push!(wdata,water)
+    push!(pdata,region.population)
+    push!(wdata,region.water)
     #evolute the population
-    for i=1:dt:time
-        p = EvoPop(region,PopulationIncreaseRate=PopulationIncreaseRate,dt=dt,max=max)
-        water = EvoWater(water,p,dt=dt)
-        push!(pdata,p)
-        push!(wdata,water)
+    for i=0:dt:time
+        curability = ability(region)
+        region.population = EvoPop(region,curability;PopulationIncreaseRate=PopulationIncreaseRate,dt=dt)
+        region.water = EvoWater(region,curability;dt=dt)
+        push!(pdata,region.population)
+        push!(wdata,region.water)
     end
-
-    region.population = p
-    region.water = water
-
-    return ability(region,α=region.α,β=region.β,C=region.C),pdata,wdata
+    return ability(region),pdata,wdata
 end
 export Region,
     nature_maxrate,
@@ -235,9 +111,10 @@ using Modelone
 using PyPlot
 
 fig = figure(1)
-testR = Region(10,10,1,2,3)
+testR = Region(300,1000,1000,1,1,0)
 
-ability,pdata,wdata = EvoRegion(testR,100,dt=0.1,PopulationIncreaseRate=0.05,max=400)
+ability,pdata,wdata = EvoRegion(testR,3000,dt=0.01,PopulationIncreaseRate=0.15)
 
+plot(pdata)
 plot(wdata)
 show()
