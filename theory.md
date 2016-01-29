@@ -10,7 +10,7 @@
 
 
 $$
-Prize = \beta\cdot e^{\alpha\cdot W_c-W_s} + Policy
+Ability = \beta\cdot e^{\frac{\alpha\cdot W_c-W_s}{W_0}} + Policy
 $$
 
 ## 依赖关系
