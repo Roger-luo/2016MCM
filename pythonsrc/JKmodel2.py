@@ -7,7 +7,7 @@ alpha=0.05
 beta=0.1
 person_min=0.2
 person_max=0.2*20
-ext=500
+ext=400
 Wps=1
 K=600
 lam=0.01
@@ -20,7 +20,7 @@ Wc=[100]
 
 
 dt=0.1
-t_max=1000
+t_max=2000
 step=int(t_max/dt)
 
 #middle parameters
@@ -31,7 +31,6 @@ def gamma(Wc,P):
     return 1-exp(-Wc/P-person_min)
 
 def Wns(Wc):
-    print(Wc-alpha*Wc-Wps)
     return Wc-alpha*Wc-Wps
 
 #iteration parameters
@@ -42,7 +41,7 @@ def W_itter(Wn,Wnsn,Wcn):
 def Wc_itter(Wcn,Pn,An):
     return Wcn+dt*An*Pn
     #return Wcn+dt*Pn*((person_max-person_min)*exp(-An/0.01)+person_min)
-
+    #return Pn*((person_max-person_min)*exp(-An/0.01)+person_min)
 A_ying = []
 for i in range(step):
     Pn1 = P_itter(P[-1], gamma(Wc[-1],P[-1]))
