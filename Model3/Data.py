@@ -11,6 +11,10 @@ for i in range(len(ying)):
     GDP[2014-i] = ying[i]
 
 
+ying = [6094.86,6183.45,6141.80,6107.20,6021.99,5965.15,5909.95,5818.67,5794.97,5632.98,5547.80]
+WaterUseTotal= {}
+for i in range(len(ying)):
+    WaterUseTotal[2014-i] = ying[i]
 
 ying = [3868.98,3921.52,3880.30,3743.60,3689.14,3723.11,3663.46,3599.51,3664.45,3580.00,3585.70]
 WaterUseAgriculture= {}
@@ -46,6 +50,3 @@ ying = [7745.03,8081.11,8416.12,7214.50,8417.05,7267.03,8122.00,7617.17,7642.91,
 WaterUnderground= {}
 for i in range(len(ying)):
     WaterUnderground[2014-i] = ying[i]
-
-
-
