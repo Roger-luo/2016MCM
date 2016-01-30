@@ -43,7 +43,7 @@ def solve_A_Wc(P,W):
         return [P*((person_max-person_min)*exp(-A/A0)+person_min), (Wc/W)-A]
     return fsolve(func, [A0, 1])
 
-def iter(P,W):
+def iterr(P,W):
     A,Wc = solve_A_Wc(P,W);
     return [P_iter(P,gamma(A),dt,lam), W_iter(W, Wc)]
 
@@ -52,7 +52,7 @@ Ps=[P_init]
 Ws=[W_init]
 
 for i in range(step-1):
-    PW=iter(Ps[-1],Ws[-1])
+    PW=iterr(Ps[-1],Ws[-1])
     Ps.append(PW[0])
     Ws.append(PW[1])
 

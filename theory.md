@@ -36,3 +36,22 @@ W_{rc}(P,A) = \alpha_{rcp}\cdot P\\
 \frac{dP}{dt} = \lambda P(1-\frac{P}{K(1-e^{-\frac{A}{A_{0}}})})\\
 \frac{dW}{dt}=ext-W_{ns}+\gamma\cdot W_{ac}\\
 $$
+
+## Model2 Algorithm
+
+
+$$
+\begin{cases}
+P(n+1) = P(n)+dt\*\lambda\*P(n)(1-\frac{P(n)}{\gamma K}) \cr
+W(n+1) = W(n) + dt\*\{ext-W_{ns}(n)+\beta W_c(n)\} \cr
+W_c(n+1) = \dots (待商榷) \cr
+A(n) = W_c(n)/W(n) \cr
+\gamma = 1-\exp(-W_c(n)/P(n)-min) \cr
+W_{ns}(n) = W_c(n)-\alpha W_c(n) - W_{ps}
+\end{cases}
+$$
+
+其中迭代变量为: $P, W ,W_c$
+中间变量为: $A, \gamma, W_{ns}$
+常量为: $dt, K, ext, \beta, max, min, \alpha, W_{ps}$
+
