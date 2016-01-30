@@ -57,3 +57,13 @@ $$
 中间变量为: $A, \gamma, W_{ns}$
 常量为: $dt, K, ext, \beta, max, min, \alpha, W_{ps}$
 
+
+## Model3
+
+- 收集外部数据,对数据进行fit来predict未来的数据
+- W-->(Wa,Wr,Wi)-->\bar W-->(Wnat,Wrec)
+
+- spearmanr 分析哪些变量主要决定水流量
+- 对主要相关量进行fit
+- 预言未来的A
+
