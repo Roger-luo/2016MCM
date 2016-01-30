@@ -74,7 +74,7 @@ parameters
 - `dt=1` time step
 - `max=200` maximum population
 """
-function EvoRegion(region::Region,time::Real;dt=0.01,PopulationIncreaseRate=0.15)
+function EvoRegion(region::Region,time::Real;dt=1,PopulationIncreaseRate=0.15)
     pdata = Array(Float64,0)
     wdata = Array(Float64,0)
 
@@ -112,7 +112,7 @@ using PyPlot
 fig = figure(1)
 testR = Region(300,1000,1000,1,1,0)
 
-ability,pdata,wdata = EvoRegion(testR,3000,dt=0.01,PopulationIncreaseRate=0.15)
+ability,pdata,wdata = EvoRegion(testR,3000,dt=1,PopulationIncreaseRate=0.15)
 
 plot(pdata)
 plot(wdata)
