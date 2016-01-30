@@ -4,7 +4,7 @@
 
 \section{Nomenclatures}
 
-\begin{table}[tb]
+\begin{table}[!htb]
   \caption{Nomenclatures System}
   \centering
   \begin{tabular}{||c|c||}
@@ -15,34 +15,76 @@
     \hline
     $\text{GAP}$ & Cross Agricultural Product \\
     \hline
-    $\text{AWC}$ & Agricultural water consumption \\
+    $\text{AWC}$ & Agricultural Water Consumption per year \\
     \hline
-    $\text{IWC}$ & Industrial water consumption \\
+    $\text{IWC}$ & Industrial Water Consumption per year \\
     \hline
-    $\text{DWC}$ & Domestic water consumption \\
+    $\text{DWC}$ & Domestic Water Consumption per year \\
     \hline
-    $\text{WWD}$ & Waste water discharge \\
+    $\text{TWR}$ & Total Water Resource \\
     \hline
-    $\text{TWR}$ & Total water resource \\
+    $\text{SWR}$ & total Surface Water Resource \\
+    \hline
+    $\text{UWR}$ & total Underground Water Resource \\
+    \hline
+
+    $\text{WWD}$ & Waste Water Discharge \\
+    \hline
+
+    $A$          & Annual water supplies per person \\
     \hline
   \end{tabular}
 \end{table}
 
 \section{Model of water supply ability}
+  When it come to the water supply ability of a region, a country or even the world. We often use the measurement called annual water supplies per person($A$) to describe water supply ability\cite{1}. We can set three levels to classify the ability of several regions:
+  \begin{table}[!htb]
+    \centering
+    \begin{tabular}{|c||c|c|}
+    \hline
+    level 1   & $A>1700$ & Sufficient \\
+    \hline
+    level 2   & $1700>A>1000$ & stressful \\
+    \hline
+    level 3   & $1000>A$ & scarce \\
+    \hline
+    \end{tabular}
+  \end{table}
+
+To cover the internal dynamics of the water flow and the water storage change, we introduce following model.
+
+
 
 \section{China's water scarcity}
+  According to the UN water scarcity map, China is a country with water stress,
+  \begin{wrapfigure}{l}{7cm}
+  \includegraphics[width = 6cm]{picture/WaterScarcityMap.jpg}
+  \end{wrapfigure}
+  which make it a region where water is moderately overloaded. In our consideration, level 2, will provide more abundant behavior in a dynamical model(will it become water scarce or water sufficient in the future?). Thus we pick up China as our research object. To make our model more predictable and more reality connected. We will continue our investigation with the data from National Bureau of Statistics of the People's Republic China\cite{2}.
+  According to our models, the following variables are prominent: the Population, the GDP, the water consumption and the total water resource.
+  We grab all the data and try to analyses them and they relation.
+
+  \subsection{Prominent variables' tendency}
+
+  \subsection{Prominent variables' relation}
+
+  \subsection{fitness of past data using dynamic model}
+
 
 \section{Prediction of water situation}
+  In our model external variables are used for future prediction.
+
 
 \section{Intervention plan designing}
 
-\section{Prediction with Intervrention plan}
+\section{Prediction with Intervention plan}
 
 \section{Conclusion}
 
 
 \begin{thebibliography}{99}
-
+  \bibitem{1} {Falkenmark and Lindh 1976, quoted in UNEP/WMO.Climate Change 2001: Working Group II: Impacts,Adaptation and Vulnerability. UNEP. Retrieved 3 February 2009.}
+  \bibitem{2} http://www.stats.gov.cn
 \end{thebibliography}
 
 
