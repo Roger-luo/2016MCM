@@ -54,9 +54,9 @@ parameters
 ---
 - `region::Region` region object
 """
-function ability(region::Region,curability::Real)
+function ability(region::Region)
     Wco = 1;Wso = 1;
-    return region.β*exp((WaterStorage(region)/Wso)-(WaterCost(region,curability)/Wco))+region.C
+    return region.β*exp((WaterStorage(region)/Wso)-(WaterCost(region)/Wco))+region.C
 end
 
 """
@@ -82,9 +82,8 @@ function EvoRegion(region::Region,time::Real;dt=0.01,PopulationIncreaseRate=0.15
     push!(wdata,region.water)
     #evolute the population
     for i=0:dt:time
-        curability = ability(region)
-        region.population = EvoPop(region,curability;PopulationIncreaseRate=PopulationIncreaseRate,dt=dt)
-        region.water = EvoWater(region,curability;dt=dt)
+        region.population = EvoPop(region;PopulationIncreaseRate=PopulationIncreaseRate,dt=dt)
+        region.water = EvoWater(region;dt=dt)
         push!(pdata,region.population)
         push!(wdata,region.water)
     end

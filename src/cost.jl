@@ -7,8 +7,8 @@ parameter
 ---
 - population
 """
-function WaterCost(region::Region,curability::Real)
-    return IndustCost(region,curability)+AgriCost(region,curability)+ResidentCost(region,curability)
+function WaterCost(region::Region)
+    return IndustCost(region)+AgriCost(region)+ResidentCost(region)
 end
 
 
@@ -27,8 +27,8 @@ IndustCost(population::Real;poprate = 1)
 
 Industrial Cost
 """
-function IndustCost(region::Region,curability::Real;poprate = 0.001)
-    return poprate*gamma(region,curability)
+function IndustCost(region::Region;poprate = 0.001)
+    return poprate*region.population
 end
 
 """
@@ -38,8 +38,8 @@ AgriCost(population::Real;poprate = 1)
 
 Agriculture water cost
 """
-function AgriCost(region::Region,curability::Real;poprate = 0.001)
-    return poprate*gamma(region,curability)
+function AgriCost(region::Region;poprate = 0.001)
+    return poprate*region.population
 end
 
 """
@@ -49,6 +49,6 @@ ResidentCost(population::Real;poprate = 1)
 
 Resident water cost
 """
-function ResidentCost(region::Region,curability::Real;poprate = 0.001)
-    return poprate*gamma(region,curability)
+function ResidentCost(region::Region;poprate = 0.001)
+    return poprate*region.population
 end
