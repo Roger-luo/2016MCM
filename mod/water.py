@@ -1,40 +1,5 @@
-class Water(object):
-    """water"""
-    def __init__(self, curwater):
-        self.curwater = curwater
-
-    def __add__(self, water):
-        return Water(self.curwater+water)
-
-    def __sub__(self, water):
-        return Water(self.curwater-water)
-
-    def __mul__(self, water):
-        return Water(self.curwater*water)
-
-    def __div__(self, water):
-        return Water(self.curwater/water)
-
-    def __repr__(self):
-        return 'water storage:%s'%self.curwater
-
-
-class AvailableWater(Water):
-    """Available Water"""
-    def __init__(self, curwater):
-        super(AvailableWater, self).__init__(curwater)
-
-    def __repr__(self):
-        return 'Available water storage:%s'%self.curwater
-
-class WasteWater(Water):
-    """Waste Water"""
-    def __init__(self, curwater):
-        super(WasteWater, self).__init__(curwater)
-
-    def __repr__(self):
-        return 'waste water quantum:%s'%self.curwater
-
+import numpy as np
+import numpy.random as random
 
 class WaterAmount(object):
     """the whole quantum of water in a given region"""
@@ -44,3 +9,17 @@ class WaterAmount(object):
 
     def __repr__(self):
         return 'available water: %s\nwaste water: %s'%(self.available,self.waste)
+
+    def next_available(self, mu, sigma, dt):
+        return self.available + self.available*(mu*dt+np.sqrt(dt)*random.randn())
+
+    def avlb(self,time,mu,sigma, dt=1e-3):
+        for i in np.linspace(0,dt,time):
+            self.available = self.next_available(mu,sigma,dt)
+
+
+a = WaterAmount(2,3)
+
+a.avlb(10,1,0.4)
+
+print(a)
