@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     13167,        329]
-NotebookOptionsPosition[     12837,        312]
-NotebookOutlinePosition[     13193,        328]
-CellTagsIndexPosition[     13150,        325]
+NotebookDataLength[     13281,        332]
+NotebookOptionsPosition[     12951,        315]
+NotebookOutlinePosition[     13307,        331]
+CellTagsIndexPosition[     13264,        328]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -71,7 +71,9 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"\[Alpha]rc", "=", "0.27"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"tmax", "=", "10"}], ";"}], "\n", 
+  RowBox[{
+   RowBox[{"tmax", "=", 
+    RowBox[{"10", "+", "15"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{"Wrs", "=", 
    RowBox[{
@@ -225,34 +227,34 @@ Cell[BoxData[{
    3.663130594142074*^9, 3.663130595145802*^9}, {3.6631307465450373`*^9, 
    3.6631307710984793`*^9}, {3.663130813354697*^9, 3.663130814659038*^9}, {
    3.66313088820815*^9, 3.663130917185855*^9}, {3.663130947650827*^9, 
-   3.663130975564529*^9}, {3.6631311528951817`*^9, 3.663131176549892*^9}}],
+   3.663130975564529*^9}, {3.6631311528951817`*^9, 3.663131176549892*^9}, {
+   3.663131477533741*^9, 3.663131494600211*^9}}],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`c$$ = 
-    0.5750000000000001, $CellContext`Wc0$$ = 6060., $CellContext`Ws0$$ = 
-    1900., $CellContext`\[Beta]$$ = 0.42300000000000004`, Typeset`show$$ = 
-    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
-    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
-    "\"untitled\"", Typeset`specs$$ = {{
+   DynamicModuleBox[{$CellContext`c$$ = 0.658, $CellContext`Wc0$$ = 
+    2120., $CellContext`Ws0$$ = 1100., $CellContext`\[Beta]$$ = 0.105, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
       Hold[$CellContext`c$$], 0.01, 1}, {
       Hold[$CellContext`\[Beta]$$], 0.01, 1}, {
       Hold[$CellContext`Ws0$$], 100, 20000}, {
       Hold[$CellContext`Wc0$$], 100, 20000}}, Typeset`size$$ = {
-    942., {89., 94.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = True, $CellContext`c$254860$$ = 
-    0, $CellContext`\[Beta]$254861$$ = 0, $CellContext`Ws0$254862$$ = 
-    0, $CellContext`Wc0$254863$$ = 0}, 
+    942., {88., 92.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`c$283776$$ = 
+    0, $CellContext`\[Beta]$283777$$ = 0, $CellContext`Ws0$283778$$ = 
+    0, $CellContext`Wc0$283779$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`c$$ = 0.01, $CellContext`Wc0$$ = 
         100, $CellContext`Ws0$$ = 100, $CellContext`\[Beta]$$ = 0.01}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`c$$, $CellContext`c$254860$$, 0], 
-        Hold[$CellContext`\[Beta]$$, $CellContext`\[Beta]$254861$$, 0], 
-        Hold[$CellContext`Ws0$$, $CellContext`Ws0$254862$$, 0], 
-        Hold[$CellContext`Wc0$$, $CellContext`Wc0$254863$$, 0]}, 
+        Hold[$CellContext`c$$, $CellContext`c$283776$$, 0], 
+        Hold[$CellContext`\[Beta]$$, $CellContext`\[Beta]$283777$$, 0], 
+        Hold[$CellContext`Ws0$$, $CellContext`Ws0$283778$$, 0], 
+        Hold[$CellContext`Wc0$$, $CellContext`Wc0$283779$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -267,6 +269,7 @@ $CellContext`P[$CellContext`t] (
             1 - $CellContext`P[$CellContext`t]/($CellContext`k (1 - 
              Exp[(-$CellContext`A)/$CellContext`A0]))), 
           Derivative[
+           
            1][$CellContext`W][$CellContext`t] == $CellContext`ext - \
 $CellContext`Wns + $CellContext`\[Alpha] $CellContext`Wac}; $CellContext`init = \
 {$CellContext`P[0] == 129988, $CellContext`W[0] == 24129}; $CellContext`sol = 
@@ -290,7 +293,7 @@ $CellContext`W}, {$CellContext`t, 0, $CellContext`tmax}]; {
          1}, {$CellContext`\[Beta]$$, 0.01, 1}, {$CellContext`Ws0$$, 100, 
          20000}, {$CellContext`Wc0$$, 100, 20000}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{987., {175., 180.}},
+     ImageSizeCache->{987., {174., 179.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -307,7 +310,7 @@ $CellContext`W}, {$CellContext`t, 0, $CellContext`tmax}]; {
    3.663130373306699*^9, 3.6631304294736834`*^9}, 3.6631304872102013`*^9, 
    3.663130556159953*^9, 3.663130595663639*^9, {3.6631307484048367`*^9, 
    3.663130771534738*^9}, {3.663130956370981*^9, 3.663130976277117*^9}, {
-   3.6631311590160007`*^9, 3.663131176895075*^9}}]
+   3.6631311590160007`*^9, 3.663131176895075*^9}, 3.663131495219452*^9}]
 }, Open  ]]
 },
 WindowSize->{1436, 855},
@@ -328,8 +331,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 8049, 205, 845, "Input"],
-Cell[8632, 229, 4189, 80, 372, "Output"]
+Cell[580, 22, 8162, 208, 862, "Input"],
+Cell[8745, 232, 4190, 80, 370, "Output"]
 }, Open  ]]
 }
 ]
