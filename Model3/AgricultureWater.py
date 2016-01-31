@@ -43,7 +43,7 @@ def AgricultureWater(time):
     pop = (Expo(Fit.PopulationFit(time),pPara)/Expo(Fit.PopulationFit(years[-1]),pPara))
     pcg = (Expo(Fit.PCGDPFit(time),gPara)/Expo(Fit.PCGDPFit(years[-1]),gPara))
     ira = (Expo(Fit.IrrigationAreaFit(time),iPara)/Expo(Fit.IrrigationAreaFit(years[-1]),iPara))
-    return Data.WaterUseAgriculture[years[-1]]*pop*pcg*ira
+    return Data.WaterUseAgriculture[years[-1]]*(pop/3+pcg/3+ira/3)
 
 plt.figure()
 plt.scatter(years,[Data.WaterUseAgriculture[i] for i in years],marker="^",s=100)

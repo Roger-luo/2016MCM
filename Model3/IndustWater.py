@@ -35,11 +35,11 @@ ePara = para(Data.Electricity,Data.WaterUseIndustry)
 sPara = para(Data.SteelProduct,Data.WaterUseIndustry)
 
 def IndustWater(time):
-    pop = (Gaussian(Fit.PopulationFit(time),pPara)/Gaussian(Fit.PopulationFit(years[3]),pPara))
-    pcg = (Gaussian(Fit.PCGDPFit(time),gPara)/Gaussian(Fit.PCGDPFit(years[3]),gPara))
-    ele = (Gaussian(Fit.ElectricityFit(time),ePara)/Gaussian(Fit.ElectricityFit(years[3]),ePara))
-    spr = (Gaussian(Fit.SteelProductFit(time),sPara)/Gaussian(Fit.SteelProductFit(years[3]),sPara))
-    return Data.WaterUseIndustry[years[3]]*pop*pcg*ele*spr
+    pop = (Gaussian(Fit.PopulationFit(time),pPara)/Gaussian(Fit.PopulationFit(years[-1]),pPara))
+    pcg = (Gaussian(Fit.PCGDPFit(time),gPara)/Gaussian(Fit.PCGDPFit(years[-1]),gPara))
+    ele = (Gaussian(Fit.ElectricityFit(time),ePara)/Gaussian(Fit.ElectricityFit(years[-1]),ePara))
+    spr = (Gaussian(Fit.SteelProductFit(time),sPara)/Gaussian(Fit.SteelProductFit(years[-1]),sPara))
+    return Data.WaterUseIndustry[years[-1]]*(pop/4+pcg/4+ele/4+spr/4)
 
 # comparedata(Data.Population,Data.WaterUseIndustry)
 # comparedata(Data.PCGDP,Data.WaterUseIndustry)

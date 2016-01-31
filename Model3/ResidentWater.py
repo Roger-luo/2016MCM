@@ -37,7 +37,7 @@ gPara = para(Data.PCGDP,Data.WaterUseResidential)
 def ResidentWater(time):
     pop = (Expo(Fit.PopulationFit(time),pPara)/Expo(Fit.PopulationFit(years[-1]),pPara))
     pcg = (Expo(Fit.PCGDPFit(time),gPara)/Expo(Fit.PCGDPFit(years[-1]),gPara))
-    return Data.WaterUseResidential[years[-1]]*pop*pcg
+    return Data.WaterUseResidential[years[-1]]*(pop/2+pcg/2)
 
 plt.figure()
 plt.scatter(years,[Data.WaterUseResidential[t] for t in years],marker="^",s=100)
