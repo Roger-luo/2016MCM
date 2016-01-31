@@ -42,3 +42,11 @@ waterstress-overuse-EN.jpg)选一个水资源重度或中度超过负荷的国�
 - 将你设计的介入方案应用后，该地区将来是否对水资源匮乏更不容易受到影响
     + 水资源是否会在将来某一个时间出现匮乏？如果会，请评估发生的时间
 - 请写一个20页的报告，总结页不包括在内来解释你的模型，所选地区的水资源匮乏情况
+
+
+
+The hydrologic cycle is simulated in a Python program. The cycle components are available water and unavailable water resident water cost industrial water cost and agricultural water cost.
+
+The available water decreased when there are requests of water supply from industry, agriculture and residence.The unavailable water increases in the mean time.
+
+There are some parameters that effects the three kinds of water costs.
