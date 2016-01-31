@@ -80,15 +80,12 @@ plt.close()
 print("r(GDP,Population)="+str(spearmanr([Data.GDP[t] for t in years],[Data.Population[t] for t in years])))
 
 # analysis for Wi
-<<<<<<< HEAD
 print("r(Wi,Population)="+str(pearsonr([Data.WaterUseIndustry[t] for t in years],[Data.Population[t] for t in years])))
 print("r(Wi,GDP)="+str(pearsonr([Data.WaterUseIndustry[t] for t in years],[Data.GDP[t] for t in years])))
-=======
 print("r(Wi,Population)="+str(spearmanr([Data.WaterUseIndustry[t] for t in years],[Data.Population[t] for t in years])))
 print("r(Wi,GDP)="+str(spearmanr([Data.WaterUseIndustry[t] for t in years],[Data.GDP[t] for t in years])))
 print("r(Wi,PCGDP)="+str(spearmanr([Data.WaterUseIndustry[t] for t in years],[Data.PCGDP[t] for t in years])))
 print("r(Wi,SteelProduct)="+str(spearmanr([Data.WaterUseIndustry[t] for t in years],[Data.SteelProduct[t] for t in years])))
->>>>>>> b549f1da1a693acddba82e6b4d99014f1967afe6
 
 plt.figure()
 plt.xlabel("Industry Water Usage/ 100m m^3")
