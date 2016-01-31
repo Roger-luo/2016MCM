@@ -85,13 +85,13 @@ plt.show()
 plt.close()
 
 # analysis for GDP & Population
-# print("r(GDP,Population)="+str(spearmanr([Data.GDP[t] for t in years],[Data.Population[t] for t in years])))
+# print("r(GDP,Population)="+str(pearsonr([Data.GDP[t] for t in years],[Data.Population[t] for t in years])))
 
 # analysis for Wi
-print("r(Wi,Population)="+str(spearmanr([Data.WaterUseIndustry[t] for t in years],[Data.Population[t] for t in years])))
-print("r(Wi,PCGDP)="+str(spearmanr([Data.WaterUseIndustry[t] for t in years],[Data.PCGDP[t] for t in years])))
-print("r(Wi,Electricity)="+str(spearmanr([Data.WaterUseIndustry[t] for t in years],[Data.Electricity[t]for t in years])))
-print("r(Wi,SteelProduct)="+str(spearmanr([Data.WaterUseIndustry[t] for t in years],[Data.SteelProduct[t] for t in years])))
+print("r(Wi,Population)="+str(pearsonr([Data.WaterUseIndustry[t] for t in years],[Data.Population[t] for t in years])))
+print("r(Wi,PCGDP)="+str(pearsonr([Data.WaterUseIndustry[t] for t in years],[Data.PCGDP[t] for t in years])))
+print("r(Wi,Electricity)="+str(pearsonr([Data.WaterUseIndustry[t] for t in years],[Data.Electricity[t]for t in years])))
+print("r(Wi,SteelProduct)="+str(pearsonr([Data.WaterUseIndustry[t] for t in years],[Data.SteelProduct[t] for t in years])))
 
 plt.figure()
 plt.xlabel("Industry Water Usage/ 100m m^3")
@@ -122,9 +122,9 @@ plt.show()
 plt.close()
 
 # analysis for Wa
-print("r(Wa,Population)="+str(spearmanr([Data.WaterUseAgriculture[t] for t in years],[Data.Population[t] for t in years])))
-print("r(Wa,PCGDP)="+str(spearmanr([Data.WaterUseAgriculture[t] for t in years],[Data.PCGDP[t] for t in years])))
-print("r(Wa,IrrigationArea)="+str(spearmanr([Data.WaterUseAgriculture[t] for t in years],[Data.IrrigationArea[t] for t in years])))
+print("r(Wa,Population)="+str(pearsonr([Data.WaterUseAgriculture[t] for t in years],[Data.Population[t] for t in years])))
+print("r(Wa,PCGDP)="+str(pearsonr([Data.WaterUseAgriculture[t] for t in years],[Data.PCGDP[t] for t in years])))
+print("r(Wa,IrrigationArea)="+str(pearsonr([Data.WaterUseAgriculture[t] for t in years],[Data.IrrigationArea[t] for t in years])))
 
 plt.figure()
 plt.xlabel("Agriculture Water Usage/ 100m m^3")
@@ -148,10 +148,10 @@ plt.show()
 plt.close()
 
 # analysis for Wr
-print("r(Wr,Population)="+str(spearmanr([Data.WaterUseResidential[t] for t in years],[Data.Population[t] for t in years])))
-print("r(Wr,PCGDP)="+str(spearmanr([Data.WaterUseResidential[t] for t in years],[Data.PCGDP[t] for t in years])))
-print("r(Wr,RuralEngel)="+str(spearmanr([Data.WaterUseResidential[t] for t in years],[Data.RuralEngel[t] for t in years])))
-print("r(Wr,UrbanEngel)="+str(spearmanr([Data.WaterUseResidential[t] for t in years],[Data.UrbanEngel[t] for t in years])))
+print("r(Wr,Population)="+str(pearsonr([Data.WaterUseResidential[t] for t in years],[Data.Population[t] for t in years])))
+print("r(Wr,PCGDP)="+str(pearsonr([Data.WaterUseResidential[t] for t in years],[Data.PCGDP[t] for t in years])))
+print("r(Wr,RuralEngel)="+str(pearsonr([Data.WaterUseResidential[t] for t in years],[Data.RuralEngel[t] for t in years])))
+print("r(Wr,UrbanEngel)="+str(pearsonr([Data.WaterUseResidential[t] for t in years],[Data.UrbanEngel[t] for t in years])))
 
 plt.figure()
 plt.xlabel("Domestic Water Usage/ 100m m^3")
