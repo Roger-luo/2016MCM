@@ -35,14 +35,15 @@ def comparedata(datax,datay,xlabel,ylabel):
 pPara = para(Data.Population,Data.WaterUseResidential)
 gPara = para(Data.PCGDP,Data.WaterUseResidential)
 def ResidentWater(time):
-    return Data.WaterUseResidential[years[-1]]*(Expo(Fit.PopulationFit(time),pPara)/Expo(Fit.PopulationFit(years[-1]),pPara))*(Expo(Fit.PCGDPFit(time),gPara)/Expo(Fit.PCGDPFit(years[-1]),gPara))
+    pop = (Expo(Fit.PopulationFit(time),pPara)/Expo(Fit.PopulationFit(years[-1]),pPara))
+    pcg = (Expo(Fit.PCGDPFit(time),gPara)/Expo(Fit.PCGDPFit(years[-1]),gPara))
+    return Data.WaterUseResidential[years[-1]]*pop*pcg
 
-# plt.figure()
-# plt.ylabel("Domestic Water Usage/ 100m m^3")
-# plt.xlabel("Rural Engel/ Percentage")
-# plt.scatter([Data.RuralEngel[t] for t in years],[Data.WaterUseResidential[t] for t in years],marker="^",s=100)
-# plt.show()
-# plt.close()
+plt.figure()
+plt.scatter(years,[Data.WaterUseResidential[t] for t in years],marker="^",s=100)
+plt.plot(years,ResidentWater(years),'b-')
+plt.show()
+plt.close()
 
 # plt.figure()
 # plt.ylabel("Domestic Water Usage/ 100m m^3")
