@@ -32,20 +32,25 @@ class Region(object):
     def __repr__(self):
         return '%s\n%s'%(self.water,self.pop)
 
+    def average_available_water(self):
+        return self.water/self.pop
+
+    #evaluation of available water in next time step
     def next_timestep(self):
-        return self.mu()*self.dt+self.sigma()
+        return self.mu()*self.dt+self.sigma()*np.sqrt(dt)*random.randn()
 
     def mu(self):
         return (self.water-self.cost()+self.produce())/self.water
 
+    #variance of the evaluate
     def sigma(self):
-        return self.uncrt_produce()-self.uncrt_cost()+np.sqrt(dt)*random.randn()
+        return self.var_produce()+self.var_cost()
 
-    def uncrt_cost(self):
-        return
+    def var_cost(self):
+        return 0
 
-    def uncrt_produce(self):
-        return
+    def var_produce(self):
+        return 0
 
     def cost(self):
         return self.agriculture()+self.industrial()+self.resident()
@@ -54,16 +59,13 @@ class Region(object):
         return self.waterrecycle()
 
     def waterrecycle(self):
-        return
+        return 0
 
     def agriculture(self):
-        return
+        return 0
 
     def industrial(self):
-        pass
+        return 0
 
     def resident(self):
         pass
-
-
-Region()
