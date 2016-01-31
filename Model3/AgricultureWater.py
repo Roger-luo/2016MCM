@@ -1,5 +1,9 @@
 import Data
 import matplotlib.pyplot as plt
+import numpy as np
+from scipy.optimize import leastsq
+import matplotlib.pyplot as plt
+from numpy import linspace
 
 years=range(2004, 2015)
 
@@ -10,25 +14,22 @@ def err(p, x, y):
     return Expo(x,p)-y
 
 def para(datax,datay):
-    
+    x = [datax[t] for t in years]
+    y = [datay[t] for t in years]
+    return leastsq(err,[y[0],1e-8,x[0]],args=(x,y))[0]
 
-plt.figure()
-plt.ylabel("Agriculture Water Usage/ 100m m^3")
-plt.xlabel("Population/ 10k people")
-plt.scatter([Data.Population[t] for t in years],[Data.WaterUseAgriculture[t] for t in years],marker="^",s=100)
-plt.show()
-plt.close()
+def comparedata(datax,datay,xlabel,ylabel):
+    Para = para(datax,datay)
+    x = np.linspace(datax[years[0]],datax[years[-1]],100)
+    y = Expo(x,Para)
+    plt.figure()
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.scatter([datax[t] for t in years],[datay[t] for t in years],marker="^",s=100)  
+    plt.plot(x,y,'b-')
+    plt.show()
+    plt.close()
 
-plt.figure()
-plt.ylabel("Agreculture Water Usage/ 100m m^3")
-plt.xlabel("PCGDP/ CNY")
-plt.scatter([Data.PCGDP[t] for t in years],[Data.WaterUseAgriculture[t] for t in years],marker="^",s=100)
-plt.show()
-plt.close()
-
-plt.figure()
-plt.ylabel("Agreculture Water Usage/ 100m m^3")
-plt.xlabel("Irrigation Area/ kha")
-plt.scatter([Data.IrrigationArea[t] for t in years],[Data.WaterUseAgriculture[t] for t in years],marker="^",s=100)
-plt.show()
-plt.close()
+comparedata(Data.Population,Data.WaterUseAgriculture,"Population/ 10k people","Agriculture Water Usage/ 100m m^3")
+comparedata(Data.PCGDP,Data.WaterUseAgriculture,"PCGDP/ CNY","Agreculture Water Usage/ 100m m^3")
+comparedata(Data.IrrigationArea,Data.WaterUseAgriculture,"Irrigation Area/ kha","Agreculture Water Usage/ 100m m^3")
