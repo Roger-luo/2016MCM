@@ -65,13 +65,13 @@ To cover the internal dynamics of the water flow and the water storage change, w
 
   \subsection{Model Structure}
 
-    Our model's structure is pretty clear.
-    \begin{figure}[!h]
-    \begin{center}
-    \includegraphics[width = 12cm]{picture/struc.jpg}
-    \end{center}
-    \end{figure}
 
+    \begin{wrapfigure}{l}{9cm}
+    %\begin{center}
+    \includegraphics[width = 9cm]{picture/struc.jpg}
+    %\end{center}
+    \end{wrapfigure}
+    Our model's structure is pretty clear.
     We using some prominent external parameters as the input of our dynamic system. To determine the water supply ability of a region, the most important part is the water flow which means the total amount of industrial, agricultural and residential consumption. The season we can use the consumption to measure the supply it that they must be the same during a long period just like the electricity use equal to the electricity produce.
 
     $$
@@ -84,14 +84,14 @@ To cover the internal dynamics of the water flow and the water storage change, w
 
     The prominent parameters are some thing the dynamics part heavily rely on, to find the prominent parameters, we need to investigate the relation between some alternative parameters and consumptions according to the past data. In other words, prominent parameters are not given before a specific research object is given, we just give some alternative parameters and using the past data to determine which is better related and which is less related to our dynamic part variables.
 
-    Generally, there are several important alternative parameters like: Population, GDP per Capita are of course important statistic numbers. Moreover, Agricultural Irrigation Area play an important role in agricultural consumption, Iron and Steel Production is also important in industrial consumption, and Engel's coefficient is an important statistical number about residential living which make it important in residential consumption.
+    Generally, there are several important alternative parameters like: Population, GDP Per Capita are of course important statistic numbers. Moreover, Agricultural Irrigation Area play an important role in agricultural consumption, Iron and Steel Production is also important in industrial consumption, and Engel's coefficient is an important statistical number about residential living which make it important in residential consumption.
 
   \subsection{Model Dynamics}
 
     The dynamics part of our model is inspired by the water cycle(Figure \ref{water cycle})\cite{WaterCycle}
-    \begin{figure}[!h]
+    \begin{figure}[!hb]
     \begin{center}
-    \includegraphics[width = 12cm]{picture/UrbanWaterCycle.jpg}
+    \includegraphics[width = 10cm]{picture/UrbanWaterCycle.jpg}
     \caption{water cycle}
     \label{water cycle}
     \end{center}
@@ -119,11 +119,79 @@ To cover the internal dynamics of the water flow and the water storage change, w
   We grab all the data and try to analyses them and they relation.
 
   \subsection{Prominent variables' tendency}
-  Using proper assumption and the past data in databases.
+  Using proper assumption and the past data in databases. We can using fitness method to determine the time dependency of our alternative parameters.
+  In our consideration, following factors especially eye-catching.
+  \begin{table}[!h]
+  \begin{tabular}{|c|c|}
+  \hline
+  $P$ & Population \\
+  \hline
+  $\text{PCGDP}$ & Per Capita Gross Domestic Product \\
+  \hline
+  $\text{IA}$ & Irrigation Area \\
+  \hline
+  $\text{ISP}$ & Iron and Steel Production \\
+  \hline
+  $\text{ElP}$ & Electricity Production. \\
+  \hline
+  $\text{EnC}$ & Engel's Coefficient \\
+  \hline
+  \end{tabular}
+  \end{table}
+  For further convenience, we will investigate their relation towards time at first.
+    \subsubsection{Population}
+      The population growth model is various, for best concern, we use Logistic Model as the Population evolution model thus we can use the solution--Standard logistic sigmoid function as our target function by adding three basic coefficients.
+      $$
+      P(t) = \frac{K_p}{1+\exp[-\lambda_p(t-t_0)]}
+      $$
+      {\huge figure}
+    \subsubsection{Per Capita Gross Domestic Product}
+      As the largest developing country over the world, China has pretty high PCGDP growth rate. It seems like an exponential growth However, according to our data browse, some developed countries have already reach some obstacles. Thus we think it will be suitable if we apply Logistic model in the fitness model of $\text{PCGDP}$.
+      $$
+      \text{PCGDP}(t) = \frac{K_\text{PCGDP}}{1+\exp[-\lambda_\text{PCGDP}(t-t_0)]}
+      $$
+      {\huge figure}
+    \subsubsection{Irrigation Area}
 
-  \subsection{Prominent variables' relation}
+    {\huge figure}
+    \subsubsection{Iron and Steel Production}
 
-  \subsection{fitness of past data using dynamic model}
+    {\huge figure}
+    \subsubsection{Electricity Production}
+
+    {\huge figure}
+    \subsubsection{Engel's Coefficient}
+    $$
+    \begin{cases}
+    \text{Enc}_{urban}(t) = \frac{C_{urban}}{t-t_0} \\
+    \text{Enc}_{rural}(t) = \frac{C_{urban}}{t-t_0}
+    \end{cases}
+    $$
+
+  \subsection{Relation between prominent parameters and variables}
+    To investigate the relation between prominent parameters and variables, we firstly introduce the conception of  correlation. In statistics, dependence is any statistical relationship between two random variables or two sets of data, and correlation refers to any of a broad class of statistical relationships involving dependence.
+
+
+    \paragraph{Pearson product-moment correlation coefficient} is a measure of the linear correlation between two variables $X, Y$. If there is two datasets $\{x_1,x_2,\ddots, x_n\}$ and $\{y_1,y_2,\ddots, y_n\}$, then the formula for r is:
+    $$
+    r = \frac{\sum{(x_i-\bar{x})(y_i-\bar{y})}}{\sqrt{\sum{(x_i-\bar{x})^2}}\sqrt{\sum{(y_i-\bar{y})^2}}}
+    $$
+
+    \paragraph{Spearman's rank correlation coefficient} is a nonparametric measure of statistical dependence between two variables. It assesses how well the relationship between two variables can be described using a monotonic function. If there are no repeated data values, a perfect Spearman correlation of $+1$ or $-1$ occurs when each of the variables is a perfect monotone function of the other\cite{Spearman}\cite{spearmanr}. The Spearman correlation coefficient is defined as the Pearson correlation coefficient between the ranked variables\cite{ranked variable}. For a sample of size n, the n raw scores $X_i,Y_i$ are converted ranks $x_i, y_i$, and $\rho$ is computed from:
+    $$
+    \rho = 1 - \frac{6\sum{(x_i-y_i)^2}}{n(n^2-1)}
+    $$
+
+    \paragraph{Kendall rank correlation coefficient} is a statistic used to measure the association between two measured quantities. Let $(x_1, y_1),(x_2, y_2),\ddots,(x_n, y_n)$ be a set of observations of the joint random variables X and Y respectively, such that all the values of $(x_i)$ and $(y_i)$ are unique. Any pair of observations $(x_i,y_i)$ and $(x_j, y_j)$, where $i\neq j$, are said to be concordant if the ranks for both elements agree: that is, if both $x_i > x_j$ and $y_i > y_j$ or if both $x_i < x_j$ and $y_i < y_j$. They are said to be discordant, if $x_i > x_j$ and $y_i < y_j$ or if $x_i < x_j$ and $y_i > y_j$. If $x_i = x_j$ or $y_i = y_j$, the pair is neither concordant nor discordant. Thus the $\tau$ coefficient is defined as\cite{Kendall}\cite{kendalltau}:
+    $$
+    \tau = \frac{(\text{number of concordant pairs}) - (\text{number of discordant pairs})}{1/2 n (n-1)}
+    $$
+
+    Using coefficients above, we get a map about the relation between prominent parameters and consumption variables.
+
+    {\huge Coefficients Table}
+
+  \subsection{Fitness of past data using dynamic model}
 
 
 \section{Prediction of water situation}
@@ -139,9 +207,15 @@ To cover the internal dynamics of the water flow and the water storage change, w
 
 \begin{thebibliography}{99}
   \bibitem{AbilityMeasure} {Falkenmark and Lindh 1976, quoted in UNEP/WMO.Climate Change 2001: Working Group II: Impacts,Adaptation and Vulnerability. UNEP. Retrieved 3 February 2009.}
-  \bibitem {WaterScarcityMap} http://www.unep.org/dewa/vitalwater
+  \bibitem{WaterScarcityMap} http://www.unep.org/dewa/vitalwater
   \bibitem{WaterCycle} trinityrivertexas.org, Living with the Trinity Lesson Plan 1: The Natural Water Cycle and the Urban Water Cycle
   \bibitem{ChinaDataBase} http://www.stats.gov.cn
+  \bibitem{Spearman} https://en.wikipedia.org/wiki/Spearman\%27s\_rank\_correlation\_coefficient
+  \bibitem{spearmanr} Zwillinger, D. and Kokoska, S. (2000). CRC Standard Probability and Statistics Tables and Formulae. Chapman \& Hall: New York. 2000. Section 14.7
+  \bibitem{ranked variables} Myers, Jerome L.; Well, Arnold D. (2003). Research Design and Statistical Analysis (2nd ed.). Lawrence Erlbaum. p. 508
+  \bibitem{Kendall} https://en.wikipedia.org/wiki/Kendall\_rank\_correlation\_coefficient
+  \bibitem{kendalltau} W.R. Knight, “A Computer Method for Calculating Kendall’s Tau with Ungrouped Data”, Journal of the American Statistical Association, Vol. 61, No. 314, Part 1, pp. 436-439, 1966
+
 \end{thebibliography}
 
 

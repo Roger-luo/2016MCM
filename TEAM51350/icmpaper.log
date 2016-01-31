@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.26)  31 JAN 2016 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.26)  1 FEB 2016 00:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -623,11 +623,11 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17.28> not available
 (./icmpaper.toc
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1.
-)
+ [2])
 \tf@toc=\write6
 \openout6 = `icmpaper.toc'.
 
- [2] (./body.tex
+ [3] (./body.tex
 Overfull \hbox (5.98494pt too wide) in paragraph at lines 56--57
 []\OT1/ppl/m/n/12 To cover the in-ter-nal dy-nam-ics of the wa-ter flow and the
  wa-ter stor-age change,
@@ -635,7 +635,7 @@ Overfull \hbox (5.98494pt too wide) in paragraph at lines 56--57
 
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 58.
-[3]
+[4]
 LaTeX Font Info:    Try loading font information for OMS+ppl on input line 61.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
@@ -643,24 +643,38 @@ File: omsppl.fd
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
 
-<picture/struc.jpg, id=107, 1027.84pt x 770.88pt>
+<picture/struc.jpg, id=142, 1027.84pt x 770.88pt>
 File: picture/struc.jpg Graphic file (type jpg)
  <use picture/struc.jpg>
 Package pdftex.def Info: picture/struc.jpg used on input line 71.
-(pdftex.def)             Requested size: 341.43306pt x 256.07324pt.
+(pdftex.def)             Requested size: 256.0748pt x 192.04906pt.
 
-[4 <./picture/struc.jpg>]
-<picture/UrbanWaterCycle.jpg, id=116, 673.51625pt x 667.49374pt>
+Underfull \hbox (badness 3209) in paragraph at lines 74--76
+\OT1/ppl/m/n/12 namic sys-tem. To de-ter-
+ []
+
+
+Underfull \hbox (badness 3039) in paragraph at lines 74--76
+\OT1/ppl/m/n/12 ity of a re-gion, the most
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 74--76
+\OT1/ppl/m/n/12 amount of in-dus-trial, agri-
+ []
+
+[5 <./picture/struc.jpg>]
+<picture/UrbanWaterCycle.jpg, id=151, 673.51625pt x 667.49374pt>
 File: picture/UrbanWaterCycle.jpg Graphic file (type jpg)
 
 <use picture/UrbanWaterCycle.jpg>
 Package pdftex.def Info: picture/UrbanWaterCycle.jpg used on input line 94.
-(pdftex.def)             Requested size: 341.43306pt x 338.38028pt.
+(pdftex.def)             Requested size: 284.52756pt x 281.98528pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5] <picture/WaterScarcityMap.jpg, id=125, 181.75905pt x 118.5228pt>
+<picture/WaterScarcityMap.jpg, id=153, 181.75905pt x 118.5228pt>
 File: picture/WaterScarcityMap.jpg Graphic file (type jpg)
 
 <use picture/WaterScarcityMap.jpg>
@@ -671,7 +685,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--116
 \OT1/ppl/m/n/12 stress,
  []
 
-[6 <./picture/UrbanWaterCycle.jpg>]
+[6]
 Underfull \hbox (badness 2495) in paragraph at lines 116--120
 []\OT1/ppl/m/n/12 which make it a re-gion where wa-
  []
@@ -681,37 +695,66 @@ Underfull \hbox (badness 4217) in paragraph at lines 116--120
 \OT1/ppl/m/n/12 con-sid-er-a-tion, level 2, will pro-vide
  []
 
-[7 <./picture/WaterScarcityMap.jpg>] Excluding 'comment' comment.)
+[7 <./picture/UrbanWaterCycle.jpg> <./picture/WaterScarcityMap.jpg>] [8]
 
+LaTeX Warning: Citation `ranked variable' on page 9 undefined on input line 180
+.
+
+[9] [10]
+Overfull \hbox (7.24248pt too wide) in paragraph at lines 209--210
+[]\OT1/ppl/m/n/12 https://en.wikipedia.org/wiki/Spearman%27s[]rank[]correlation
+[]coefficient 
+ []
+
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ú in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ù in font pplr7t!
+Excluding 'comment' comment.) 
 AED: lastpage setting LastPage
-[8]
+[11]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
  (./icmpaper.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 48.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `icmpaper.out' has not changed.
-(rerunfilecheck)             Checksum: A88A9A1297DCF849DF76F61E9927C85F;1047.
+(rerunfilecheck)             Checksum: 159DC45E92C8D362EF7D085CEC004297;1553.
+
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 8779 strings out of 493089
- 127024 string characters out of 6134842
+ 8812 strings out of 493089
+ 127516 string characters out of 6134842
  249855 words of memory out of 5000000
- 11990 multiletter control sequences out of 15000+600000
- 28375 words of font info for 94 fonts, out of 8000000 for 9000
+ 12004 multiletter control sequences out of 15000+600000
+ 30152 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,13n,45p,515b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,14n,45p,837b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on icmpaper.pdf (8 pages, 548646 bytes).
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/urw/palatino/uplr8a.pfb>
+Output written on icmpaper.pdf (11 pages, 613416 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 158 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
- 144 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 235 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 192 words of extra memory for PDF output out of 10000 (max. 10000000)
 
