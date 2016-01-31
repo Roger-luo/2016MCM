@@ -19,7 +19,7 @@ def err(p, x, y):
 def para(datax,datay):
     x = [datax[t] for t in years]
     y = [datay[t] for t in years]
-    return leastsq(err,[datay[years[0]],1e-8,datax[years[0]],2],args=(x,y))[0]
+    return leastsq(err,[datay[years[0]],1e-8,datax[years[0]]],args=(x,y))[0]
 
 
 def comparedata(datax,datay):
