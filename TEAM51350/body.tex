@@ -13,6 +13,8 @@
     \hline
     $\text{GDP}$ & Gross Domestic Product \\
     \hline
+    $\text{PCGDP}$ & Per Capita Gross Domestic Product \\
+    \hline
     $\text{GAP}$ & Cross Agricultural Product \\
     \hline
     $\text{AWC}$ & Agricultural Water Consumption per year \\
@@ -53,15 +55,40 @@
 
 To cover the internal dynamics of the water flow and the water storage change, we introduce following model.
 
-  \subsection{Model introduction}
+  \subsection{Model Introduction}
     Water circulation is a rather complicated process, which make it almost impossible for us to design a purely fundamental model to include all the variables and their relations. Nevertheless, if we just collect all the data and using fitting method as our predicting model, it will be too trivial and old-fashioned. To solve this paradox, we introduce a phenomenological model which is quite normal in particle physics and other related field. Our model includes two main parts:
     \begin{itemize}
       \item prominent external parameters: a several statistical parameters about a region like population, GDP and so on.
       \item internal dynamic process: a several dynamical relations between external parameters and internal parameters like water consumption ,water recycle and evolution equations of water storage and related variables.
     \end{itemize}
+    The prominent external parameters comes from the statistic numbers and it's fitness, while the internal dynamics process is mainly based on the relation between state parameters and external parameters and the water cycle process.
 
+  \subsection{Model Structure}
 
-    The dynamics part of our model is inspired by the water cycle(figure \ref{water cycle})\cite{WaterCycle}
+    Our model's structure is pretty clear.
+    \begin{figure}[!h]
+    \begin{center}
+    \includegraphics[width = 12cm]{picture/struc.jpg}
+    \end{center}
+    \end{figure}
+
+    We using some prominent external parameters as the input of our dynamic system. To determine the water supply ability of a region, the most important part is the water flow which means the total amount of industrial, agricultural and residential consumption. The season we can use the consumption to measure the supply it that they must be the same during a long period just like the electricity use equal to the electricity produce.
+
+    $$
+    \langle \text{Consumption}\rangle = \langle \text{Supply} \rangle
+    $$
+
+    The $W$ and $\bar{W}$ is a crucial conception in our dynamic part, $W$ stand for the total clean water resource over a period, while the $\bar{W}$ is the total wasted water resource which can be transfered into $W$ after several processing steps.
+
+  \subsection{Model Prominent Parameters}
+
+    The prominent parameters are some thing the dynamics part heavily rely on, to find the prominent parameters, we need to investigate the relation between some alternative parameters and consumptions according to the past data. In other words, prominent parameters are not given before a specific research object is given, we just give some alternative parameters and using the past data to determine which is better related and which is less related to our dynamic part variables.
+
+    Generally, there are several important alternative parameters like: Population, GDP per Capita are of course important statistic numbers. Moreover, Agricultural Irrigation Area play an important role in agricultural consumption, Iron and Steel Production is also important in industrial consumption, and Engel's coefficient is an important statistical number about residential living which make it important in residential consumption.
+
+  \subsection{Model Dynamics}
+
+    The dynamics part of our model is inspired by the water cycle(Figure \ref{water cycle})\cite{WaterCycle}
     \begin{figure}[!h]
     \begin{center}
     \includegraphics[width = 12cm]{picture/UrbanWaterCycle.jpg}
@@ -71,6 +98,16 @@ To cover the internal dynamics of the water flow and the water storage change, w
     \end{figure}
 
 
+  \subsection{How to apply our model}
+
+    With good structure of our model and program, the application of our model can be done in a pretty clear way.
+
+    \begin{enumerate}[step 1]
+      \item Using the data of alternative prominent parameters and consumption variables in the past to find the strength of correlation, Spearman or Pearson or other coefficients.
+      \item According to the analysis of step 1, we can  determine the specific evolution equations of consumption variables which depend on the prominent parameters and water resource $W$ and $\bar{W}$.
+      \item Using the past data of needed prominent parameters, we will be able to use fitness method to predict the future data of prominent parameters as the input of evolution equations.
+      \item Using the Iterative method, we can predict the variables in dynamics part thus we can get the Output -- the water supply per person (A) to judge the water situation in a specific future time of a certain region.
+    \end{enumerate}
 
 \section{China's water scarcity}
   According to the UN water scarcity map\cite{WaterScarcityMap}, China is a country with water stress,
@@ -82,6 +119,7 @@ To cover the internal dynamics of the water flow and the water storage change, w
   We grab all the data and try to analyses them and they relation.
 
   \subsection{Prominent variables' tendency}
+  Using proper assumption and the past data in databases.
 
   \subsection{Prominent variables' relation}
 
