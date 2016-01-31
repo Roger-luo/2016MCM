@@ -104,3 +104,53 @@ plt.close()
 
 def SteelProductFit(t):
 	return SteelProductFunction(t, SteelProductFitParam)
+
+# fit of Urban Engel
+
+def UrbanEngelFunction(t,p):
+	return p[1]/(t-p[0])
+
+def UrbanEngelResFunction(p):
+	return np.array([UrbanEngelFunction(t,p)-Data.UrbanEngel[t] for t in Data.UrbanEngel])
+
+UrbanEngelFitParam=leastsq(UrbanEngelResFunction,[1950,0.1])[0]
+print(UrbanEngelFitParam)
+xs=linspace(1982, 2030, 256)
+ys=UrbanEngelFunction(xs, UrbanEngelFitParam)
+plt.figure()
+plt.xlim(1977, 2035)
+plt.xlabel("Years")
+plt.ylabel("Urban Engel/ Percentage")
+plt.plot(xs,ys,"g-",linewidth=3, label="Fitting")
+plt.plot(list(Data.UrbanEngel),[Data.UrbanEngel[t] for t in Data.UrbanEngel], "bo", label="Raw Data")
+plt.legend(loc=0)
+plt.show()
+plt.close()
+
+def UrbanEngelFit(t):
+	return UrbanEngelFunction(t, UrbanEngelFitParam)
+
+# fit of Urban Engel
+
+def RuralEngelFunction(t,p):
+	return p[1]/(t-p[0])
+
+def RuralEngelResFunction(p):
+	return np.array([RuralEngelFunction(t,p)-Data.RuralEngel[t] for t in Data.RuralEngel])
+
+RuralEngelFitParam=leastsq(RuralEngelResFunction,[1950,0.1])[0]
+print(RuralEngelFitParam)
+xs=linspace(1982, 2030, 256)
+ys=RuralEngelFunction(xs, RuralEngelFitParam)
+plt.figure()
+plt.xlim(1977, 2035)
+plt.xlabel("Years")
+plt.ylabel("Urban Engel/ Percentage")
+plt.plot(xs,ys,"g-",linewidth=3, label="Fitting")
+plt.plot(list(Data.RuralEngel),[Data.RuralEngel[t] for t in Data.RuralEngel], "bo", label="Raw Data")
+plt.legend(loc=0)
+plt.show()
+plt.close()
+
+def RuralEngelFit(t):
+	return RuralEngelFunction(t, RuralEngelFitParam)
