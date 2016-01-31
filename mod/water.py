@@ -7,3 +7,7 @@ class water(object):
 
     def __repr__(self):
         return 'water storage:%s\nwater supply:%s\nwaste water:%s'%(self.water_storage,self.water_supply,self.waste_water)
+
+    def next(self):
+        self.water_storage -=self.water_supply
+        self.waste_water   +=self.water_supply
