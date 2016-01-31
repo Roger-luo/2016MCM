@@ -80,4 +80,27 @@ plt.close()
 def IrrigationAreaFit(t):
 	return IrrigationAreaFunction(t, IrrigationAreaFitParam)
 
-# fit of 
+# fit of steel product
+
+def SteelProductFunction(t,p):
+	return p[0]+p[1]*t+p[2]*t**2
+
+def SteelProductResFunction(p):
+	return np.array([SteelProductFunction(t,p)-Data.SteelProduct[t] for t in Data.SteelProduct])
+
+SteelProductFitParam=leastsq(SteelProductResFunction,[1000,100,1])[0]
+print(SteelProductFitParam)
+xs=linspace(1997, 2030, 256)
+ys=SteelProductFunction(xs, SteelProductFitParam)
+plt.figure()
+plt.xlim(1993, 2035)
+plt.xlabel("Years")
+plt.ylabel("Steel Product/ 10k t")
+plt.plot(xs,ys,"g-",linewidth=3, label="Fitting")
+plt.plot(list(Data.SteelProduct),[Data.SteelProduct[t] for t in Data.SteelProduct], "bo", label="Raw Data")
+plt.legend(loc=0)
+plt.show()
+plt.close()
+
+def SteelProductFit(t):
+	return SteelProductFunction(t, SteelProductFitParam)
