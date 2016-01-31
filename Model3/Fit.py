@@ -13,21 +13,22 @@ def PopulationFunction(t,p):
 def PopulationResFunction(p):
 	return np.array([PopulationFunction(t,p)-Data.Population[t] for t in Data.Population])
 
-p=leastsq(PopulationResFunction,[1950,0.01,160000])[0]
-print(p)
+PopulationFitParam=leastsq(PopulationResFunction,[1950,0.01,160000])[0]
+print(PopulationFitParam)
 xs=linspace(1950, 2030, 256)
-ys=PopulationFunction(xs, p)
+ys=PopulationFunction(xs, PopulationFitParam)
 plt.figure()
 plt.xlim(1945, 2035)
 plt.xlabel("Years")
 plt.ylabel("Population/ 10k people")
-plt.plot(xs,ys,"g-",linewidth=3)
-plt.plot(list(Data.Population),[Data.Population[t] for t in list(Data.Population)], "bo")
+plt.plot(xs,ys,"g-",linewidth=3, label="Fitting")
+plt.plot(list(Data.Population),[Data.Population[t] for t in list(Data.Population)], "bo", label="Raw Data")
+plt.legend(loc=0)
 plt.show()
 plt.close()
 
 def PopulationFit(t):
-	return PopulationFunction(t, p)
+	return PopulationFunction(t, PopulationFitParam)
 
 # fit for PCGDP
 
@@ -37,21 +38,22 @@ def PCGDPFunction(t,p):
 def PCGDPResFunction(p):
 	return np.array([PCGDPFunction(t,p)-Data.PCGDP[t] for t in Data.PCGDP])
 
-p=leastsq(PCGDPResFunction,[2050, 0.07, 200000])[0]
-print(p)
+PCGDPFitParam=leastsq(PCGDPResFunction,[2050, 0.07, 200000])[0]
+print(PCGDPFitParam)
 xs=linspace(1975, 2030, 256)
-ys=PCGDPFunction(xs, p)
+ys=PCGDPFunction(xs, PCGDPFitParam)
 plt.figure()
 plt.xlim(1970, 2035)
 plt.xlabel("Years")
 plt.ylabel("PCGDP/ CNY")
-plt.plot(xs,ys,"g-",linewidth=3)
-plt.plot(list(Data.PCGDP),[Data.PCGDP[t] for t in list(Data.PCGDP)], "bo")
+plt.plot(xs,ys,"g-",linewidth=3, label="Fitting")
+plt.plot(list(Data.PCGDP),[Data.PCGDP[t] for t in list(Data.PCGDP)], "bo", label="Raw Data")
+plt.legend(loc=0)
 plt.show()
 plt.close()
 
 def PCGDPFit(t):
-	return PCGDPFunction(t, p)
+	return PCGDPFunction(t, PCGDPFitParam)
 
 # fit for Irrigation Area
 
@@ -61,18 +63,21 @@ def IrrigationAreaFunction(t,p):
 def IrrigationAreaResFunction(p):
 	return np.array([IrrigationAreaFunction(t,p)-Data.IrrigationArea[t] for t in Data.IrrigationArea])
 
-p=leastsq(IrrigationAreaResFunction,[1000,100,1])[0]
-print(p)
+IrrigationAreaFitParam=leastsq(IrrigationAreaResFunction,[1000,100,1])[0]
+print(IrrigationAreaFitParam)
 xs=linspace(1977, 2030, 256)
-ys=IrrigationAreaFunction(xs, p)
+ys=IrrigationAreaFunction(xs, IrrigationAreaFitParam)
 plt.figure()
 plt.xlim(1970, 2035)
 plt.xlabel("Years")
 plt.ylabel("Irrigation Area/ kha")
-plt.plot(xs,ys,"g-",linewidth=3)
-plt.plot(list(Data.IrrigationArea),[Data.IrrigationArea[t] for t in Data.IrrigationArea], "bo")
+plt.plot(xs,ys,"g-",linewidth=3, label="Fitting")
+plt.plot(list(Data.IrrigationArea),[Data.IrrigationArea[t] for t in Data.IrrigationArea], "bo", label="Raw Data")
+plt.legend(loc=0)
 plt.show()
 plt.close()
 
 def IrrigationAreaFit(t):
-	return IrrigationAreaFunction(t, p)
+	return IrrigationAreaFunction(t, IrrigationAreaFitParam)
+
+# fit of 
