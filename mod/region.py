@@ -65,7 +65,7 @@ class Region(object):
         self.year = year
 
     def __repr__(self):
-        return '%s\naverage water supply:%s'%(self.water,self.water.water_supply/self.pop)
+        return '%s\naverage water supply:%s'%(self.water,self.water.water_supply/self.pop.population)
 
     #industrial water supply after dt
     def indust_next(self):
@@ -99,6 +99,6 @@ class Region(object):
 
 w = water.water(2,3,4)
 i = infras(2,2)
-r = Region(20,100,w,i,1e-3)
+r = Region(population(2,2), 20, w, i, 20, year(2000), 1e-3)
 
 print(r)
