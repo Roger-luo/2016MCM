@@ -5,6 +5,9 @@ from scipy.optimize import leastsq
 import matplotlib.pyplot as plt
 from numpy import linspace
 import Fit
+import ResidentWater
+import IndustWater
+
 
 years=range(2004, 2015)
 
@@ -45,8 +48,16 @@ def AgricultureWater(time):
     ira = (Expo(Fit.IrrigationAreaFit(time),iPara)/Expo(Fit.IrrigationAreaFit(years[-1]),iPara))
     return Data.WaterUseAgriculture[years[-1]]*(pop/3+pcg/3+ira/3)
 
+def All(time):
+    return (AgricultureWater(time)+ResidentWater.ResidentWater(time)+IndustWater.IndustWater(time))/Fit.PopulationFit(time)
+
+y = np.array(range(2004,2030))
+
 plt.figure()
-plt.scatter(years,[Data.WaterUseAgriculture[i] for i in years],marker="^",s=100)
-plt.plot(years,AgricultureWater(years),'b-')
+plt.scatter(years,[(Data.WaterUseAgriculture[i]+Data.WaterUseResidential[i]+Data.WaterUseIndustry[i])/Data.Population[i] for i in years],marker="^",s=100)
+plt.plot(y,[All(i) for i in y],'b-')
 plt.show()
 plt.close()
+
+
+

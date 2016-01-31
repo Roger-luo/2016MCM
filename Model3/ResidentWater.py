@@ -39,11 +39,11 @@ def ResidentWater(time):
     pcg = (Expo(Fit.PCGDPFit(time),gPara)/Expo(Fit.PCGDPFit(years[-1]),gPara))
     return Data.WaterUseResidential[years[-1]]*(pop/2+pcg/2)
 
-plt.figure()
-plt.scatter(years,[Data.WaterUseResidential[t] for t in years],marker="^",s=100)
-plt.plot(years,ResidentWater(years),'b-')
-plt.show()
-plt.close()
+# plt.figure()
+# plt.scatter(years,[Data.WaterUseResidential[t] for t in years],marker="^",s=100)
+# plt.plot(years,ResidentWater(years),'b-')
+# plt.show()
+# plt.close()
 
 # plt.figure()
 # plt.ylabel("Domestic Water Usage/ 100m m^3")
