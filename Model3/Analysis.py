@@ -77,6 +77,13 @@ plt.plot(list(Data.WasteWaterInvestment), [Data.WasteWaterInvestment[t] for t in
 plt.show()
 plt.close()
 
+plt.figure()
+plt.xlabel("Years")
+plt.ylabel("Electricity/ 100m kWh")
+plt.plot(list(Data.Electricity), [Data.Electricity[t] for t in list(Data.Electricity)], "bo")
+plt.show()
+plt.close()
+
 # analysis for GDP & Population
 print("r(GDP,Population)="+str(spearmanr([Data.GDP[t] for t in years],[Data.Population[t] for t in years])))
 
