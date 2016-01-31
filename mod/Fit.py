@@ -6,7 +6,6 @@ from numpy import linspace
 
 # fit for population
 
-
 def PopulationFunction(t,p):
 	return p[2]/(1+np.exp(-p[1]*(t-p[0])))
 
@@ -14,6 +13,8 @@ def PopulationResFunction(p):
 	return np.array([PopulationFunction(t,p)-Data.Population[t] for t in Data.Population])
 
 PopulationFitParam=leastsq(PopulationResFunction,[1950,0.01,160000])[0]
+
+print(PopulationFitParam)
 
 def PopulationFit(t):
 	return PopulationFunction(t, PopulationFitParam)
