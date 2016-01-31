@@ -88,16 +88,16 @@ To cover the internal dynamics of the water flow and the water storage change, w
 
   \subsection{Model Dynamics}
 
-    The dynamics part of our model is inspired by the water cycle(Figure \ref{water cycle})\cite{WaterCycle}
-    \begin{figure}[!hb]
-    \begin{center}
-    \includegraphics[width = 10cm]{picture/UrbanWaterCycle.jpg}
-    \caption{water cycle}
+    \begin{wrapfigure}{l}{8cm}
+    %\begin{center}
+    \includegraphics[width = 8cm]{picture/UrbanWaterCycle.jpg}
+    \caption{water cycle\cite{WaterCycle}}
     \label{water cycle}
-    \end{center}
-    \end{figure}
+    %\end{center}
+    \end{wrapfigure}
+  The dynamics part of our model is inspired by the water cycle(Figure \ref{water cycle})
 
-
+  \clearpage
   \subsection{How to apply our model}
 
     With good structure of our model and program, the application of our model can be done in a pretty clear way.
@@ -109,19 +109,29 @@ To cover the internal dynamics of the water flow and the water storage change, w
       \item Using the Iterative method, we can predict the variables in dynamics part thus we can get the Output -- the water supply per person (A) to judge the water situation in a specific future time of a certain region.
     \end{enumerate}
 
+
+
 \section{China's water scarcity}
-  According to the UN water scarcity map\cite{WaterScarcityMap}, China is a country with water stress,
+  According to the UN water scarcity map, China is a country with water stress,
   \begin{wrapfigure}{l}{7cm}
   \includegraphics[width = 6cm]{picture/WaterScarcityMap.jpg}
+  \caption{water scarcity map\cite{WaterScarcityMap}}
   \end{wrapfigure}
-  which make it a region where water is moderately overloaded. In our consideration, level 2, will provide more abundant behavior in a dynamical model(will it become water scarce or water sufficient in the future?). Thus we pick up China as our research object. To make our model more predictable and more reality connected. We will continue our investigation with the data from National Bureau of Statistics of the People's Republic China\cite{ChinaDataBase}.
-  According to our models, the following variables are prominent: the Population, the GDP, the water consumption and the total water resource.
-  We grab all the data and try to analyses them and they relation.
+  which make it a region where water is moderately overloaded. In our consideration, level 2, will provide more abundant behavior in a dynamical model(will it become water scarce or water sufficient in the future?). Thus we pick up China as our research object. To make our model more predictable and more reality connected.
 
+  \subsection{Social drivers}
+
+  \subsection{Environmental drivers}
+
+
+\section{China's water scarcity: Further Investigation and Prediction}
+
+  For further investigation, we study with the data from National Bureau of Statistics of the People's Republic China\cite{ChinaDataBase}.According to our models, we should predetermine the alternative prominent parameters and grab all the data and try to analyses them and they relation.
   \subsection{Prominent variables' tendency}
   Using proper assumption and the past data in databases. We can using fitness method to determine the time dependency of our alternative parameters.
   In our consideration, following factors especially eye-catching.
   \begin{table}[!h]
+  \centering
   \begin{tabular}{|c|c|}
   \hline
   $P$ & Population \\
@@ -139,40 +149,84 @@ To cover the internal dynamics of the water flow and the water storage change, w
   \end{tabular}
   \end{table}
   For further convenience, we will investigate their relation towards time at first.
-    \subsubsection{Population}
+    \paragraph{Population}
       The population growth model is various, for best concern, we use Logistic Model as the Population evolution model thus we can use the solution--Standard logistic sigmoid function as our target function by adding three basic coefficients.
       $$
-      P(t) = \frac{K_p}{1+\exp[-\lambda_p(t-t_0)]}
+      P(t) = \frac{K^P}{1+\exp[-\lambda^P(t-t_0^P)]}
       $$
-      {\huge figure}
-    \subsubsection{Per Capita Gross Domestic Product}
+
+    \paragraph{Per Capita Gross Domestic Product}
       As the largest developing country over the world, China has pretty high PCGDP growth rate. It seems like an exponential growth However, according to our data browse, some developed countries have already reach some obstacles. Thus we think it will be suitable if we apply Logistic model in the fitness model of $\text{PCGDP}$.
       $$
-      \text{PCGDP}(t) = \frac{K_\text{PCGDP}}{1+\exp[-\lambda_\text{PCGDP}(t-t_0)]}
+      \text{PCGDP}(t) = \frac{K^\text{PCGDP}}{1+\exp[-\lambda^\text{PCGDP}(t-t_0^\text{PCGDP})]}
       $$
-      {\huge figure}
-    \subsubsection{Irrigation Area}
 
-    {\huge figure}
-    \subsubsection{Iron and Steel Production}
+    \paragraph{Irrigation Area}
+    According to our observation, there is a strong evidence about linear growth of Irrigation Area. Consider the complicity and the fact we are just required to predict about 15 years
+    $$
+    \text{IA}(t) = A_0^\text{IA}+A_1^\text{IA} t + A_2^\text{IA} t^2
+    $$
 
-    {\huge figure}
-    \subsubsection{Electricity Production}
+    \paragraph{Iron and Steel Production}
+    $$
+    \text{ISP}(t) = A_0^\text{ISP}+A_1^\text{ISP} t + A_2^\text{ISP} t^2
+    $$
 
-    {\huge figure}
-    \subsubsection{Engel's Coefficient}
+    \paragraph{Electricity Production}
+    $$
+    \text{ELP}(t) = A_0^\text{ELP}+A_1^\text{ELP} t + A_2^\text{ELP} t^2
+    $$
+
+    \paragraph{Engel's Coefficient}
     $$
     \begin{cases}
-    \text{Enc}_{urban}(t) = \frac{C_{urban}}{t-t_0} \\
-    \text{Enc}_{rural}(t) = \frac{C_{urban}}{t-t_0}
+    \text{Enc}_\text{urban}(t) = \frac{C^\text{urban}}{t-t_0^\text{urban}} \\
+    \text{Enc}_\text{rural}(t) = \frac{C^\text{rural}}{t-t_0^\text{rural}}
     \end{cases}
     $$
+
+
+    \begin{figure}[!h]
+    \label{fig: parameters fit}
+    \begin{center}
+    \subfigure[$p(t)$]{\includegraphics[width = 0.45\textwidth]{picture/Population.png}}
+    \subfigure[$\text{PCGDP}(t)$]{\includegraphics[width = 0.45\textwidth]{picture/PCGDP.png}}\\
+    \subfigure[$\text{IA}(t)$]{\includegraphics[width = 0.45\textwidth]{picture/IrrigationArea.png}}
+    \subfigure[$\text{ISP}(t)$]{\includegraphics[width = 0.45\textwidth]{picture/SteelProduct.png}}\\
+    \subfigure[$\text{ELP}(t)$]{\includegraphics[width = 0.45\textwidth]{picture/Electricity.png}}
+    \subfigure[$\text{Enc}(t)$]{\includegraphics[width = 0.45\textwidth]{picture/Engel.png}}
+    \end{center}
+    \caption{Parameters fit: blue dots means the existed data which we refer from the national database, green lines stand for the optimized curve and the prediction value in the future }
+    \end{figure}
+
+    With the fitness method, we can get all the evolution of alternative prominent parameters in Figure \ref{fig: parameters fit}, and the parameters in evolution equations in Table\ref{tab:evolution par}:
+    \begin{table}[!h]
+      \label{tab:evolution par}
+      \centering
+      \begin{tabular}{|l|l|}
+      \hline
+      $\left[t_0^P, \lambda^P,K^P\right]$ & [1968.14, 3.94\%, 161162.404] \\
+      \hline
+      $\left[t_0^\text{PCGDP}, \lambda^\text{PCGDP},K^\text{PCGDP}\right]$ & [2021.12, 14.9\%, 187060.984] \\
+      \hline
+      $\left[A_0^\text{IA},A_1^\text{IA},A_2^\text{IA}\right]$ & [5.155e+07, -5.217e+04, 13.21] \\
+      \hline
+      $\left[A_0^\text{ISP},A_1^\text{ISP},A_2^\text{ISP}\right]$ & [1.027e+09, -1.031e+06, 258.6] \\
+      \hline
+      $\left[A_0^\text{ELP},A_1^\text{ELP},A_2^\text{ELP}\right]$ & [3.125e+08, -3.146e+05, 79.19] \\
+      \hline
+      $\left[C^\text{urban},t_0^\text{urban},C^\text{rural},t_0^\text{rural}\right]$ & [1938.24, 2700.15, 1916.02, 4218.31] \\
+      \hline
+      \end{tabular}
+      \caption{evolution parameters}
+    \end{table}
+
 
   \subsection{Relation between prominent parameters and variables}
     To investigate the relation between prominent parameters and variables, we firstly introduce the conception of  correlation. In statistics, dependence is any statistical relationship between two random variables or two sets of data, and correlation refers to any of a broad class of statistical relationships involving dependence.
 
 
-    \paragraph{Pearson product-moment correlation coefficient} is a measure of the linear correlation between two variables $X, Y$. If there is two datasets $\{x_1,x_2,\ddots, x_n\}$ and $\{y_1,y_2,\ddots, y_n\}$, then the formula for r is:
+    \paragraph{Pearson product-moment correlation coefficient}\cite{Pearson} is a measure of the linear correlation between two variables $X, Y$. If there is two datasets $\{x_1,x_2,\dots, x_n\}$ and $\{y_1,y_2,\dots, y_n\}$, then the formula for r is\cite{pearsonr}:
     $$
     r = \frac{\sum{(x_i-\bar{x})(y_i-\bar{y})}}{\sqrt{\sum{(x_i-\bar{x})^2}}\sqrt{\sum{(y_i-\bar{y})^2}}}
     $$
@@ -182,20 +236,53 @@ To cover the internal dynamics of the water flow and the water storage change, w
     \rho = 1 - \frac{6\sum{(x_i-y_i)^2}}{n(n^2-1)}
     $$
 
-    \paragraph{Kendall rank correlation coefficient} is a statistic used to measure the association between two measured quantities. Let $(x_1, y_1),(x_2, y_2),\ddots,(x_n, y_n)$ be a set of observations of the joint random variables X and Y respectively, such that all the values of $(x_i)$ and $(y_i)$ are unique. Any pair of observations $(x_i,y_i)$ and $(x_j, y_j)$, where $i\neq j$, are said to be concordant if the ranks for both elements agree: that is, if both $x_i > x_j$ and $y_i > y_j$ or if both $x_i < x_j$ and $y_i < y_j$. They are said to be discordant, if $x_i > x_j$ and $y_i < y_j$ or if $x_i < x_j$ and $y_i > y_j$. If $x_i = x_j$ or $y_i = y_j$, the pair is neither concordant nor discordant. Thus the $\tau$ coefficient is defined as\cite{Kendall}\cite{kendalltau}:
+    \paragraph{Kendall rank correlation coefficient} is a statistic used to measure the association between two measured quantities. Let $(x_1, y_1),(x_2, y_2),\dots,(x_n, y_n)$ be a set of observations of the joint random variables $X$ and $Y$ respectively, such that all the values of $(x_i)$ and $(y_i)$ are unique. Any pair of observations $(x_i,y_i)$ and $(x_j, y_j)$, where $i\neq j$, are said to be concordant if the ranks for both elements agree: that is, if both $x_i > x_j$ and $y_i > y_j$ or if both $x_i < x_j$ and $y_i < y_j$. They are said to be discordant, if $x_i > x_j$ and $y_i < y_j$ or if $x_i < x_j$ and $y_i > y_j$. If $x_i = x_j$ or $y_i = y_j$, the pair is neither concordant nor discordant. Thus the $\tau$ coefficient is defined as\cite{Kendall}\cite{kendalltau}:
     $$
-    \tau = \frac{(\text{number of concordant pairs}) - (\text{number of discordant pairs})}{1/2 n (n-1)}
+    \tau = \frac{(\text{number of concordant pairs}) - (\text{number of discordant pairs})}{\frac{1}{2} n (n-1)}
     $$
 
     Using coefficients above, we get a map about the relation between prominent parameters and consumption variables.
+
+    \begin{table}[!htb]
+      \label{tab: coefficients}
+      \centering
+      \begin{tabular}{l||c|c|c}
+      \hline
+      Data                & Pearson $(r_p,p)$                        & Spearman $(r_s,p)$       & Kendall $(\tau, p)$ \\
+      \hline
+
+      $\text{IWC}\sim P$ & (0.669,0.0245)                   &(0.627,0.0388)   &(0.455,0.0516) \\
+      \hline
+      $\text{IWC}\sim \text{PCGDP}$ &(0.614,0.0444)         &(0.627,0.0388)   &(0.455,0.0516) \\
+      \hline
+      $\text{IWC}\sim \text{ELP}$ &(0.648,0.0311)           &(0.627,0.0388)   &(0.455,0.0516) \\
+      \hline
+      $\text{IWC}\sim \text{ISP}$ &(0.653,0.0294)           &(0.627,0.0388)   &(0.455,0.0516) \\
+      \hline\hline
+      $\text{AWC}\sim P$ &(0.924,4.95e-5)                   &(0.927,3.97e-5)  &(0.782,0.000815) \\
+      \hline
+      $\text{AWC}\sim \text{PCGDP}$ &(0.936,2.28e-5)        &(0.927,3.97e-5)  &(0.782,0.000815) \\
+      \hline
+      $\text{AWC}\sim \text{IA}$ &(0.927,4.10e-5)           &(0.927,3.97e-5)  &(0.782,0.000815) \\
+      \hline\hline
+      $\text{DWC}\sim P$ &(0.844,0.00108)                   &(0.836,0.00133)  &(0.745,0.00141) \\
+      \hline
+      $\text{DWC}\sim \text{PCGDP}$ &(0.806,0.00276)        &(0.836,0.00133)  &(0.745,0.00141) \\
+      \hline
+      $\text{DWC}\sim \text{Enc}_\text{urban}$ &(-0.785,0.00417) &(-0.809,0.00256) &(-0.600,0.0102) \\
+      \hline
+      $\text{DWC}\sim \text{Enc}_\text{rural}$ &(-0.419,0.199)   &(-0.315,0.345)   &(-0.204,0.383) \\
+      \hline
+
+      \end{tabular}
+      \caption{Coefficients: Coefficients of correlation in different standard}
+    \end{table}
 
     {\huge Coefficients Table}
 
   \subsection{Fitness of past data using dynamic model}
 
 
-\section{Prediction of water situation}
-  In our model external variables are used for future prediction.
 
 
 \section{Intervention plan designing}
@@ -207,9 +294,11 @@ To cover the internal dynamics of the water flow and the water storage change, w
 
 \begin{thebibliography}{99}
   \bibitem{AbilityMeasure} {Falkenmark and Lindh 1976, quoted in UNEP/WMO.Climate Change 2001: Working Group II: Impacts,Adaptation and Vulnerability. UNEP. Retrieved 3 February 2009.}
-  \bibitem{WaterScarcityMap} http://www.unep.org/dewa/vitalwater
   \bibitem{WaterCycle} trinityrivertexas.org, Living with the Trinity Lesson Plan 1: The Natural Water Cycle and the Urban Water Cycle
+  \bibitem{WaterScarcityMap} http://www.unep.org/dewa/vitalwater
   \bibitem{ChinaDataBase} http://www.stats.gov.cn
+  \bibitem{Pearson} https://en.wikipedia.org/wiki/Pearson\_product-moment\_correlation\_coefficient\#Definition
+  \bibitem{pearsonr} http://www.statsoft.com/textbook/glosp.html\#Pearson\%20Correlation
   \bibitem{Spearman} https://en.wikipedia.org/wiki/Spearman\%27s\_rank\_correlation\_coefficient
   \bibitem{spearmanr} Zwillinger, D. and Kokoska, S. (2000). CRC Standard Probability and Statistics Tables and Formulae. Chapman \& Hall: New York. 2000. Section 14.7
   \bibitem{ranked variables} Myers, Jerome L.; Well, Arnold D. (2003). Research Design and Statistical Analysis (2nd ed.). Lawrence Erlbaum. p. 508
