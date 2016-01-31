@@ -37,7 +37,7 @@
 \end{table}
 
 \section{Model of water supply ability}
-  When it come to the water supply ability of a region, a country or even the world. We often use the measurement called annual water supplies per person($A$) to describe water supply ability\cite{1}. We can set three levels to classify the ability of several regions:
+  When it come to the water supply ability of a region, a country or even the world. We often use the measurement called annual water supplies per person($A$) for description\cite{AbilityMeasure}. We can set three levels to classify the ability of several regions:
   \begin{table}[!htb]
     \centering
     \begin{tabular}{|c||c|c|}
@@ -53,14 +53,31 @@
 
 To cover the internal dynamics of the water flow and the water storage change, we introduce following model.
 
+  \subsection{Model introduction}
+    Water circulation is a rather complicated process, which make it almost impossible for us to design a purely fundamental model to include all the variables and their relations. Nevertheless, if we just collect all the data and using fitting method as our predicting model, it will be too trivial and old-fashioned. To solve this paradox, we introduce a phenomenological model which is quite normal in particle physics and other related field. Our model includes two main parts:
+    \begin{itemize}
+      \item prominent external parameters: a several statistical parameters about a region like population, GDP and so on.
+      \item internal dynamic process: a several dynamical relations between external parameters and internal parameters like water consumption ,water recycle and evolution equations of water storage and related variables.
+    \end{itemize}
+
+
+    The dynamics part of our model is inspired by the water cycle(figure \ref{water cycle})\cite{WaterCycle}
+    \begin{figure}[!h]
+    \begin{center}
+    \includegraphics[width = 12cm]{picture/UrbanWaterCycle.jpg}
+    \caption{water cycle}
+    \label{water cycle}
+    \end{center}
+    \end{figure}
+
 
 
 \section{China's water scarcity}
-  According to the UN water scarcity map, China is a country with water stress,
+  According to the UN water scarcity map\cite{WaterScarcityMap}, China is a country with water stress,
   \begin{wrapfigure}{l}{7cm}
   \includegraphics[width = 6cm]{picture/WaterScarcityMap.jpg}
   \end{wrapfigure}
-  which make it a region where water is moderately overloaded. In our consideration, level 2, will provide more abundant behavior in a dynamical model(will it become water scarce or water sufficient in the future?). Thus we pick up China as our research object. To make our model more predictable and more reality connected. We will continue our investigation with the data from National Bureau of Statistics of the People's Republic China\cite{2}.
+  which make it a region where water is moderately overloaded. In our consideration, level 2, will provide more abundant behavior in a dynamical model(will it become water scarce or water sufficient in the future?). Thus we pick up China as our research object. To make our model more predictable and more reality connected. We will continue our investigation with the data from National Bureau of Statistics of the People's Republic China\cite{ChinaDataBase}.
   According to our models, the following variables are prominent: the Population, the GDP, the water consumption and the total water resource.
   We grab all the data and try to analyses them and they relation.
 
@@ -83,8 +100,10 @@ To cover the internal dynamics of the water flow and the water storage change, w
 
 
 \begin{thebibliography}{99}
-  \bibitem{1} {Falkenmark and Lindh 1976, quoted in UNEP/WMO.Climate Change 2001: Working Group II: Impacts,Adaptation and Vulnerability. UNEP. Retrieved 3 February 2009.}
-  \bibitem{2} http://www.stats.gov.cn
+  \bibitem{AbilityMeasure} {Falkenmark and Lindh 1976, quoted in UNEP/WMO.Climate Change 2001: Working Group II: Impacts,Adaptation and Vulnerability. UNEP. Retrieved 3 February 2009.}
+  \bibitem {WaterScarcityMap} http://www.unep.org/dewa/vitalwater
+  \bibitem{WaterCycle} trinityrivertexas.org, Living with the Trinity Lesson Plan 1: The Natural Water Cycle and the Urban Water Cycle
+  \bibitem{ChinaDataBase} http://www.stats.gov.cn
 \end{thebibliography}
 
 
