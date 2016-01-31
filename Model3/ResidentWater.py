@@ -4,6 +4,7 @@ import numpy as np
 from scipy.optimize import leastsq
 import matplotlib.pyplot as plt
 from numpy import linspace
+import Fit
 
 years=range(2004, 2015)
 
@@ -31,20 +32,10 @@ def comparedata(datax,datay,xlabel,ylabel):
     plt.close()
 
 
-# comparedata(Data.Population,Data.WaterUseResidential,"Population/ 10k people","Domestic Water Usage/ 100m m^3")
-# comparedata(Data.PCGDP,Data.WaterUseResidential,"PCGDP/ CNY","Domestic Water Usage/ 100m m^3")
-
 pPara = para(Data.Population,Data.WaterUseResidential)
 gPara = para(Data.PCGDP,Data.WaterUseResidential)
 def ResidentWater(time):
-    return Data.WaterUseResidential[years[0]]*(Expo(time,pPara)/Expo(years[0],pPara))*(Expo(time,gPara)/Expo(years[0],gPara))
-
-
-plt.figure()
-plt.scatter(years,[Data.WaterUseResidential[t] for t in years])
-plt.plot(years,ResidentWater(years),'b-')
-plt.show()
-plt.close()
+    return Data.WaterUseResidential[years[-1]]*(Expo(Fit.PopulationFit(time),pPara)/Expo(Fit.PopulationFit(years[-1]),pPara))*(Expo(Fit.PCGDPFit(time),gPara)/Expo(Fit.PCGDPFit(years[-1]),gPara))
 
 # plt.figure()
 # plt.ylabel("Domestic Water Usage/ 100m m^3")

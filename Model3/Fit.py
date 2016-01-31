@@ -34,7 +34,7 @@ def PCGDPFit(t):
 # fit for Irrigation Area
 
 def IrrigationAreaFunction(t,p):
-	return p[0]+p[1]*t+p[2]*t**2
+	return p[0]+p[1]*t+p[2]*t*t
 
 def IrrigationAreaResFunction(p):
 	return np.array([IrrigationAreaFunction(t,p)-Data.IrrigationArea[t] for t in Data.IrrigationArea])
@@ -47,7 +47,7 @@ def IrrigationAreaFit(t):
 # fit of steel product
 
 def SteelProductFunction(t,p):
-	return p[0]+p[1]*t+p[2]*t**2
+	return p[0]+p[1]*t+p[2]*t*t
 
 def SteelProductResFunction(p):
 	return np.array([SteelProductFunction(t,p)-Data.SteelProduct[t] for t in Data.SteelProduct])
@@ -86,7 +86,7 @@ def RuralEngelFit(t):
 # fit electricity
 
 def ElectricityFunction(t,p):
-	return p[0]+p[1]*t+p[2]*t**2
+	return p[0]+p[1]*t+p[2]*t*t
 
 def ElectricityResFunction(p):
 	return np.array([ElectricityFunction(t,p)-Data.Electricity[t] for t in Data.Electricity])

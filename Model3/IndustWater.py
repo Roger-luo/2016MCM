@@ -4,6 +4,7 @@ import numpy as np
 from scipy.optimize import leastsq
 import matplotlib.pyplot as plt
 from numpy import linspace
+import Fit
 
 years=range(2004, 2015)
 
@@ -28,11 +29,28 @@ def comparedata(datax,datay):
     plt.show()
     plt.close()
 
-comparedata(Data.Population,Data.WaterUseIndustry)
-comparedata(Data.PCGDP,Data.WaterUseIndustry)
-comparedata(Data.Electricity,Data.WaterUseIndustry)
-comparedata(Data.SteelProduct,Data.WaterUseIndustry)
+pPara = para(Data.Population,Data.WaterUseIndustry)
+gPara = para(Data.PCGDP,Data.WaterUseIndustry)
+ePara = para(Data.Electricity,Data.WaterUseIndustry)
+sPara = para(Data.SteelProduct,Data.WaterUseIndustry)
 
+def IndustWater(time):
+    pop = (Gaussian(Fit.PopulationFit(time),pPara)/Gaussian(Fit.PopulationFit(years[3]),pPara))
+    pcg = (Gaussian(Fit.PCGDPFit(time),gPara)/Gaussian(Fit.PCGDPFit(years[3]),gPara))
+    ele = (Gaussian(Fit.ElectricityFit(time),ePara)/Gaussian(Fit.ElectricityFit(years[3]),ePara))
+    spr = (Gaussian(Fit.SteelProductFit(time),sPara)/Gaussian(Fit.SteelProductFit(years[3]),sPara))
+    return Data.WaterUseIndustry[years[3]]*pop*pcg*ele*spr
+
+# comparedata(Data.Population,Data.WaterUseIndustry)
+# comparedata(Data.PCGDP,Data.WaterUseIndustry)
+# comparedata(Data.Electricity,Data.WaterUseIndustry)
+# comparedata(Data.SteelProduct,Data.WaterUseIndustry)
+
+plt.figure()
+plt.scatter(years,[Data.WaterUseIndustry[t] for t in years],marker="^",s=100)
+plt.plot(years,IndustWater(years),'b-')
+plt.show()
+plt.close()
 # plt.figure()
 # plt.xlabel("Steel Production/ CNY")
 # plt.ylabel("Industry Water Usage/ 100m m^3")
