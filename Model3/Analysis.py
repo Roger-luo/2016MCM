@@ -1,6 +1,7 @@
 import Data
 import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
+from scipy.stats import pearsonr
 
 years=range(2004, 2015)
 
