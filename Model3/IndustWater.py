@@ -14,12 +14,14 @@ def ResFunction(p):
     return np.array([Gaussian(i,p)-Data.WaterUseIndustry[i] for i in Data.WaterUseIndustry])
 
 def err(p, x, y):
-    return Gaussian(x,p)-y
+    return (Gaussian(x,p)-y)**2
 
 def para(datax,datay):
+    arrayx = list(datax.values())
+    arrayy = list(datay.values())
     x = [datax[t] for t in years]
     y = [datay[t] for t in years]
-    return leastsq(err,[datay[years[0]],1e-8,datax[years[0]],2],args=(x,y))[0]
+    return leastsq(err,[y[0],1e-8,x[y.index(np.max(y))]],args=(x,y))[0]
 
 
 def comparedata(datax,datay):
