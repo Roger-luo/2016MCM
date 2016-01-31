@@ -87,7 +87,12 @@ for i in range(len(ying)):
     SteelProduct[2014-i] = ying[i]
 
 
-ying = []
+ying = [57226,54316.4,49875.5,47130.2,42071.6,37146.5,34668.8,32815.5,28657.3,25002.6,22033.1,19105.8,16540.0,14808.0,13556.0]
+# yi du
+Electricity = {}
+for i in range(len(ying)):
+    Electricity[2014-i] = ying[i]
+# 2014 是我脑补的.
 
 
 
