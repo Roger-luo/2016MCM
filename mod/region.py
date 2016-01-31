@@ -1,6 +1,8 @@
 import numpy as np
 import numpy.random as random
 import water
+import Fit
+
 class population(object):
     """population"""
     def __init__(self, population, icrrate):
@@ -9,6 +11,9 @@ class population(object):
 
     def __repr__(self):
         return 'current population: %s'%self.population
+
+    def __call__(self, time):
+        return Fit.PopulationFit(time)
 
     def next_timestep(self, region):
         self.population*(1-region.capacity)
@@ -101,4 +106,6 @@ w = water.water(2,3,4)
 i = infras(2,2)
 r = Region(population(2,2), 20, w, i, 20, year(2000), 1e-3)
 
-print(r)
+p = population(2,2)
+
+print(p(2000))
