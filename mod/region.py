@@ -1,6 +1,6 @@
 import numpy as np
 import numpy.random as random
-
+import water
 class population(object):
     """population"""
     def __init__(self, population, icrrate):
@@ -20,9 +20,16 @@ class infras(object):
         self.dam = dam
         self.recycle = recycle
 
+    def average(self):
+        return self.dam+self.recycle
+
+    def variance(self):
+        return 0
+
 class Region(object):
     """Region"""
     def __init__(self, pop, capacity, water, ifrstrc, dt):
+        super(Region, self).__init__()
         self.pop = pop
         self.capacity = capacity
         self.water = water
@@ -30,42 +37,22 @@ class Region(object):
         self.dt = dt
 
     def __repr__(self):
-        return '%s\n%s'%(self.water,self.pop)
+        return '%s\naverage water supply:%s'%(self.water,self.water.water_supply/self.pop)
 
-    def average_available_water(self):
-        return self.water/self.pop
-
-    #evaluation of available water in next time step
-    def next_timestep(self):
-        return self.mu()*self.dt+self.sigma()*np.sqrt(dt)*random.randn()
-
-    def mu(self):
-        return (self.water-self.cost()+self.produce())/self.water
-
-    #variance of the evaluate
-    def sigma(self):
-        return self.var_produce()+self.var_cost()
-
-    def var_cost(self):
+    def agriculture_supply(self, supply):
         return 0
 
-    def var_produce(self):
+    def industrial_supply(self, supply):
         return 0
 
-    def cost(self):
-        return self.agriculture()+self.industrial()+self.resident()
-
-    def produce(self):
-        return self.waterrecycle()
-
-    def waterrecycle(self):
+    def resident_supply(self, supply):
         return 0
 
-    def agriculture(self):
-        return 0
 
-    def industrial(self):
-        return 0
 
-    def resident(self):
-        pass
+
+w = water.water(2,3,4)
+i = infras(2,2)
+r = Region(20,100,w,i,1e-3)
+
+print(r)
