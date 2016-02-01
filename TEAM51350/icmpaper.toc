@@ -29,14 +29,15 @@
 \contentsline {subsection}{\numberline {5.3}Fitness method in consumption variables}{14}{subsection.5.3}
 \contentsline {paragraph}{Industry Water Consumption}{15}{section*.12}
 \contentsline {paragraph}{Agricultural Water Consumption}{15}{section*.13}
-\contentsline {paragraph}{Domestic Water Consumption}{15}{section*.14}
+\contentsline {paragraph}{Domestic Water Consumption}{16}{section*.14}
 \contentsline {subsection}{\numberline {5.4}Prediction of future water supply ability}{17}{subsection.5.4}
 \contentsline {section}{\numberline {6}Intervention plan designing and prediction}{18}{section.6}
 \contentsline {subsection}{\numberline {6.1}Population Intervention}{18}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Water Distribution Intervention}{18}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Industrial Intervention}{19}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}Overview}{20}{subsection.6.4}
-\contentsline {subsection}{\numberline {6.5}Climate and uncertainty evaluation}{20}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.3}Industrial Intervention}{18}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Overview}{19}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Climate and uncertainty evaluation}{19}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Disscussion}{20}{subsection.6.6}
 \contentsline {section}{\numberline {7}Executive Summary}{21}{section.7}
 \contentsline {subsection}{\numberline {7.1}Approach to the problem}{21}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Conclusion}{21}{subsection.7.2}
