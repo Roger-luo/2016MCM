@@ -11,9 +11,14 @@ class IndustWater(object):
         self.Elec = Elec
         self.Steel = Steel
         self.WaterUse = WaterUse
+        pass
+        self.pcoeff = self.para(self.Pop.data)
+        self.gcoeff = self.para(self.PCGDP.data)
+        self.ecoeff = self.para(self.Elec.data)
+        self.scoeff = self.para(self.Steel.data)
         
     def Gaussian(self, x,p):
-        return (p[0]+p[1]*(x-p[2])**2)**2
+        return p[0]*np.exp(-p[1]*(x-p[2])**2)
 
     def err(self, p, x, y):
         return self.Gaussian(x,p)-y
@@ -24,20 +29,16 @@ class IndustWater(object):
         return leastsq(self.err,[y[0],1e-8,x[y.index(np.max(y))]],args=(x,y))[0]
 
     def __call__(self, time):
-        pPara = self.para(self.Pop.data)
-        gPara = self.para(self.PCGDP.data)
-        ePara = self.para(self.Elec.data)
-        sPara = self.para(self.Steel.data)
         # if time>2015:
         #     pPara[1] *= np.exp(1e-1*(2015-time))
         #     gPara[1] *= np.exp(1e-1*(2015-time))
         #     ePara[1] *= np.exp(1e-1*(2015-time))
         #     sPara[1] *= np.exp(1e-1*(2015-time))
         pass
-        pop = (self.Gaussian(self.Pop(time),pPara)/self.Gaussian(self.Pop(years[-1]),pPara))
-        pcg = (self.Gaussian(self.PCGDP(time),gPara)/self.Gaussian(self.PCGDP(years[-1]),gPara))
-        ele = (self.Gaussian(self.Elec(time),ePara)/self.Gaussian(self.Elec(years[-1]),ePara))
-        spr = (self.Gaussian(self.Steel(time),sPara)/self.Gaussian(self.Steel(years[-1]),sPara))
+        pop = (self.Gaussian(self.Pop(time),self.pcoeff)/self.Gaussian(self.Pop(years[-1]),self.pcoeff))
+        pcg = (self.Gaussian(self.PCGDP(time),self.gcoeff)/self.Gaussian(self.PCGDP(years[-1]),self.gcoeff))
+        ele = (self.Gaussian(self.Elec(time),self.ecoeff)/self.Gaussian(self.Elec(years[-1]),self.ecoeff))
+        spr = (self.Gaussian(self.Steel(time),self.scoeff)/self.Gaussian(self.Steel(years[-1]),self.scoeff))
         # print((pop/4+pcg/4+ele/4+spr/4))
         return self.WaterUse[years[-1]]*(pop/4+pcg/4+ele/4+spr/4)
 
@@ -48,9 +49,12 @@ class AgriWater(object):
         self.PCGDP    = PCGDP
         self.IrrArea  = IrrArea
         self.WaterUse = WaterUse
+        self.pcoeff = self.para(self.Pop.data)
+        self.gcoeff = self.para(self.PCGDP.data)
+        self.icoeff = self.para(self.IrrArea.data)
 
     def Expo(self,x,p):
-        return p[0]+p[1]*x
+        return p[0]+p[1]*(x-p[2])
 
     def err(self,p, x, y):
         return self.Expo(x,p)-y
@@ -58,15 +62,12 @@ class AgriWater(object):
     def para(self,datax):
         x = [datax[t] for t in years]
         y = [self.WaterUse[t] for t in years]
-        return leastsq(self.err,[y[0],1e-8],args=(x,y))[0]
+        return leastsq(self.err,[y[0],1e-8,x[0]],args=(x,y))[0]
 
     def __call__(self,time):
-        pPara = self.para(self.Pop.data)
-        gPara = self.para(self.PCGDP.data)
-        iPara = self.para(self.IrrArea.data)
-        pop = (self.Expo(self.Pop(time),pPara)/self.Expo(self.Pop(years[-1]),pPara))
-        pcg = (self.Expo(self.PCGDP(time),gPara)/self.Expo(self.PCGDP(years[-1]),gPara))
-        ira = (self.Expo(self.IrrArea(time),iPara)/self.Expo(self.IrrArea(years[-1]),iPara))
+        pop = (self.Expo(self.Pop(time),self.pcoeff)/self.Expo(self.Pop(years[-1]),self.pcoeff))
+        pcg = (self.Expo(self.PCGDP(time),self.gcoeff)/self.Expo(self.PCGDP(years[-1]),self.gcoeff))
+        ira = (self.Expo(self.IrrArea(time),self.icoeff)/self.Expo(self.IrrArea(years[-1]),self.icoeff))
         return self.WaterUse[years[-1]]*(pop/3+pcg/3+ira/3)
 
 class ResWater(object):
@@ -75,9 +76,11 @@ class ResWater(object):
         self.WaterUse = WaterUse
         self.Pop = Pop
         self.PCGDP = PCGDP
+        self.pcoeff = self.para(self.Pop.data)
+        self.gcoeff = self.para(self.PCGDP.data)
 
     def Expo(self,x,p):
-        return p[0]+p[1]*x
+        return p[0]+p[1]*(x-p[2])
 
     def err(self,p, x, y):
         return self.Expo(x,p)-y
@@ -85,11 +88,9 @@ class ResWater(object):
     def para(self,datax):
         x = [datax[t] for t in years]
         y = [self.WaterUse[t] for t in years]
-        return leastsq(self.err,[y[0],1e-8],args=(x,y))[0]
+        return leastsq(self.err,[y[0],1e-8,x[0]],args=(x,y))[0]
     
     def __call__(self,time):
-        pPara = self.para(self.Pop.data)
-        gPara = self.para(self.PCGDP.data)
-        pop = (self.Expo(self.Pop(time),pPara)/self.Expo(self.Pop(years[-1]),pPara))
-        pcg = (self.Expo(self.PCGDP(time),gPara)/self.Expo(self.PCGDP(years[-1]),gPara))
+        pop = (self.Expo(self.Pop(time),self.pcoeff)/self.Expo(self.Pop(years[-1]),self.pcoeff))
+        pcg = (self.Expo(self.PCGDP(time),self.gcoeff)/self.Expo(self.PCGDP(years[-1]),self.gcoeff))
         return self.WaterUse[years[-1]]*(pop/2+pcg/2)

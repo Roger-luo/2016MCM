@@ -11,9 +11,9 @@ stl = Base.SteelProduct(Data.SteelProduct)
 ele = Base.Electricity(Data.Electricity)
 
 
-# Wr = ResWater(Data.WaterUseResidential,pop,pcg)
+Wr = ResWater(Data.WaterUseResidential,pop,pcg)
 Wi = IndustWater(Data.WaterUseIndustry,pop,pcg,ele,stl)
-# Wa = AgriWater(Data.WaterUseAgriculture,pop,pcg,ira)
+Wa = AgriWater(Data.WaterUseAgriculture,pop,pcg,ira)
 
 # def AverSupply(time):
 #     if time <2014 :
@@ -27,10 +27,16 @@ Wi = IndustWater(Data.WaterUseIndustry,pop,pcg,ele,stl)
 
 # print(AverSupply(years[-1]+15))
 
+print(Wr.pcoeff)
+print(Wr.gcoeff)
+print(Wa.pcoeff)
+print(Wa.gcoeff)
+print(Wa.icoeff)
 
-plt.figure()
-plt.xlabel("years")
-# plt.scatter(years,[Data.WaterUseIndustry[t] for t in years],marker="^",s=100)
-plt.plot(range(2015,2030),Wi(range(2015,2030)),'b-')
-plt.show()
-plt.close()
+
+# plt.figure()
+# plt.xlabel("years")
+# # plt.scatter(years,[Data.WaterUseIndustry[t] for t in years],marker="^",s=100)
+# plt.plot(range(2004,2030),Wr(range(2004,2030)),'b-')
+# plt.show()
+# plt.close()
