@@ -1,0 +1,11 @@
+Model Hypothesis
+
+1 We presume that the total water usage can be divided into three parts: Industrial, Agricultural and Domestic. And the main purpose of this model is to investigate these 3 quantities and relevant quantities. This hypothesis is plausible because the remaining fractions are relatively so small.
+
+2 Because that the water supply is one of the supporting industry in human society, we presume the water supply can always adjust itself to meet the need of the demand to a very large extent annually. Thus, each part of the water usage is treated as the function of more fundamental social quantities such as populations, PCGDP, irrigation area and so on.
+
+3 We presume that the fundamental social quantities mentioned above can specify the development information of human society. That is to say they are only the function of time itself. This hypothesis is plausible because in relatively short time period, say 15 years for example, the evolution of such fundamental quantities is determined by the intrinsic property of the society, but have little relationship with the water usage we interested in.
+
+5 We use specific model to fit the fundamental social quantities, and presume that the model will be legitimate in the following 15 years. This hypothesis is plausible because that the model we choose to fit is proper and the data is plentiful.
+
+6 According to the above description, each part of the water usage is treated as the function of fundamental social quantities. We further presume that they act linearly on corresponding water usage. This hypothesis is plausible for mainly 2 reasons. Firstly, we will find in later discussion that all values taken into consideration change slowly with respect of time. So from the Taylor series viewpoint, the complex interactions exist in the system can be finely interpolated using a linear interacting model.  Secondly, we intendedly choose the fundamental social quantities that can independently describe one aspect of the given society. So the interaction between these quantities are designed to be ignorable.
