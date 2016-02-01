@@ -5,9 +5,9 @@
 \section{Nomenclatures}
 
 \begin{table}[!htb]
-  \caption{Nomenclatures System}
+
   \centering
-  \begin{tabular}{||c|c||}
+  \begin{tabular}{||l|c||}
     \hline
     $P$   & Population \\
     \hline
@@ -29,13 +29,21 @@
     \hline
     $\text{UWR}$ & total Underground Water Resource \\
     \hline
-
-    $\text{WWD}$ & Waste Water Discharge \\
+    $\text{PCGDP}$ & Per Capita Gross Domestic Product \\
     \hline
-
+    $\text{IA}$ & Irrigation Area \\
+    \hline
+    $\text{ISP}$ & Iron and Steel Production \\
+    \hline
+    $\text{ElP}$ & Electricity Production. \\
+    \hline
+    $\text{EnC}$ & Engel's Coefficient \\
+    \hline
     $A$          & Annual water supplies per person \\
     \hline
   \end{tabular}
+  \caption{Nomenclatures System}
+  \label{tab: Nomenclatures sys}
 \end{table}
 
 \section{Model of water supply ability}
@@ -51,6 +59,7 @@
     level 3   & $1000>A$ & scarce \\
     \hline
     \end{tabular}
+    \caption{water supply ability}
   \end{table}
 
 To cover the internal dynamics of the water flow and the water storage change, we introduce following model.
@@ -59,18 +68,17 @@ To cover the internal dynamics of the water flow and the water storage change, w
     Water circulation is a rather complicated process, which make it almost impossible for us to design a purely fundamental model to include all the variables and their relations. Nevertheless, if we just collect all the data and using fitting method as our predicting model, it will be too trivial and old-fashioned. To solve this paradox, we introduce a phenomenological model which is quite normal in particle physics and other related field. Our model includes two main parts:
     \begin{itemize}
       \item prominent external parameters: a several statistical parameters about a region like population, GDP and so on.
-      \item internal dynamic process: a several dynamical relations between external parameters and internal parameters like water consumption ,water recycle and evolution equations of water storage and related variables.
+      \item internal dynamic variables: find out the relation between prominent external parameters and internal variables including Agriculture Water Consumption, Industrial Water Consumption and Domestic Water consumption.
     \end{itemize}
-    The prominent external parameters comes from the statistic numbers and it's fitness, while the internal dynamics process is mainly based on the relation between state parameters and external parameters and the water cycle process.
+    The prominent external parameters comes from the statistic numbers and it's fitness, while the internal dynamics variables is mainly based on prominent parameters, which makes them indirectly depend on time in our model.
 
   \subsection{Model Structure}
 
-
-    \begin{wrapfigure}{l}{9cm}
-    %\begin{center}
-    \includegraphics[width = 9cm]{picture/struc.jpg}
-    %\end{center}
-    \end{wrapfigure}
+    \begin{figure}[!h]
+    \includegraphics[width = 0.9\textwidth]{picture/struct.png}
+    \caption{structure}
+    \label{fig: structure}
+    \end{figure}
     Our model's structure is pretty clear.
     We using some prominent external parameters as the input of our dynamic system. To determine the water supply ability of a region, the most important part is the water flow which means the total amount of industrial, agricultural and residential consumption. The season we can use the consumption to measure the supply it that they must be the same during a long period just like the electricity use equal to the electricity produce.
 
@@ -95,18 +103,17 @@ To cover the internal dynamics of the water flow and the water storage change, w
     \label{water cycle}
     %\end{center}
     \end{wrapfigure}
-  The dynamics part of our model is inspired by the water cycle(Figure \ref{water cycle})
+    The dynamics part of our model is inspired by the water cycle(Figure ~\ref{water cycle}). Basically, our water is mainly refreshed though the precipitation. So it will be elegant if we using such water cycle process to build a mighty system about how the water flow and run with real data to determine the theoretical water consumption. However, after several data browse, we find that using precipitation as part of the water storage's changing rate is ridiculous--The total water resource is steadily a certain ratio of precipitation. Therefore using prominent parameters as arguments of internal variables and find the relation according to the past data will be a proper choice.
 
-  \clearpage
   \subsection{How to apply our model}
 
     With good structure of our model and program, the application of our model can be done in a pretty clear way.
 
     \begin{enumerate}[step 1]
+      \item Using the past data of alternative prominent parameters, find proper relation between those parameters and time, therefore determine the time dependent equation of prominent parameters.
       \item Using the data of alternative prominent parameters and consumption variables in the past to find the strength of correlation, Spearman or Pearson or other coefficients.
-      \item According to the analysis of step 1, we can  determine the specific evolution equations of consumption variables which depend on the prominent parameters and water resource $W$ and $\bar{W}$.
-      \item Using the past data of needed prominent parameters, we will be able to use fitness method to predict the future data of prominent parameters as the input of evolution equations.
-      \item Using the Iterative method, we can predict the variables in dynamics part thus we can get the Output -- the water supply per person (A) to judge the water situation in a specific future time of a certain region.
+      \item According to the coefficients, structure the parameter dependent equations of consumption variables.
+      \item With the equations construed above and the time dependent equation of prominent parameters, get the tendency of consumption variable therefore getting the prediction of water consumption and the water supply per person ($A$).
     \end{enumerate}
 
 
@@ -118,11 +125,11 @@ To cover the internal dynamics of the water flow and the water storage change, w
   \caption{water scarcity map\cite{WaterScarcityMap}}
   \end{wrapfigure}
   which make it a region where water is moderately overloaded. In our consideration, level 2, will provide more abundant behavior in a dynamical model(will it become water scarce or water sufficient in the future?). Thus we pick up China as our research object. To make our model more predictable and more reality connected.
-
+  \clearpage
   \subsection{Social drivers}
-
+  demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo
   \subsection{Environmental drivers}
-
+  demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo
 
 \section{China's water scarcity: Further Investigation and Prediction}
 
@@ -162,32 +169,34 @@ To cover the internal dynamics of the water flow and the water storage change, w
       $$
 
     \paragraph{Irrigation Area}
-    According to our observation, there is a strong evidence about linear growth of Irrigation Area. Consider the complicity and the fact we are just required to predict about 15 years
+      According to our observation, there is a strong evidence about linear growth of Irrigation Area. Consider the complicity and the fact we are just required to predict about 15 years, a polynomial fitting with power 2 is sufficient.
     $$
     \text{IA}(t) = A_0^\text{IA}+A_1^\text{IA} t + A_2^\text{IA} t^2
     $$
 
     \paragraph{Iron and Steel Production}
+      The data of ISP perform in a similar way of IA, therefore we can use the same method to predict the ISP evolution.
     $$
     \text{ISP}(t) = A_0^\text{ISP}+A_1^\text{ISP} t + A_2^\text{ISP} t^2
     $$
 
     \paragraph{Electricity Production}
+      The behavior of ELP is every bit as same as two parameters above, thus we just apply the same evolution equation form.
     $$
     \text{ELP}(t) = A_0^\text{ELP}+A_1^\text{ELP} t + A_2^\text{ELP} t^2
     $$
 
     \paragraph{Engel's Coefficient}
+      Engel's Coefficient perform in a much different way. When it comes to the Engel, it make sense that with the development of society. It will keep decreasing as it used to be with a limit target: zero. Therefore we introduce a inverse proportion function to describe it's tendency.
     $$
     \begin{cases}
-    \text{Enc}_\text{urban}(t) = \frac{C^\text{urban}}{t-t_0^\text{urban}} \\
-    \text{Enc}_\text{rural}(t) = \frac{C^\text{rural}}{t-t_0^\text{rural}}
+    \text{Enc}_\text{urban}(t) = C^\text{urban}/(t-t_0^\text{urban}) \\
+    \text{Enc}_\text{rural}(t) = C^\text{rural}/(t-t_0^\text{rural})
     \end{cases}
     $$
 
 
     \begin{figure}[!h]
-    \label{fig: parameters fit}
     \begin{center}
     \subfigure[$p(t)$]{\includegraphics[width = 0.45\textwidth]{picture/Population.png}}
     \subfigure[$\text{PCGDP}(t)$]{\includegraphics[width = 0.45\textwidth]{picture/PCGDP.png}}\\
@@ -197,11 +206,11 @@ To cover the internal dynamics of the water flow and the water storage change, w
     \subfigure[$\text{Enc}(t)$]{\includegraphics[width = 0.45\textwidth]{picture/Engel.png}}
     \end{center}
     \caption{Parameters fit: blue dots means the existed data which we refer from the national database, green lines stand for the optimized curve and the prediction value in the future }
+    \label{fig: parameters fit}
     \end{figure}
 
-    With the fitness method, we can get all the evolution of alternative prominent parameters in Figure \ref{fig: parameters fit}, and the parameters in evolution equations in Table\ref{tab:evolution par}:
+    With the fitness method, we can get all the evolution of alternative prominent parameters in Figure ~\ref{fig: parameters fit}, and the parameters in evolution equations in Table~\ref{tab: evolution par}:
     \begin{table}[!h]
-      \label{tab:evolution par}
       \centering
       \begin{tabular}{|l|l|}
       \hline
@@ -219,6 +228,7 @@ To cover the internal dynamics of the water flow and the water storage change, w
       \hline
       \end{tabular}
       \caption{evolution parameters}
+      \label{tab: evolution par}
     \end{table}
 
 
@@ -244,45 +254,117 @@ To cover the internal dynamics of the water flow and the water storage change, w
     Using coefficients above, we get a map about the relation between prominent parameters and consumption variables.
 
     \begin{table}[!htb]
-      \label{tab: coefficients}
+
       \centering
-      \begin{tabular}{l||c|c|c}
+      \begin{tabular}{l||c|c|c|c}
       \hline
-      Data                & Pearson $(r_p,p)$                        & Spearman $(r_s,p)$       & Kendall $(\tau, p)$ \\
+      Data                & Pearson $(r_p,p)$                        & Spearman $(r_s,p)$       & Kendall $(\tau, p)$ & Average \\
       \hline
 
-      $\text{IWC}\sim P$ & (0.669,0.0245)                   &(0.627,0.0388)   &(0.455,0.0516) \\
+      $\text{IWC}\sim P$ & (0.669,0.0245)                   &(0.627,0.0388)   &(0.455,0.0516)     &   0.584\\
       \hline
-      $\text{IWC}\sim \text{PCGDP}$ &(0.614,0.0444)         &(0.627,0.0388)   &(0.455,0.0516) \\
+      $\text{IWC}\sim \text{PCGDP}$ &(0.614,0.0444)         &(0.627,0.0388)   &(0.455,0.0516)     &   0.565\\
       \hline
-      $\text{IWC}\sim \text{ELP}$ &(0.648,0.0311)           &(0.627,0.0388)   &(0.455,0.0516) \\
+      $\text{IWC}\sim \text{ELP}$ &(0.648,0.0311)           &(0.627,0.0388)   &(0.455,0.0516)     &   0.577\\
       \hline
-      $\text{IWC}\sim \text{ISP}$ &(0.653,0.0294)           &(0.627,0.0388)   &(0.455,0.0516) \\
+      $\text{IWC}\sim \text{ISP}$ &(0.653,0.0294)           &(0.627,0.0388)   &(0.455,0.0516)     &   0.577\\
       \hline\hline
-      $\text{AWC}\sim P$ &(0.924,4.95e-5)                   &(0.927,3.97e-5)  &(0.782,0.000815) \\
+      $\text{AWC}\sim P$ &(0.924,4.95e-5)                   &(0.927,3.97e-5)  &(0.782,0.000815)     &   0.878\\
       \hline
-      $\text{AWC}\sim \text{PCGDP}$ &(0.936,2.28e-5)        &(0.927,3.97e-5)  &(0.782,0.000815) \\
+      $\text{AWC}\sim \text{PCGDP}$ &(0.936,2.28e-5)        &(0.927,3.97e-5)  &(0.782,0.000815)     &   0.882\\
       \hline
-      $\text{AWC}\sim \text{IA}$ &(0.927,4.10e-5)           &(0.927,3.97e-5)  &(0.782,0.000815) \\
+      $\text{AWC}\sim \text{IA}$ &(0.927,4.10e-5)           &(0.927,3.97e-5)  &(0.782,0.000815)     &  0.879 \\
       \hline\hline
-      $\text{DWC}\sim P$ &(0.844,0.00108)                   &(0.836,0.00133)  &(0.745,0.00141) \\
+      $\text{DWC}\sim P$ &(0.844,0.00108)                   &(0.836,0.00133)  &(0.745,0.00141)     &   0.808\\
       \hline
-      $\text{DWC}\sim \text{PCGDP}$ &(0.806,0.00276)        &(0.836,0.00133)  &(0.745,0.00141) \\
+      $\text{DWC}\sim \text{PCGDP}$ &(0.806,0.00276)        &(0.836,0.00133)  &(0.745,0.00141)     &   0.796\\
       \hline
-      $\text{DWC}\sim \text{Enc}_\text{urban}$ &(-0.785,0.00417) &(-0.809,0.00256) &(-0.600,0.0102) \\
+      $\text{DWC}\sim \text{Enc}_\text{urban}$ &(-0.785,0.00417) &(-0.809,0.00256) &(-0.600,0.0102)     &  -0.731 \\
       \hline
-      $\text{DWC}\sim \text{Enc}_\text{rural}$ &(-0.419,0.199)   &(-0.315,0.345)   &(-0.204,0.383) \\
+      $\text{DWC}\sim \text{Enc}_\text{rural}$ &(-0.419,0.199)   &(-0.315,0.345)   &(-0.204,0.383)     &   -0.313\\
       \hline
 
       \end{tabular}
       \caption{Coefficients: Coefficients of correlation in different standard}
+      \label{tab: coefficients}
     \end{table}
 
-    {\huge Coefficients Table}
-
-  \subsection{Fitness of past data using dynamic model}
 
 
+  \subsection{Fitness method in consumption variables}
+  To investigate the evolution of consumption variables, We first investigate the correlation between one specific consumption with one specific prominent parameters.
+
+  \begin{table}[!h]
+
+  \centering
+  \begin{tabular}{l||c|c|c}
+  \hline
+  Parameters & $p_0$  &  $p_1$  & $p_2$ \\ \hline
+  $P$       &  -1.31e3 & 5.07e-2 & 3.42e4 \\ \hline
+  $\text{PCGDP}$ & -1.50e3 &  9.54e-3 & -5.18e5 \\ \hline
+  $\text{IA}$   & -1.09e3  &  3.20e-2 & -9.09e4 \\ \hline
+  \end{tabular}
+  \caption{AWC - parameters: $p_0 +p_1 (\text{para}-p_2)$ }
+  \label{tab:AWC - parameters}
+  \end{table}
+
+  \begin{table}[!h]
+
+  \centering
+  \begin{tabular}{l||c|c|c}
+  \hline
+  Parameters & $p_0$  &  $p_1$  & $p_2$ \\ \hline
+  $P$       &  1.43e3 & 7.62e-9 & 1.34e5 \\ \hline
+  $\text{PCGDP}$ & 1.45e3 &  3.35e-10 & 3.31e4 \\ \hline
+  $\text{ELP}$   & 1.44e3  &  3.10e-10 & 4.45e4 \\ \hline
+  $\text{ISP}$   & 1.44e3  &  5.50e-11 & 8.40e4 \\ \hline
+
+  \end{tabular}
+  \caption{IWC - parameters: $p_0\exp{[-p_1 (\text{para}-p_2)^2]}$}
+  \label{tab:IWC - parameters}
+  \end{table}
+
+  \begin{table}[!h]
+  \centering
+  \begin{tabular}{l||c|c|c}
+  \hline
+  Parameters & $p_0$  &  $p_1$  & $p_2$ \\ \hline
+  $P$       &  3.95e2 & -2.16e-5 & 1.05e5 \\ \hline
+  $\text{PCGDP}$ & 3.98e2 &  -3.82e-6 & -1.30e5 \\ \hline
+
+  \end{tabular}
+  \caption{DWC - parameters: $p_0\exp{[-p_1 (\text{para}-p_2)]}$}
+  \label{tab:DWC - parameters}
+  \end{table}
+
+
+  \begin{figure}[!h]
+  \centering
+  \subfigure[$P$]{\includegraphics[width = 0.3\textwidth]{picture/Population-Agreculture.png}}
+  \subfigure[$\text{PCGDP}$]{\includegraphics[width = 0.3\textwidth]{picture/PCGDP-Agreculture.png}}
+  \subfigure[$\text{IA}$]{\includegraphics[width = 0.3\textwidth]{picture/IrrigationArea-Agreculture.png}}
+  \caption{AWC - parameters}
+  \label{fig: AWC para}
+  \end{figure}
+
+  \begin{figure}[!h]
+  \centering
+  \subfigure[$P$]{\includegraphics[width = 0.45\textwidth]{picture/Population-Industry.png}}
+  \subfigure[$\text{PCGDP}$]{\includegraphics[width = 0.45\textwidth]{picture/PCGDP-Industry.png}}
+  \subfigure[$\text{ELP}$]{\includegraphics[width = 0.45\textwidth]{picture/Electricity-Industry.png}}
+  \subfigure[$\text{ISP}$]{\includegraphics[width = 0.45\textwidth]{picture/SteelProduct-Industry.png}}
+  \caption{IWC - parameters}
+  \label{fig: IWC para}
+  \end{figure}
+
+
+  \begin{figure}[!h]
+  \centering
+  \subfigure[$P$]{\includegraphics[width = 0.45\textwidth]{picture/Population-Resident.png}}
+  \subfigure[$\text{PCGDP}$]{\includegraphics[width = 0.45\textwidth]{picture/PCGDP-Resident.png}}
+  \caption{DWC - parameters}
+  \label{fig: DWC para}
+  \end{figure}
 
 
 \section{Intervention plan designing}
