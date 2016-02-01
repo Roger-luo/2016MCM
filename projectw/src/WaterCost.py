@@ -29,6 +29,11 @@ class IndustWater(object):
         gPara = self.para(self.PCGDP)
         ePara = self.para(self.Elec)
         sPara = self.para(self.Steel)
+        # if time>2015:
+        #     pPara[1] *= np.exp(1e-1*(2015-time))
+        #     gPara[1] *= np.exp(1e-1*(2015-time))
+        #     ePara[1] *= np.exp(1e-1*(2015-time))
+        #     sPara[1] *= np.exp(1e-1*(2015-time))
         pass
         pop = (self.Gaussian(Fit.PopulationFit(time),pPara)/self.Gaussian(Fit.PopulationFit(years[-1]),pPara))
         pcg = (self.Gaussian(Fit.PCGDPFit(time),gPara)/self.Gaussian(Fit.PCGDPFit(years[-1]),gPara))

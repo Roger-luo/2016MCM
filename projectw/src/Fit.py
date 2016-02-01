@@ -4,6 +4,7 @@ from scipy.optimize import leastsq
 import matplotlib.pyplot as plt
 from numpy import linspace
 import numpy as np
+import numpy.random as random
 # fit for population
 
 
@@ -19,10 +20,12 @@ def decrease(time):
     return np.array([0,0.0094*(time-2015),0])
 
 def PopulationFit(t):
-    if t<2014:
-        return PopulationFunction(t, PopulationFitParam)
-    else:
-        return 1/(1/PopulationFitParam[2]+(1/Data.Population[2014]-1/PopulationFitParam[2])*np.exp(-0.03*(t-2014)))
+    return PopulationFunction(t, PopulationFitParam)*(1+1e-2*random.randn())
+# def PopulationFit(t):
+#     if t<=2014:
+#         return PopulationFunction(t, PopulationFitParam)
+#     else:
+#         return 1/(1/(PopulationFitParam[2])+(1/PopulationFit(2014)-1/(PopulationFitParam[2]))*np.exp(-PopulationFitParam[1]*(t-2014)))
 # fit for PCGDP
 
 def PCGDPFunction(t,p):
@@ -34,7 +37,7 @@ def PCGDPResFunction(p):
 PCGDPFitParam=leastsq(PCGDPResFunction,[2050, 0.07, 200000])[0]
 
 def PCGDPFit(t):
-    return PCGDPFunction(t, PCGDPFitParam)
+    return PCGDPFunction(t, PCGDPFitParam)*(1e-2*random.randn())
 
 # fit for Irrigation Area
 
@@ -47,7 +50,7 @@ def IrrigationAreaResFunction(p):
 IrrigationAreaFitParam=leastsq(IrrigationAreaResFunction,[1000,100,1])[0]
 
 def IrrigationAreaFit(t):
-    return IrrigationAreaFunction(t, IrrigationAreaFitParam)
+    return IrrigationAreaFunction(t, IrrigationAreaFitParam)*(1e-2*random.randn())
 
 # fit of steel product
 
@@ -60,7 +63,7 @@ def SteelProductResFunction(p):
 SteelProductFitParam=leastsq(SteelProductResFunction,[1000,100,1])[0]
 
 def SteelProductFit(t):
-    return SteelProductFunction(t, SteelProductFitParam)
+    return SteelProductFunction(t, SteelProductFitParam)*(1e-2*random.randn())
 
 # fit of Urban Engel
 
@@ -73,7 +76,7 @@ def UrbanEngelResFunction(p):
 UrbanEngelFitParam=leastsq(UrbanEngelResFunction,[1950,0.1])[0]
 
 def UrbanEngelFit(t):
-    return UrbanEngelFunction(t, UrbanEngelFitParam)
+    return UrbanEngelFunction(t, UrbanEngelFitParam)*(1e-2*random.randn())
 
 # fit of Urban Engel
 
@@ -86,7 +89,7 @@ def RuralEngelResFunction(p):
 RuralEngelFitParam=leastsq(RuralEngelResFunction,[1950,0.1])[0]
 
 def RuralEngelFit(t):
-    return RuralEngelFunction(t, RuralEngelFitParam)
+    return RuralEngelFunction(t, RuralEngelFitParam)*(1e-2*random.randn())
 
 # fit electricity
 
@@ -99,4 +102,4 @@ def ElectricityResFunction(p):
 ElectricityFitParam=leastsq(ElectricityResFunction,[30000,5000,1])[0]
 
 def ElectricityFit(t):
-    return ElectricityFunction(t, ElectricityFitParam)
+    return ElectricityFunction(t, ElectricityFitParam)*(1e-2*random.randn())
