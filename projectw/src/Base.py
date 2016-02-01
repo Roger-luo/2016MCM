@@ -25,8 +25,12 @@ class Population(object):
     def variance(self):
         return np.mean([(self.data[i]-self.fitfunc(i,self.coefs))**2 for i in years])
 
-    def __call__(self, time):
-        return self.fitfunc(time, self.coefs)+np.sqrt(self.var)*random.randn()
+    def __call__(self, time, intr=False):
+        return self.fitfunc(time, self.coefs)
+        # if time<=2014 or intr==False:
+        #     return self.fitfunc(time, self.coefs)#+np.sqrt(self.var)*random.randn()
+        # else:
+        #     return 1/(1/(self.coefs[2])+(1/self.__call__(2014)-1/(self.coefs[2]))*np.exp(-0.01*(time-2014)))
 
 class PCGDP(object):
     """PCGDP"""
@@ -49,8 +53,8 @@ class PCGDP(object):
         y = [self.data[t] for t in years]
         return leastsq(self.err,[2050, 0.07, 200000],args=(x,y))[0]
 
-    def __call__(self, time):
-        return self.fitfunc(time, self.coefs)+np.sqrt(self.var)*random.randn()
+    def __call__(self, time, intr=False):
+        return self.fitfunc(time, self.coefs)#+np.sqrt(self.var)*random.randn()
 
 
 class IrrArea(object):
@@ -74,19 +78,11 @@ class IrrArea(object):
     def variance(self):
         return np.mean([(self.data[i]-self.fitfunc(i,self.coefs))**2 for i in years])
 
-    def __call__(self, time):
-        return self.fitfunc(time, self.coefs)+np.sqrt(self.var)*random.randn()
-
-
-# Populationvariance = np.mean([(PopulationFit(i)-Data.Population[i])**2 for i in years])
-
-
-# def PopulationFit(t):
-#     if t<=2014:
-#         return PopulationFunction(t, PopulationFitParam)
-#     else:
-#         return 1/(1/(PopulationFitParam[2])+(1/PopulationFit(2014)-1/(PopulationFitParam[2]))*np.exp(-PopulationFitParam[1]*(t-2014)))
-# fit for PCGDP
+    def __call__(self, time, intr=False):
+        if time<2015 or intr==False:
+            return self.fitfunc(time, self.coefs)#+np.sqrt(self.var)*random.randn()
+        else:
+            return (self.coefs[0]+self.coefs[1]*time+self.coefs[2]*time*time)
 
 class SteelProduct(object):
     """Steel Product"""
@@ -109,9 +105,11 @@ class SteelProduct(object):
     def variance(self):
         return np.mean([(self.data[i]-self.fitfunc(i,self.coefs))**2 for i in years])
 
-    def __call__(self, time):
-        return self.fitfunc(time, self.coefs)+np.sqrt(self.var)*random.randn()
-
+    def __call__(self, time, intr=False):
+        if time<2015 or intr==False:
+            return self.fitfunc(time, self.coefs)#+np.sqrt(self.var)*random.randn()
+        else:
+            return 0.7*self.fitfunc(time, self.coefs)
 
 class Electricity(object):
     """Electricity"""
@@ -134,8 +132,8 @@ class Electricity(object):
     def variance(self):
         return np.mean([(self.data[i]-self.fitfunc(i,self.coefs))**2 for i in years])
 
-    def __call__(self, time):
-        return self.fitfunc(time, self.coefs)+np.sqrt(self.var)*random.randn()
+    def __call__(self, time, intr=False):
+        return self.fitfunc(time, self.coefs)#+np.sqrt(self.var)*random.randn()
 
 
 

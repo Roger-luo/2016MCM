@@ -15,22 +15,15 @@ Wr = ResWater(Data.WaterUseResidential,pop,pcg)
 Wi = IndustWater(Data.WaterUseIndustry,pop,pcg,ele,stl)
 Wa = AgriWater(Data.WaterUseAgriculture,pop,pcg,ira)
 
-def AverSupply(time):
-    if time <2014 :
-        return (Wr(time)+Wi(time)+Wa(time))/pop(time)
-    else:
-        return (Wr(time)+Wi(time)+Wa(time))/pop(time)
-
-f = open('ability.md','w')
-
-for i in range(2014,2030):
-    f.write('year:%s\n ability:%s\n'%(i,AverSupply(i)))
+def AverSupply(time,intr=False):
+    return (Wr(time,intr)+Wi(time,intr)+Wa(time,intr))/pop(time,intr)
 
 plt.figure()
 plt.xlabel("years /yr")
 plt.ylabel("Ability /per 10k person per yr 100m cubic meters")
 plt.scatter(years,[Data.WaterUseTotal[t]/Data.Population[t] for t in years],marker="^",s=100,label='raw data')
-plt.plot(range(2004,2030),[AverSupply(i) for i in range(2004,2030)],'b-',label="prediction")
+plt.plot(range(2004,2030),[AverSupply(i) for i in range(2004,2030)],'b-',label="original")
+plt.plot(range(2004,2030),[AverSupply(i,intr=True) for i in range(2004,2030)],'g-',label="decrease steel production")
 plt.legend(loc=0)
 plt.show()
 

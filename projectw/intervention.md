@@ -1,68 +1,22 @@
-![](imag/init.png)
-
-
-# 减少工业用水量
-
-
-将工业用水降低50%
-![](imag/half.png)
-
-
-## 工业上调整
-
-降低30%
-![](imag/thirty.png)
-
-因此降低工业用水将是可行的方案
-
-具体实施细则
-
-- 减少发展耗水型工业
-- 增加耗水型工业产品(如炼钢)进口,降低税率
-- 研发新技术减少工业耗水量
-
-## 人口上的控制
-
-- 少生优生,控制人口增长
-    + 从2014年之后控制生长率为3%
-- 城镇化
-
-## 修建水利设置
-- 修建水利设施,降低工业用水变化速率
-
 ## intervention plan
 As shown in our prediction. China will suffer from water scarcity in 15 years. Therefore we designed an intervention plan to avoid this situation. 
 
 To introduce the natural uncertainty from environment, a normal distributed random variable with variance of each factor is added to prominent parameters.
 The variance of Ability shows the sensitivity of a given region.
 
->the 
+### Population Intervention
+The huge population base has become the most serious problem in China and plays a leading role in China's water stress problem. To improve the ability of water supply family planning can play a significant role.  We decrease the population growth rate to 1% and the result is obvious.
 
-### Industry Intervention
+![](imag/popcontrol.png)
 
+### Water Distribution Intervention
+One of the most important issue in China's water allocation problem is the uneven distributed water resources. By developing infrastructure,a better water allocation will be possible to achieve.  
+increase irrigation area by 30%
 
-AgricultureWater
+![](imag/icrarea.png)
 
-population [ -1.308e+03   5.070e-02   3.425e+04]
-PCGDP [ -1.496e+03   9.544e-03  -5.184e+05]
-IrrigationArea [ -1.090e+03   3.202e-02  -9.094e+04]
+### Industrial Intervention
+Virtual water has been a hot issue recently,which refers to the hidden flow of water if food or other commodities are traded from place to another. In our model, the water-consuming industry is evaluated by steel production. Therefore water stress can be alleviated by reducing steel production and import more steel. The result of reducing 30% of the steel production is shown in [fig]
 
-p[0]+p[1]*(x-p[2])
-
-ResidentWater
-
-population [ -1.690e+03   1.606e-02  -1.713e+04]
-PCGDP [ -3.275e+02   2.847e-03  -3.426e+05]
-
-p[0]+-p[1]*(x-p[2])
-
-IndustWater
-
-Steel Production [  1.43783775e+03   5.49613554e-11   8.40052763e+04]
-Population [  1.43387736e+03   7.61874825e-09   1.34410559e+05]
-PCGDP [  1.44744343e+03   3.34730102e-10   3.30799980e+04]
-Electricity [  1.44199462e+03   3.10130409e-10   4.45432350e+04]
-
-p[0]*np.exp(-p[1]*(x-p[2])**2)
-
-
+decrease by 30%
+![](imag/drssteel.png)
