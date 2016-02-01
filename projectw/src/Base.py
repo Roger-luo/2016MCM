@@ -9,7 +9,8 @@ class Population(object):
     def __init__(self, data):
         self.data = data
         self.coefs = self.para()
-        
+        self.var = self.variance()
+
     def fitfunc(self, t, p):
         return p[2]/(1+np.exp(-p[1]*(t-p[0])))
 
@@ -21,17 +22,18 @@ class Population(object):
         y = [self.data[t] for t in years]
         return leastsq(self.err,[1950,0.01,160000],args=(x,y))[0]
 
-    def var(self):
-        np.mean([(self.data[i]-self.__call__(i))**2 for i in years])
+    def variance(self):
+        return np.mean([(self.data[i]-self.fitfunc(i,self.coefs))**2 for i in years])
 
     def __call__(self, time):
-        return self.fitfunc(time, self.coefs)
+        return self.fitfunc(time, self.coefs)+np.sqrt(self.var)*random.randn()
 
 class PCGDP(object):
     """PCGDP"""
     def __init__(self, data):
         self.data = data
         self.coefs = self.para()
+        self.var = self.variance()
 
     def fitfunc(self, t, p):
         return p[2]/(1+np.exp(-p[1]*(t-p[0])))
@@ -39,8 +41,8 @@ class PCGDP(object):
     def err(self, p, x, y):
         return self.fitfunc(x,p)-y
 
-    def var(self):
-        np.mean([(self.data[i]-self.__call__(i))**2 for i in years])
+    def variance(self):
+        return np.mean([(self.data[i]-self.fitfunc(i,self.coefs))**2 for i in years])
 
     def para(self):
         x = years
@@ -48,7 +50,7 @@ class PCGDP(object):
         return leastsq(self.err,[2050, 0.07, 200000],args=(x,y))[0]
 
     def __call__(self, time):
-        return self.fitfunc(time, self.coefs)
+        return self.fitfunc(time, self.coefs)+np.sqrt(self.var)*random.randn()
 
 
 class IrrArea(object):
@@ -56,6 +58,7 @@ class IrrArea(object):
     def __init__(self, data):
         self.data = data
         self.coefs = self.para()
+        self.var = self.variance()
 
     def fitfunc(self, t, p):
         return p[0]+p[1]*t+p[2]*t*t
@@ -68,14 +71,14 @@ class IrrArea(object):
         y = [self.data[t] for t in years]
         return leastsq(self.err,[1000,100,1],args=(x,y))[0]
 
-    def var(self):
-        np.mean([(self.data[i]-self.__call__(i))**2 for i in years])
+    def variance(self):
+        return np.mean([(self.data[i]-self.fitfunc(i,self.coefs))**2 for i in years])
 
     def __call__(self, time):
-        return self.fitfunc(time, self.coefs)
+        return self.fitfunc(time, self.coefs)+np.sqrt(self.var)*random.randn()
 
 
-# PopulationVar = np.mean([(PopulationFit(i)-Data.Population[i])**2 for i in years])
+# Populationvariance = np.mean([(PopulationFit(i)-Data.Population[i])**2 for i in years])
 
 
 # def PopulationFit(t):
@@ -90,6 +93,7 @@ class SteelProduct(object):
     def __init__(self, data):
         self.data = data
         self.coefs = self.para()
+        self.var = self.variance()
 
     def fitfunc(self, t, p):
         return p[0]+p[1]*t+p[2]*t*t
@@ -102,11 +106,11 @@ class SteelProduct(object):
         y = [self.data[t] for t in years]
         return leastsq(self.err,[1000,100,1],args=(x,y))[0]
 
-    def var(self):
-        np.mean([(self.data[i]-self.__call__(i))**2 for i in years])
+    def variance(self):
+        return np.mean([(self.data[i]-self.fitfunc(i,self.coefs))**2 for i in years])
 
     def __call__(self, time):
-        return self.fitfunc(time, self.coefs)
+        return self.fitfunc(time, self.coefs)+np.sqrt(self.var)*random.randn()
 
 
 class Electricity(object):
@@ -114,6 +118,7 @@ class Electricity(object):
     def __init__(self, data):
         self.data = data
         self.coefs = self.para()
+        self.var = self.variance()
 
     def fitfunc(self, t, p):
         return p[0]+p[1]*t+p[2]*t*t 
@@ -126,11 +131,11 @@ class Electricity(object):
         y = [self.data[t] for t in years]
         return leastsq(self.err,[30000,5000,1],args=(x,y))[0]
 
-    def var(self):
-        np.mean([(self.data[i]-self.__call__(i))**2 for i in years])
+    def variance(self):
+        return np.mean([(self.data[i]-self.fitfunc(i,self.coefs))**2 for i in years])
 
     def __call__(self, time):
-        return self.fitfunc(time, self.coefs)
+        return self.fitfunc(time, self.coefs)+np.sqrt(self.var)*random.randn()
 
 
 
