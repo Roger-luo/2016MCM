@@ -3,7 +3,7 @@ import numpy as np
 from scipy.optimize import leastsq
 import matplotlib.pyplot as plt
 from numpy import linspace
-
+import numpy as np
 # fit for population
 
 
@@ -15,9 +15,14 @@ def PopulationResFunction(p):
 
 PopulationFitParam=leastsq(PopulationResFunction,[1950,0.01,160000])[0]
 
-def PopulationFit(t):
-    return PopulationFunction(t, PopulationFitParam)
+def decrease(time):
+    return np.array([0,0.0094*(time-2015),0])
 
+def PopulationFit(t):
+    if t<2014:
+        return PopulationFunction(t, PopulationFitParam)
+    else:
+        return 1/(1/PopulationFitParam[2]+(1/Data.Population[2014]-1/PopulationFitParam[2])*np.exp(-0.03*(t-2014)))
 # fit for PCGDP
 
 def PCGDPFunction(t,p):

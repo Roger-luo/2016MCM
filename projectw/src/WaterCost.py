@@ -34,6 +34,7 @@ class IndustWater(object):
         pcg = (self.Gaussian(Fit.PCGDPFit(time),gPara)/self.Gaussian(Fit.PCGDPFit(years[-1]),gPara))
         ele = (self.Gaussian(Fit.ElectricityFit(time),ePara)/self.Gaussian(Fit.ElectricityFit(years[-1]),ePara))
         spr = (self.Gaussian(Fit.SteelProductFit(time),sPara)/self.Gaussian(Fit.SteelProductFit(years[-1]),sPara))
+        # print((pop/4+pcg/4+ele/4+spr/4))
         return self.WaterUse[years[-1]]*(pop/4+pcg/4+ele/4+spr/4)
 
 class AgriWater(object):
