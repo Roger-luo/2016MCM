@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.26)  1 FEB 2016 16:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.26)  1 FEB 2016 21:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -532,30 +532,25 @@ Excluding comment 'comment')
 \WF@everypar=\toks37
 Package: wrapfig 2003/01/31  v 3.6
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/palatino.sty
-Package: palatino 2005/04/12 PSNFSS-v9.2a (SPQR) 
-)
 (./icmpaper.aux)
 \openout1 = `icmpaper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 31.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ppl.fd
-File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
-) (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count140
 \scratchdimen=\dimen151
@@ -571,10 +566,10 @@ File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 31.
+(lastpage)             ! on input line 35.
 \c@lstlisting=\count146
 \AtBeginShipoutBox=\box38
-Package hyperref Info: Link coloring ON on input line 31.
+Package hyperref Info: Link coloring ON on input line 35.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -583,306 +578,304 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count147
 )
-LaTeX Info: Redefining \ref on input line 31.
-LaTeX Info: Redefining \pageref on input line 31.
-LaTeX Info: Redefining \nameref on input line 31.
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
 
 (./icmpaper.out) (./icmpaper.out)
 \@outlinefile=\write5
 \openout5 = `icmpaper.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
+LaTeX Font Info:    Try loading font information for U+msa on input line 39.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 39.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 35.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 39.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 35.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 39.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) (./abstract.tex
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1.
-)
+) (./abstract.tex)
 [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 44.
-
-(./icmpaper.toc
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1.
-)
+(./icmpaper.toc)
 \tf@toc=\write6
 \openout6 = `icmpaper.toc'.
 
- [2] (./body.tex
-Overfull \hbox (5.98494pt too wide) in paragraph at lines 65--66
-[]\OT1/ppl/m/n/12 To cover the in-ter-nal dy-nam-ics of the wa-ter flow and the
- wa-ter stor-age change,
- []
+ [2] (./body.tex [3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 78.
 
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 67.
-[3]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 70.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsppl.fd
-File: omsppl.fd 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 70.
-
-<picture/struct.png, id=118, 606.265pt x 256.96pt>
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+ [4]
+<picture/struct.png, id=148, 1079.03125pt x 480.79625pt>
 File: picture/struct.png Graphic file (type png)
- <use picture/struct.png>
-Package pdftex.def Info: picture/struct.png used on input line 78.
-(pdftex.def)             Requested size: 378.86852pt x 160.57999pt.
 
-[4 <./picture/struct.png>]
-<picture/UrbanWaterCycle.jpg, id=128, 673.51625pt x 667.49374pt>
+<use picture/struct.png>
+Package pdftex.def Info: picture/struct.png used on input line 98.
+(pdftex.def)             Requested size: 378.86852pt x 168.81676pt.
+ [5 <./picture/struct.png>]
+<picture/UrbanWaterCycle.jpg, id=159, 673.51625pt x 667.49374pt>
 File: picture/UrbanWaterCycle.jpg Graphic file (type jpg)
 
 <use picture/UrbanWaterCycle.jpg>
-Package pdftex.def Info: picture/UrbanWaterCycle.jpg used on input line 101.
-(pdftex.def)             Requested size: 227.62204pt x 225.59026pt.
-
-Underfull \hbox (badness 8132) in paragraph at lines 106--107
-[][]\OT1/ppl/m/n/12 The dy-nam-ics part of our
- []
-
-
-Underfull \hbox (badness 1635) in paragraph at lines 106--107
-\OT1/ppl/m/n/12 ever, af-ter sev-eral data browse,
- []
-
-[5 <./picture/UrbanWaterCycle.jpg>]
-<picture/WaterScarcityMap.jpg, id=138, 181.75905pt x 118.5228pt>
+Package pdftex.def Info: picture/UrbanWaterCycle.jpg used on input line 121.
+(pdftex.def)             Requested size: 147.34132pt x 146.02408pt.
+ [6 <./picture/UrbanWaterCycle.jpg>]
+<picture/WaterScarcityMap.jpg, id=172, 181.75905pt x 118.5228pt>
 File: picture/WaterScarcityMap.jpg Graphic file (type jpg)
 
 <use picture/WaterScarcityMap.jpg>
-Package pdftex.def Info: picture/WaterScarcityMap.jpg used on input line 124.
+Package pdftex.def Info: picture/WaterScarcityMap.jpg used on input line 144.
 (pdftex.def)             Requested size: 170.71652pt x 111.32643pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [7 <./picture/WaterScarcityMap.jpg>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--126
-\OT1/ppl/m/n/12 stress,
- []
-
-
-Underfull \hbox (badness 2495) in paragraph at lines 126--128
-[]\OT1/ppl/m/n/12 which make it a re-gion where wa-
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 126--128
-\OT1/ppl/m/n/12 con-sid-er-a-tion, level 2, will pro-vide
- []
-
-[6 <./picture/WaterScarcityMap.jpg>] [7] [8
-
-] [9]
-<picture/Population.png, id=176, 578.16pt x 433.62pt>
+[8]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [9] [10] <picture/Population.png, id=217, 578.16pt x 433.62pt>
 File: picture/Population.png Graphic file (type png)
 
 <use picture/Population.png>
-Package pdftex.def Info: picture/Population.png used on input line 201.
+Package pdftex.def Info: picture/Population.png used on input line 291.
 (pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
- <picture/PCGDP.png, id=177, 578.16pt x 433.62pt>
+ <picture/PCGDP.png, id=218, 578.16pt x 433.62pt>
 File: picture/PCGDP.png Graphic file (type png)
 
 <use picture/PCGDP.png>
-Package pdftex.def Info: picture/PCGDP.png used on input line 202.
+Package pdftex.def Info: picture/PCGDP.png used on input line 292.
 (pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
 
-<picture/IrrigationArea.png, id=178, 578.16pt x 433.62pt>
+<picture/IrrigationArea.png, id=219, 578.16pt x 433.62pt>
 File: picture/IrrigationArea.png Graphic file (type png)
 
 <use picture/IrrigationArea.png>
-Package pdftex.def Info: picture/IrrigationArea.png used on input line 203.
+Package pdftex.def Info: picture/IrrigationArea.png used on input line 293.
 (pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
 
-<picture/SteelProduct.png, id=179, 578.16pt x 433.62pt>
+<picture/SteelProduct.png, id=220, 578.16pt x 433.62pt>
 File: picture/SteelProduct.png Graphic file (type png)
 
 <use picture/SteelProduct.png>
-Package pdftex.def Info: picture/SteelProduct.png used on input line 204.
+Package pdftex.def Info: picture/SteelProduct.png used on input line 294.
 (pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
 
-<picture/Electricity.png, id=180, 578.16pt x 433.62pt>
+<picture/Electricity.png, id=221, 578.16pt x 433.62pt>
 File: picture/Electricity.png Graphic file (type png)
 
 <use picture/Electricity.png>
-Package pdftex.def Info: picture/Electricity.png used on input line 205.
+Package pdftex.def Info: picture/Electricity.png used on input line 295.
 (pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
- <picture/Engel.png, id=181, 578.16pt x 433.62pt>
+ <picture/Engel.png, id=222, 578.16pt x 433.62pt>
 File: picture/Engel.png Graphic file (type png)
 
 <use picture/Engel.png>
-Package pdftex.def Info: picture/Engel.png used on input line 206.
+Package pdftex.def Info: picture/Engel.png used on input line 296.
 (pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Citation `ranked variable' on page 10 undefined on input line 24
+LaTeX Warning: Citation `ranked variable' on page 11 undefined on input line 33
 4.
 
-[10] [11 <./picture/Population.png> <./picture/PCGDP.png> <./picture/Irrigation
+[11] [12 <./picture/Population.png> <./picture/PCGDP.png> <./picture/Irrigation
 Area.png> <./picture/SteelProduct.png> <./picture/Electricity.png> <./picture/E
-ngel.png>]
-Overfull \hbox (24.77989pt too wide) in paragraph at lines 259--288
- [][] 
- []
+ngel.png>] [13] <picture/Population-Industry.png, id=280, 578.16pt x 433.62pt>
+File: picture/Population-Industry.png Graphic file (type png)
 
-[12] <picture/Population-Agreculture.png, id=234, 578.16pt x 433.62pt>
+<use picture/Population-Industry.png>
+Package pdftex.def Info: picture/Population-Industry.png used on input line 406
+.
+(pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
+
+<picture/PCGDP-Industry.png, id=281, 578.16pt x 433.62pt>
+File: picture/PCGDP-Industry.png Graphic file (type png)
+
+<use picture/PCGDP-Industry.png>
+Package pdftex.def Info: picture/PCGDP-Industry.png used on input line 407.
+(pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
+
+<picture/Electricity-Industry.png, id=282, 578.16pt x 433.62pt>
+File: picture/Electricity-Industry.png Graphic file (type png)
+
+<use picture/Electricity-Industry.png>
+Package pdftex.def Info: picture/Electricity-Industry.png used on input line 40
+8.
+(pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
+
+<picture/SteelProduct-Industry.png, id=283, 578.16pt x 433.62pt>
+File: picture/SteelProduct-Industry.png Graphic file (type png)
+
+<use picture/SteelProduct-Industry.png>
+Package pdftex.def Info: picture/SteelProduct-Industry.png used on input line 4
+09.
+(pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<picture/Population-Agreculture.png, id=287, 578.16pt x 433.62pt>
 File: picture/Population-Agreculture.png Graphic file (type png)
 
 <use picture/Population-Agreculture.png>
 Package pdftex.def Info: picture/Population-Agreculture.png used on input line 
-343.
+433.
 (pdftex.def)             Requested size: 126.29164pt x 94.7152pt.
 
-<picture/PCGDP-Agreculture.png, id=235, 578.16pt x 433.62pt>
+<picture/PCGDP-Agreculture.png, id=288, 578.16pt x 433.62pt>
 File: picture/PCGDP-Agreculture.png Graphic file (type png)
 
 <use picture/PCGDP-Agreculture.png>
-Package pdftex.def Info: picture/PCGDP-Agreculture.png used on input line 344.
+Package pdftex.def Info: picture/PCGDP-Agreculture.png used on input line 434.
 (pdftex.def)             Requested size: 126.29164pt x 94.7152pt.
 
-<picture/IrrigationArea-Agreculture.png, id=236, 578.16pt x 433.62pt>
+<picture/IrrigationArea-Agreculture.png, id=289, 578.16pt x 433.62pt>
 File: picture/IrrigationArea-Agreculture.png Graphic file (type png)
 
 <use picture/IrrigationArea-Agreculture.png>
 Package pdftex.def Info: picture/IrrigationArea-Agreculture.png used on input l
-ine 345.
+ine 435.
 (pdftex.def)             Requested size: 126.29164pt x 94.7152pt.
-
-<picture/Population-Industry.png, id=237, 578.16pt x 433.62pt>
-File: picture/Population-Industry.png Graphic file (type png)
-
-<use picture/Population-Industry.png>
-Package pdftex.def Info: picture/Population-Industry.png used on input line 352
-.
-(pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
-
-<picture/PCGDP-Industry.png, id=238, 578.16pt x 433.62pt>
-File: picture/PCGDP-Industry.png Graphic file (type png)
-
-<use picture/PCGDP-Industry.png>
-Package pdftex.def Info: picture/PCGDP-Industry.png used on input line 353.
-(pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
-
-<picture/Electricity-Industry.png, id=239, 578.16pt x 433.62pt>
-File: picture/Electricity-Industry.png Graphic file (type png)
-
-<use picture/Electricity-Industry.png>
-Package pdftex.def Info: picture/Electricity-Industry.png used on input line 35
-4.
-(pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
-
-<picture/SteelProduct-Industry.png, id=240, 578.16pt x 433.62pt>
-File: picture/SteelProduct-Industry.png Graphic file (type png)
-
-<use picture/SteelProduct-Industry.png>
-Package pdftex.def Info: picture/SteelProduct-Industry.png used on input line 3
-55.
-(pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<picture/Population-Resident.png, id=241, 578.16pt x 433.62pt>
+[14 <./picture/Population-Industry.png> <./picture/PCGDP-Industry.png> <./pictu
+re/Electricity-Industry.png> <./picture/SteelProduct-Industry.png>]
+<picture/Population-Resident.png, id=312, 578.16pt x 433.62pt>
 File: picture/Population-Resident.png Graphic file (type png)
 
 <use picture/Population-Resident.png>
-Package pdftex.def Info: picture/Population-Resident.png used on input line 363
+Package pdftex.def Info: picture/Population-Resident.png used on input line 457
 .
 (pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
 
-<picture/PCGDP-Resident.png, id=242, 578.16pt x 433.62pt>
+<picture/PCGDP-Resident.png, id=313, 578.16pt x 433.62pt>
 File: picture/PCGDP-Resident.png Graphic file (type png)
 
 <use picture/PCGDP-Resident.png>
-Package pdftex.def Info: picture/PCGDP-Resident.png used on input line 364.
+Package pdftex.def Info: picture/PCGDP-Resident.png used on input line 458.
 (pdftex.def)             Requested size: 189.43425pt x 142.0761pt.
+ [15 <./picture/Population-Agreculture.png> <./picture/PCGDP-Agreculture.png> <
+./picture/IrrigationArea-Agreculture.png> <./picture/Population-Resident.png> <
+./picture/PCGDP-Resident.png>]
+<picture/Indust-pre.png, id=335, 578.16pt x 433.62pt>
+File: picture/Indust-pre.png Graphic file (type png)
 
+<use picture/Indust-pre.png>
+Package pdftex.def Info: picture/Indust-pre.png used on input line 472.
+(pdftex.def)             Requested size: 134.7128pt x 101.03395pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+<picture/Agri-pre.png, id=336, 578.16pt x 433.62pt>
+File: picture/Agri-pre.png Graphic file (type png)
+ <use picture/Agri-pre.png>
+Package pdftex.def Info: picture/Agri-pre.png used on input line 473.
+(pdftex.def)             Requested size: 134.7128pt x 101.03395pt.
 
-[13 <./picture/Population-Agreculture.png> <./picture/PCGDP-Agreculture.png> <.
-/picture/IrrigationArea-Agreculture.png>] [14 <./picture/Population-Industry.pn
-g> <./picture/PCGDP-Industry.png> <./picture/Electricity-Industry.png> <./pictu
-re/SteelProduct-Industry.png> <./picture/Population-Resident.png> <./picture/PC
-GDP-Resident.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
-[]\OT1/ppl/m/n/12 https://en.wikipedia.org/wiki/Pearson[]product-
+<picture/Resident-pre.png, id=337, 578.16pt x 433.62pt>
+File: picture/Resident-pre.png Graphic file (type png)
+
+<use picture/Resident-pre.png>
+Package pdftex.def Info: picture/Resident-pre.png used on input line 474.
+(pdftex.def)             Requested size: 134.7128pt x 101.03395pt.
+
+<picture/Ability-pre.png, id=339, 1084.05pt x 392.4261pt>
+File: picture/Ability-pre.png Graphic file (type png)
+
+<use picture/Ability-pre.png>
+Package pdftex.def Info: picture/Ability-pre.png used on input line 483.
+(pdftex.def)             Requested size: 378.86852pt x 137.1476pt.
+ [16 <./picture/Indust-pre.png> <./picture/Agri-pre.png> <./picture/Resident-pr
+e.png> <./picture/Ability-pre.png>]
+Overfull \hbox (33.08661pt too wide) in paragraph at lines 500--501
+[]\OT1/cmr/m/n/10.95 https://en.wikipedia.org/wiki/Pearson[]product-moment[]cor
+relation[]coefficient#Definition 
  []
 
-
-Overfull \hbox (7.24248pt too wide) in paragraph at lines 386--387
-[]\OT1/ppl/m/n/12 https://en.wikipedia.org/wiki/Spearman%27s[]rank[]correlation
-[]coefficient 
- []
-
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ú in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ù in font pplr7t!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
 Excluding 'comment' comment.) 
 AED: lastpage setting LastPage
-[15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 49.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
+[17]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 53.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 53.
  (./icmpaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 53.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 53.
 Package rerunfilecheck Info: File `icmpaper.out' has not changed.
-(rerunfilecheck)             Checksum: A3ED47007DC2C87A487FD941819E113A;1234.
+(rerunfilecheck)             Checksum: 707A1061E0AC41B1CFBCFC69119D8709;1470.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 53.
  ) 
 Here is how much of TeX's memory you used:
- 8948 strings out of 493089
- 130341 string characters out of 6134842
- 253855 words of memory out of 5000000
- 12083 multiletter control sequences out of 15000+600000
- 32837 words of font info for 107 fonts, out of 8000000 for 9000
+ 8941 strings out of 493089
+ 130274 string characters out of 6134842
+ 254851 words of memory out of 5000000
+ 12055 multiletter control sequences out of 15000+600000
+ 21076 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,15n,45p,840b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on icmpaper.pdf (15 pages, 1195591 bytes).
+ 49i,15n,45p,867b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on icmpaper.pdf (17 pages, 1274349 bytes).
 PDF statistics:
- 340 PDF objects out of 1000 (max. 8388607)
- 276 compressed objects within 3 object streams
- 88 named destinations out of 1000 (max. 500000)
- 235 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 427 PDF objects out of 1000 (max. 8388607)
+ 350 compressed objects within 4 object streams
+ 119 named destinations out of 1000 (max. 500000)
+ 279 words of extra memory for PDF output out of 10000 (max. 10000000)
 

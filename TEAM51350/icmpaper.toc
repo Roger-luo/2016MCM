@@ -2,26 +2,35 @@
 \contentsline {section}{\numberline {2}Nomenclatures}{3}{section.2}
 \contentsline {section}{\numberline {3}Model of water supply ability}{3}{section.3}
 \contentsline {subsection}{\numberline {3.1}Model Introduction}{4}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Model Structure}{4}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Model Prominent Parameters}{5}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Model Dynamics}{5}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}How to apply our model}{6}{subsection.3.5}
-\contentsline {section}{\numberline {4}China's water scarcity}{6}{section.4}
-\contentsline {subsection}{\numberline {4.1}Social drivers}{8}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Environmental drivers}{8}{subsection.4.2}
-\contentsline {section}{\numberline {5}China's water scarcity: Further Investigation and Prediction}{8}{section.5}
-\contentsline {subsection}{\numberline {5.1}Prominent variables' tendency}{8}{subsection.5.1}
-\contentsline {paragraph}{Population}{9}{section*.1}
-\contentsline {paragraph}{Per Capita Gross Domestic Product}{9}{section*.2}
-\contentsline {paragraph}{Irrigation Area}{9}{section*.3}
-\contentsline {paragraph}{Iron and Steel Production}{9}{section*.4}
-\contentsline {paragraph}{Electricity Production}{10}{section*.5}
-\contentsline {paragraph}{Engel's Coefficient}{10}{section*.6}
-\contentsline {subsection}{\numberline {5.2}Relation between prominent parameters and variables}{10}{subsection.5.2}
-\contentsline {paragraph}{Pearson product-moment correlation coefficient}{10}{section*.7}
-\contentsline {paragraph}{Spearman's rank correlation coefficient}{11}{section*.8}
-\contentsline {paragraph}{Kendall rank correlation coefficient}{12}{section*.9}
+\contentsline {subsection}{\numberline {3.2}Model Hypothesis}{4}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Model Structure}{5}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Model Prominent Parameters}{6}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Model Dynamics}{6}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}How to apply our model}{6}{subsection.3.6}
+\contentsline {section}{\numberline {4}China's water scarcity}{7}{section.4}
+\contentsline {paragraph}{Water resources}{7}{section*.1}
+\contentsline {subsection}{\numberline {4.1}Physical scarcity}{7}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Economic water scarcity}{8}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Causes of water scarcity}{9}{subsection.4.3}
+\contentsline {paragraph}{Social drivers:}{9}{section*.2}
+\contentsline {paragraph}{Enviromental drivers:}{9}{section*.3}
+\contentsline {section}{\numberline {5}China's water scarcity: Further Investigation and Prediction}{10}{section.5}
+\contentsline {subsection}{\numberline {5.1}Prominent variables' tendency}{10}{subsection.5.1}
+\contentsline {paragraph}{Population}{10}{section*.4}
+\contentsline {paragraph}{Per Capita Gross Domestic Product}{10}{section*.5}
+\contentsline {paragraph}{Irrigation Area}{10}{section*.6}
+\contentsline {paragraph}{Iron and Steel Production}{11}{section*.7}
+\contentsline {paragraph}{Electricity Production}{11}{section*.8}
+\contentsline {paragraph}{Engel's Coefficient}{11}{section*.9}
+\contentsline {subsection}{\numberline {5.2}Relation between prominent parameters and variables}{11}{subsection.5.2}
+\contentsline {paragraph}{Pearson product-moment correlation coefficient}{11}{section*.10}
+\contentsline {paragraph}{Spearman's rank correlation coefficient}{12}{section*.11}
+\contentsline {paragraph}{Kendall rank correlation coefficient}{13}{section*.12}
 \contentsline {subsection}{\numberline {5.3}Fitness method in consumption variables}{13}{subsection.5.3}
-\contentsline {section}{\numberline {6}Intervention plan designing}{15}{section.6}
-\contentsline {section}{\numberline {7}Prediction with Intervention plan}{15}{section.7}
-\contentsline {section}{\numberline {8}Conclusion}{15}{section.8}
+\contentsline {paragraph}{Industry Water Consumption}{13}{section*.13}
+\contentsline {paragraph}{Agricultural Water Consumption}{14}{section*.14}
+\contentsline {paragraph}{Domestic Water Consumption}{15}{section*.15}
+\contentsline {subsection}{\numberline {5.4}Prediction of future water supply ability}{16}{subsection.5.4}
+\contentsline {section}{\numberline {6}Intervention plan designing}{17}{section.6}
+\contentsline {section}{\numberline {7}Prediction with Intervention plan}{17}{section.7}
+\contentsline {section}{\numberline {8}Conclusion}{17}{section.8}

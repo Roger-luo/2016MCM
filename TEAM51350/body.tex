@@ -47,7 +47,14 @@
 \end{table}
 
 \section{Model of water supply ability}
-  When it come to the water supply ability of a region, a country or even the world. We often use the measurement called annual water supplies per person($A$) for description\cite{AbilityMeasure}. We can set three levels to classify the ability of several regions:
+  When it come to the water supply ability of a region, a country or even the world. We often use the measurement called annual water supplies per person($A$) for description\cite{AbilityMeasure}. We can set three levels to classify the ability of several regions (Table~\ref{tab: water supply ability}).
+
+  \begin{equation}
+  A = \left(\sum{\text{WaterConsumption}}\right)/\text{Population}
+  \label{equ: Ability}
+  \end{equation}
+
+
   \begin{table}[!htb]
     \centering
     \begin{tabular}{|c||c|c|}
@@ -60,6 +67,7 @@
     \hline
     \end{tabular}
     \caption{water supply ability}
+    \label{tab: water supply ability}
   \end{table}
 
 To cover the internal dynamics of the water flow and the water storage change, we introduce following model.
@@ -72,9 +80,21 @@ To cover the internal dynamics of the water flow and the water storage change, w
     \end{itemize}
     The prominent external parameters comes from the statistic numbers and it's fitness, while the internal dynamics variables is mainly based on prominent parameters, which makes them indirectly depend on time in our model.
 
+  \subsection{Model Hypothesis}
+    Our model is based on following hypothesis:
+
+    \begin{enumerate}[\textbf{Hypothesis} 1]
+      \item We presume that the total water usage can be divided into three parts: Industrial, Agricultural and Domestic. And the main purpose of this model is to investigate these 3 quantities and relevant quantities. This hypothesis is plausible because the remaining fractions are relatively so small.
+      \item Because that the water supply is one of the supporting industry in human society, we presume the water supply can always adjust itself to meet the need of the demand to a very large extent annually. Thus, each part of the water usage is treated as the function of more fundamental social quantities such as populations, PCGDP, irrigation area and so on.
+      \item We presume that the fundamental social quantities mentioned above can specify the development information of human society. That is to say they are only the function of time itself. This hypothesis is plausible because in relatively short time period, say 15 years for example, the evolution of such fundamental quantities is determined by the intrinsic property of the society, but have little relationship with the water usage we interested in.
+      \item We use specific model to fit the fundamental social quantities, and presume that the model will be legitimate in the following 15 years. This hypothesis is plausible because that the model we choose to fit is proper and the data is plentiful.
+      \item According to the above description, each part of the water usage is treated as the function of fundamental social quantities. We further presume that they act linearly on corresponding water usage. This hypothesis is plausible for mainly 2 reasons. Firstly, we will find in later discussion that all values taken into consideration change slowly with respect of time. So from the Taylor series viewpoint, the complex interactions exist in the system can be finely interpolated using a linear interacting model.  Secondly, we intendedly choose the fundamental social quantities that can independently describe one aspect of the given society. So the interaction between these quantities are designed to be ignorable.
+    \end{enumerate}
+
   \subsection{Model Structure}
 
     \begin{figure}[!h]
+    \centering
     \includegraphics[width = 0.9\textwidth]{picture/struct.png}
     \caption{structure}
     \label{fig: structure}
@@ -96,20 +116,20 @@ To cover the internal dynamics of the water flow and the water storage change, w
 
   \subsection{Model Dynamics}
 
-    \begin{wrapfigure}{l}{8cm}
+    \begin{wrapfigure}{l}{0.35\textwidth}
     %\begin{center}
-    \includegraphics[width = 8cm]{picture/UrbanWaterCycle.jpg}
+    \includegraphics[width = 0.35\textwidth]{picture/UrbanWaterCycle.jpg}
     \caption{water cycle\cite{WaterCycle}}
     \label{water cycle}
     %\end{center}
     \end{wrapfigure}
-    The dynamics part of our model is inspired by the water cycle(Figure ~\ref{water cycle}). Basically, our water is mainly refreshed though the precipitation. So it will be elegant if we using such water cycle process to build a mighty system about how the water flow and run with real data to determine the theoretical water consumption. However, after several data browse, we find that using precipitation as part of the water storage's changing rate is ridiculous--The total water resource is steadily a certain ratio of precipitation. Therefore using prominent parameters as arguments of internal variables and find the relation according to the past data will be a proper choice.
+    The dynamics part of our model is inspired by the water cycle(Figure~\ref{water cycle}). Basically, our water is mainly refreshed though the precipitation. So it will be elegant if we using such water cycle process to build a mighty system about how the water flow and run with real data to determine the theoretical water consumption. However, after several data browse, we find that using precipitation as part of the water storage's changing rate is ridiculous--The total water resource is steadily a certain ratio of precipitation. Therefore using prominent parameters as arguments of internal variables and find the relation according to the past data will be a proper choice.
 
   \subsection{How to apply our model}
 
     With good structure of our model and program, the application of our model can be done in a pretty clear way.
 
-    \begin{enumerate}[step 1]
+    \begin{enumerate}[\textbf{steps} 1]
       \item Using the past data of alternative prominent parameters, find proper relation between those parameters and time, therefore determine the time dependent equation of prominent parameters.
       \item Using the data of alternative prominent parameters and consumption variables in the past to find the strength of correlation, Spearman or Pearson or other coefficients.
       \item According to the coefficients, structure the parameter dependent equations of consumption variables.
@@ -119,17 +139,87 @@ To cover the internal dynamics of the water flow and the water storage change, w
 
 
 \section{China's water scarcity}
-  According to the UN water scarcity map, China is a country with water stress,
+  According to the UN water scarcity map\cite{WaterScarcityMap}, China is a country with water stress,
   \begin{wrapfigure}{l}{7cm}
   \includegraphics[width = 6cm]{picture/WaterScarcityMap.jpg}
-  \caption{water scarcity map\cite{WaterScarcityMap}}
   \end{wrapfigure}
   which make it a region where water is moderately overloaded. In our consideration, level 2, will provide more abundant behavior in a dynamical model(will it become water scarce or water sufficient in the future?). Thus we pick up China as our research object. To make our model more predictable and more reality connected.
-  \clearpage
-  \subsection{Social drivers}
-  demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo
-  \subsection{Environmental drivers}
-  demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+
+  In order to explain why and how water is scarce in China,firstly,we state the water resources and water scarcity.Then We will give social and enviromental reasons to water scarcity.
+
+\paragraph{Water resources}
+China’s water resources are geographically divided into nine major river basins, including Yangtze, Yellow (Huang), Hai-Luan, Huai, Song-Liao, Pearl, Southeast, Southwest, and Northwest.The average volume of internal renewable water resources is estimated to be approximately 2812 billion $m^3$ per year,which ranks fifth in the world.This volume includes both surface water and groundwater.
+
+Approximately,98\% of China's surface water is recharged by precipitation.The average precipitation decreases in a spatial gradient from more than 2000 mm at the southeastern coastline to less than 200 mm at the northwestern hinterlands.
+
+\subsection{Physical scarcity}
+Physical water scarcity is attributed to the shortfall in water resource volume to meet water needs.
+
+We conclude physical water scarcity into 5 aspects as follow:
+\begin{itemize}
+\item Water shortages.
+
+In normal water years, among 662 cities, 300 will have insufficient water supplies and 110 will experience severe water shortages; 30 out of 32 metropolitan areas with populations of more than 1 million people struggle to meet water demands.The total annual water shortage is estimated to be 30-40 billion $m^3$ and is even larger in dry years.
+
+\item Water resource use and overexploitation.
+
+North China has experienced heavy demand for water, and groundwater is an important source for water supply in this area.The average rate of water resource use ranged from 31.0\% to 91.7\% for basins in the north compared to rates of 1.7–19.5\% in the south.
+
+\item Reduced instream flow and degraded aquatic ecosystems.
+
+The discharge from the river to the ocean dwindled from an annual average of 24 billion m3 in the 1950s to 1 billion m3 in 2001.
+
+\item Groundwater depletion.
+
+It's recorded that groundwater depletion has increased in North China over the last two decades.Since the beginning of the 1980s,regions that overexploit groundwater have increased from 56 to 164 and the total area subject to groundwater overexploitation has increased from 87,000 $km^2$ to 180,000 $km^2$.
+
+\item Seawater intrusion and ground subsidence.
+
+Seawater intrusion has occurred in 72 locations in Hebei, Shandong, and Liaoning provinces, covering a total area of 142 $km^2$ in 1992.Cities such as Beijing, Tianjin, and Shanghai have been subject to ground subsidences of up to several meters.
+\end{itemize}
+
+\subsection{Economic water scarcity}
+Economic water scarcity is caused by poor water quality that does not support any economic use of water rather than insufficient quantity.
+
+We conclude economic water scarcity into two aspects as follow:
+\begin{itemize}
+\item Degrading water quality.
+
+China’s general water quality trend is characterized by extended water sections of poor quality.In North China, all major river basins experience water quality degradation, and the percentage of monitored water sections ranked poor ranges from 50\% in the Yellow River basin to 78\% in the Hai River basin.
+
+China’s lakes and reservoirs are experiencing accelerated eutrophication and degraded water quality.
+
+\item Socio-economic impact.
+
+Degraded water quality has caused serious impacts on society. With a lack of clean, usable water, households, industries, and agriculture were forced to cut back their water use.In 2003, economic losses attributed to poor water quality were at least 158 billion yuan or 1.16\% of China’s annual GDP.
+
+The cancer mortality rates associate with poor water quality.The rates of stomach, liver, and bladder cancers are highest in rural areas and the mortality rates of liver and stomach cancers in China are well above the world averages.
+\end{itemize}
+
+\subsection{Causes of water scarcity}
+There are many factors contribute to China's water scarcity.We can classify them into social factors and enviromental factors.
+
+\paragraph{Social drivers:}As for the social factors,we can consider the relationship between population and water scarcity,water resource management.List seven social reasons as follow:
+
+\begin{enumerate}[\textbf{Factor} 1]
+\item Rapid industrialization and urbanization associated with a large population
+\item Fragmented institutional system of water resource management
+\item Supply-driven water resources management and inefficient water use
+\item Underdeveloped water rights system
+\item Inadequate water pricing
+\item Insufficient investment in environmental protection and weak pollution control
+\item Policies not well integrated with each other
+\end{enumerate}
+
+\paragraph{Enviromental drivers:}As for the enviromental factors,we can consider natural conditions,climate,distribution of water resource.List three factors as follow:
+
+\begin{enumerate}[\textbf{Factor} 1]
+\setcounter{enumi}{7}
+\item The spatial distribution of China’s water resources is inconsistent with the local socioeconomic needs for water. The majority of China’s water resources are located in the southern part of the country, whereas the greatest need for water comes from northern and eastern China.
+\item Climate change aggravates the problems.
+\item The loss of glaciers and wetlands upstream decreases river runoffs.
+\end{enumerate}
+
 
 \section{China's water scarcity: Further Investigation and Prediction}
 
@@ -209,7 +299,7 @@ To cover the internal dynamics of the water flow and the water storage change, w
     \label{fig: parameters fit}
     \end{figure}
 
-    With the fitness method, we can get all the evolution of alternative prominent parameters in Figure ~\ref{fig: parameters fit}, and the parameters in evolution equations in Table~\ref{tab: evolution par}:
+    With the fitness method, we can get all the evolution of alternative prominent parameters in Figure~\ref{fig: parameters fit}, and the parameters in evolution equations in Tabl~\ref{tab: evolution par}:
     \begin{table}[!h]
       \centering
       \begin{tabular}{|l|l|}
@@ -294,22 +384,10 @@ To cover the internal dynamics of the water flow and the water storage change, w
   \subsection{Fitness method in consumption variables}
   To investigate the evolution of consumption variables, We first investigate the correlation between one specific consumption with one specific prominent parameters.
 
-  \begin{table}[!h]
-
-  \centering
-  \begin{tabular}{l||c|c|c}
-  \hline
-  Parameters & $p_0$  &  $p_1$  & $p_2$ \\ \hline
-  $P$       &  -1.31e3 & 5.07e-2 & 3.42e4 \\ \hline
-  $\text{PCGDP}$ & -1.50e3 &  9.54e-3 & -5.18e5 \\ \hline
-  $\text{IA}$   & -1.09e3  &  3.20e-2 & -9.09e4 \\ \hline
-  \end{tabular}
-  \caption{AWC - parameters: $p_0 +p_1 (\text{para}-p_2)$ }
-  \label{tab:AWC - parameters}
-  \end{table}
+  \paragraph{Industry Water Consumption}
+  According to coefficients calculation result in Table~\ref{tab: coefficients}, taking all $P, \text{PCGDP}, \text{ELP}, \text{ISP}$ in to account will be rational. Moreover, The correlation between IWC and those factors are kinda weird, therefore using polynomial fit is unreasonable here. Further more, once we find that the IWC will never be negative and the shape or past data, it will be convenient for us to using Gaussian function here. At least we get the result in Table~\ref{tab:IWC - parameters} and Figure~\ref{fig: IWC para}.
 
   \begin{table}[!h]
-
   \centering
   \begin{tabular}{l||c|c|c}
   \hline
@@ -318,34 +396,10 @@ To cover the internal dynamics of the water flow and the water storage change, w
   $\text{PCGDP}$ & 1.45e3 &  3.35e-10 & 3.31e4 \\ \hline
   $\text{ELP}$   & 1.44e3  &  3.10e-10 & 4.45e4 \\ \hline
   $\text{ISP}$   & 1.44e3  &  5.50e-11 & 8.40e4 \\ \hline
-
   \end{tabular}
   \caption{IWC - parameters: $p_0\exp{[-p_1 (\text{para}-p_2)^2]}$}
   \label{tab:IWC - parameters}
   \end{table}
-
-  \begin{table}[!h]
-  \centering
-  \begin{tabular}{l||c|c|c}
-  \hline
-  Parameters & $p_0$  &  $p_1$  & $p_2$ \\ \hline
-  $P$       &  3.95e2 & -2.16e-5 & 1.05e5 \\ \hline
-  $\text{PCGDP}$ & 3.98e2 &  -3.82e-6 & -1.30e5 \\ \hline
-
-  \end{tabular}
-  \caption{DWC - parameters: $p_0\exp{[-p_1 (\text{para}-p_2)]}$}
-  \label{tab:DWC - parameters}
-  \end{table}
-
-
-  \begin{figure}[!h]
-  \centering
-  \subfigure[$P$]{\includegraphics[width = 0.3\textwidth]{picture/Population-Agreculture.png}}
-  \subfigure[$\text{PCGDP}$]{\includegraphics[width = 0.3\textwidth]{picture/PCGDP-Agreculture.png}}
-  \subfigure[$\text{IA}$]{\includegraphics[width = 0.3\textwidth]{picture/IrrigationArea-Agreculture.png}}
-  \caption{AWC - parameters}
-  \label{fig: AWC para}
-  \end{figure}
 
   \begin{figure}[!h]
   \centering
@@ -358,6 +412,46 @@ To cover the internal dynamics of the water flow and the water storage change, w
   \end{figure}
 
 
+  \paragraph{Agricultural Water Consumption}
+  According to coefficients calculation result in Table~\ref{tab: coefficients}, taking all $P, \text{PCGDP}, \text{IA}$in to account will be reasonable. Due to to fact that we have no clue about the form of their relation, using polynomial fitting will be a proper choice. The results are in Table~\ref{tab:AWC - parameters} and Figure~\ref{fig: AWC para}
+
+  \begin{table}[!h]
+  \centering
+  \begin{tabular}{l||c|c|c}
+  \hline
+  Parameters & $p_0$  &  $p_1$  & $p_2$ \\ \hline
+  $P$       &  -1.31e3 & 5.07e-2 & 3.42e4 \\ \hline
+  $\text{PCGDP}$ & -1.50e3 &  9.54e-3 & -5.18e5 \\ \hline
+  $\text{IA}$   & -1.09e3  &  3.20e-2 & -9.09e4 \\ \hline
+  \end{tabular}
+  \caption{AWC - parameters: $p_0 +p_1 (\text{para}-p_2)$ }
+  \label{tab:AWC - parameters}
+  \end{table}
+
+  \begin{figure}[!h]
+  \centering
+  \subfigure[$P$]{\includegraphics[width = 0.3\textwidth]{picture/Population-Agreculture.png}}
+  \subfigure[$\text{PCGDP}$]{\includegraphics[width = 0.3\textwidth]{picture/PCGDP-Agreculture.png}}
+  \subfigure[$\text{IA}$]{\includegraphics[width = 0.3\textwidth]{picture/IrrigationArea-Agreculture.png}}
+  \caption{AWC - parameters}
+  \label{fig: AWC para}
+  \end{figure}
+
+  \paragraph{Domestic Water Consumption}
+  The data about DWC and other parameters is kinda weird. Firstly, according to the coefficient in Table~\ref{tab: coefficients}. We think the Engel's Coefficients is kinda useless and it will be reasonable to eliminate them from right now. Moreover, make the whole fit system more general, this time we try exponential fit, and the result are showed in Table~\ref{tab:DWC - parameters} and Figure~\ref{fig: DWC para}.
+
+  \begin{table}[!h]
+  \centering
+  \begin{tabular}{l||c|c|c}
+  \hline
+  Parameters & $p_0$  &  $p_1$  & $p_2$ \\ \hline
+  $P$       &  3.95e2 & -2.16e-5 & 1.05e5 \\ \hline
+  $\text{PCGDP}$ & 3.98e2 &  -3.82e-6 & -1.30e5 \\ \hline
+  \end{tabular}
+  \caption{DWC - parameters: $p_0\exp{[-p_1 (\text{para}-p_2)]}$}
+  \label{tab:DWC - parameters}
+  \end{table}
+
   \begin{figure}[!h]
   \centering
   \subfigure[$P$]{\includegraphics[width = 0.45\textwidth]{picture/Population-Resident.png}}
@@ -366,6 +460,30 @@ To cover the internal dynamics of the water flow and the water storage change, w
   \label{fig: DWC para}
   \end{figure}
 
+  \subsection{Prediction of future water supply ability}
+  With the discussion above, now it's time to predict the future water supply ability $A$. Firstly, we introduce intermediate variables to separate the Water Consumption variables into several parts. For instance, $\text{DWC} = \text{DWC}(P,\text{PCGDP})$, with the investigation above, we can write in a separated form:
+  $$
+  \text{DWC}(t) =\text{DWC}(P(t),\text{PCGDP}(t)) = \frac{\alpha_{P}\text{DWC}(P)+\alpha_{\text{PCGDP}}\text{DWC}(\text{PCGDP})}{\alpha_{P}+\alpha_{PCGDP}}
+  $$
+  And the form of variables like $\text{DWC}(P)$ or $\text{DWC}(\text{PCGDP})$ are exactly the correlation we got int Table~\ref{tab:IWC - parameters} -~\ref{tab:DWC - parameters}.
+  Others consumption variables are exactly same as this example. The analysis result are shown in Figure~\ref{fig: consumption predict}.
+
+  \begin{figure}[!h]
+  \subfigure[IWC]{\includegraphics[width = 0.32\textwidth]{picture/Indust-pre.png}}
+  \subfigure[AWC]{\includegraphics[width = 0.32\textwidth]{picture/Agri-pre.png}}
+  \subfigure[DMC]{\includegraphics[width = 0.32\textwidth]{picture/Resident-pre.png}}
+  \caption{consumption predict}
+  \label{fig: consumption predict}
+  \end{figure}
+
+  With the prediction value of water consumption, we can easily get the water supply ability through Equation~\ref{equ: Ability}. And the result is showed in Figure ~
+
+
+  \begin{figure}[!h]
+  \includegraphics[width = 0.9\textwidth]{picture/Ability-pre.png}
+  \caption{Water supply ability prediction}
+  \label{fig: supply ability}
+  \end{figure}
 
 \section{Intervention plan designing}
 
