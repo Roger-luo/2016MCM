@@ -60,6 +60,9 @@ plt.legend()
 plt.show()
 plt.close()
 
+print(pPara)
+print(gPara)
+
 
 # plt.figure()
 # plt.scatter(years,[Data.WaterUseResidential[t] for t in years],marker="^",s=100)

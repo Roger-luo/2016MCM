@@ -51,6 +51,12 @@ def IndustWater(time):
 # plt.plot(years,IndustWater(years),'b-')
 # plt.show()
 # plt.close()
+
+print(sPara)
+print(pPara)
+print(gPara)
+print(ePara)
+
 x = np.linspace(years[0],years[-1],100)
 
 plt.figure()

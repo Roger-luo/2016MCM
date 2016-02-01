@@ -60,4 +60,6 @@ plt.show()
 plt.close()
 
 
-
+print(pPara)
+print(gPara)
+print(iPara)
