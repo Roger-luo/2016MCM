@@ -36,14 +36,14 @@ population [ -1.308e+03   5.070e-02   3.425e+04]
 PCGDP [ -1.496e+03   9.544e-03  -5.184e+05]
 IrrigationArea [ -1.090e+03   3.202e-02  -9.094e+04]
 
-p[0]+p[1]*(x-p[2])
+p[0]+p[1]*(x-p[2])+var*normal
 
 ResidentWater
 
 population [ -1.690e+03   1.606e-02  -1.713e+04]
 PCGDP [ -3.275e+02   2.847e-03  -3.426e+05]
 
-p[0]+-p[1]*(x-p[2])
+p[0]+-p[1]*(x-p[2])+var*normal
 
 IndustWater
 
@@ -52,4 +52,4 @@ Population [  1.43387736e+03   7.61874825e-09   1.34410559e+05]
 PCGDP [  1.44744343e+03   3.34730102e-10   3.30799980e+04]
 Electricity [  1.44199462e+03   3.10130409e-10   4.45432350e+04]
 
-p[0]*np.exp(-p[1]*(x-p[2])**2)
+p[0]*np.exp(-p[1]*(x-p[2])**2)+var*normal
