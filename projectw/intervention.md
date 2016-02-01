@@ -30,6 +30,17 @@
 ## 修建水利设置
 - 修建水利设施,降低工业用水变化速率
 
+## intervention plan
+As shown in our prediction. China will suffer from water scarcity in 15 years. Therefore we designed an intervention plan to avoid this situation. 
+
+To introduce the natural uncertainty from environment, a normal distributed random variable with variance of each factor is added to prominent parameters.
+The variance of Ability shows the sensitivity of a given region.
+
+>the 
+
+### Industry Intervention
+
+
 AgricultureWater
 
 population [ -1.308e+03   5.070e-02   3.425e+04]
@@ -54,15 +65,4 @@ Electricity [  1.44199462e+03   3.10130409e-10   4.45432350e+04]
 
 p[0]*np.exp(-p[1]*(x-p[2])**2)
 
-
-
-## intervention plan
-As shown in our prediction. China will suffer from water scarcity in 15 years. Therefore we designed an intervention plan to avoid this situation. 
-
-To introduce the natural uncertainty from environment, a normal distributed random variable with variance of each factor is added to prominent parameters.
-The variance of Ability shows the sensitivity of a given region.
-
-
-
-### Industry Intervention
 
