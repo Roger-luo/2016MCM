@@ -2,6 +2,7 @@ import Data
 import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
 from scipy.stats import pearsonr
+from scipy.stats import kendalltau
 
 years=range(2004, 2015)
 
@@ -88,10 +89,10 @@ plt.close()
 # print("r(GDP,Population)="+str(pearsonr([Data.GDP[t] for t in years],[Data.Population[t] for t in years])))
 
 # analysis for Wi
-print("r(Wi,Population)="+str(pearsonr([Data.WaterUseIndustry[t] for t in years],[Data.Population[t] for t in years])))
-print("r(Wi,PCGDP)="+str(pearsonr([Data.WaterUseIndustry[t] for t in years],[Data.PCGDP[t] for t in years])))
-print("r(Wi,Electricity)="+str(pearsonr([Data.WaterUseIndustry[t] for t in years],[Data.Electricity[t]for t in years])))
-print("r(Wi,SteelProduct)="+str(pearsonr([Data.WaterUseIndustry[t] for t in years],[Data.SteelProduct[t] for t in years])))
+print("r(Wi,Population)="+str(kendalltau([Data.WaterUseIndustry[t] for t in years],[Data.Population[t] for t in years])))
+print("r(Wi,PCGDP)="+str(kendalltau([Data.WaterUseIndustry[t] for t in years],[Data.PCGDP[t] for t in years])))
+print("r(Wi,Electricity)="+str(kendalltau([Data.WaterUseIndustry[t] for t in years],[Data.Electricity[t]for t in years])))
+print("r(Wi,SteelProduct)="+str(kendalltau([Data.WaterUseIndustry[t] for t in years],[Data.SteelProduct[t] for t in years])))
 
 plt.figure()
 plt.xlabel("Population/ 10k people")
@@ -122,9 +123,9 @@ plt.show()
 plt.close()
 
 # analysis for Wa
-print("r(Wa,Population)="+str(pearsonr([Data.WaterUseAgriculture[t] for t in years],[Data.Population[t] for t in years])))
-print("r(Wa,PCGDP)="+str(pearsonr([Data.WaterUseAgriculture[t] for t in years],[Data.PCGDP[t] for t in years])))
-print("r(Wa,IrrigationArea)="+str(pearsonr([Data.WaterUseAgriculture[t] for t in years],[Data.IrrigationArea[t] for t in years])))
+print("r(Wa,Population)="+str(kendalltau([Data.WaterUseAgriculture[t] for t in years],[Data.Population[t] for t in years])))
+print("r(Wa,PCGDP)="+str(kendalltau([Data.WaterUseAgriculture[t] for t in years],[Data.PCGDP[t] for t in years])))
+print("r(Wa,IrrigationArea)="+str(kendalltau([Data.WaterUseAgriculture[t] for t in years],[Data.IrrigationArea[t] for t in years])))
 
 plt.figure()
 plt.xlabel("Agriculture Water Usage/ 100m m^3")
@@ -148,10 +149,10 @@ plt.show()
 plt.close()
 
 # analysis for Wr
-print("r(Wr,Population)="+str(pearsonr([Data.WaterUseResidential[t] for t in years],[Data.Population[t] for t in years])))
-print("r(Wr,PCGDP)="+str(pearsonr([Data.WaterUseResidential[t] for t in years],[Data.PCGDP[t] for t in years])))
-print("r(Wr,RuralEngel)="+str(pearsonr([Data.WaterUseResidential[t] for t in years],[Data.RuralEngel[t] for t in years])))
-print("r(Wr,UrbanEngel)="+str(pearsonr([Data.WaterUseResidential[t] for t in years],[Data.UrbanEngel[t] for t in years])))
+print("r(Wr,Population)="+str(kendalltau([Data.WaterUseResidential[t] for t in years],[Data.Population[t] for t in years])))
+print("r(Wr,PCGDP)="+str(kendalltau([Data.WaterUseResidential[t] for t in years],[Data.PCGDP[t] for t in years])))
+print("r(Wr,RuralEngel)="+str(kendalltau([Data.WaterUseResidential[t] for t in years],[Data.RuralEngel[t] for t in years])))
+print("r(Wr,UrbanEngel)="+str(kendalltau([Data.WaterUseResidential[t] for t in years],[Data.UrbanEngel[t] for t in years])))
 
 plt.figure()
 plt.xlabel("Domestic Water Usage/ 100m m^3")
