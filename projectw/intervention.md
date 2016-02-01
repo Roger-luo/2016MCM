@@ -59,7 +59,10 @@ p[0]*np.exp(-p[1]*(x-p[2])**2)
 ## intervention plan
 As shown in our prediction. China will suffer from water scarcity in 15 years. Therefore we designed an intervention plan to avoid this situation. 
 
-To introduce the natural uncertainty, a normal distributed random variable with variance of 
+To introduce the natural uncertainty from environment, a normal distributed random variable with variance of each factor is added to prominent parameters.
+The variance of Ability shows the sensitivity of a given region.
 
-### Industrial
+
+
+### Industry Intervention
 
