@@ -6,31 +6,40 @@
 \contentsline {subsection}{\numberline {3.3}Model Structure}{6}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Model Prominent Parameters}{7}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Model Dynamics}{7}{subsection.3.5}
-\contentsline {subsection}{\numberline {3.6}How to apply our model}{7}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.6}How to apply our model}{8}{subsection.3.6}
 \contentsline {section}{\numberline {4}China's water scarcity}{8}{section.4}
 \contentsline {subsection}{\numberline {4.1}Water resources}{8}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Physical scarcity}{8}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2}Physical scarcity}{9}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Economic water scarcity}{9}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Causes of water scarcity}{10}{subsection.4.4}
 \contentsline {paragraph}{Social drivers:}{10}{section*.1}
-\contentsline {paragraph}{Environmental drivers:}{10}{section*.2}
+\contentsline {paragraph}{Environmental drivers:}{11}{section*.2}
 \contentsline {section}{\numberline {5}China's water scarcity: Further Investigation and Prediction}{11}{section.5}
 \contentsline {subsection}{\numberline {5.1}Prominent variables' tendency}{11}{subsection.5.1}
 \contentsline {paragraph}{Population}{11}{section*.3}
-\contentsline {paragraph}{Per Capita Gross Domestic Product}{11}{section*.4}
-\contentsline {paragraph}{Irrigation Area}{11}{section*.5}
+\contentsline {paragraph}{Per Capita Gross Domestic Product}{12}{section*.4}
+\contentsline {paragraph}{Irrigation Area}{12}{section*.5}
 \contentsline {paragraph}{Iron and Steel Production}{12}{section*.6}
 \contentsline {paragraph}{Electricity Production}{12}{section*.7}
 \contentsline {paragraph}{Engel's Coefficient}{12}{section*.8}
 \contentsline {subsection}{\numberline {5.2}Relation between prominent parameters and variables}{12}{subsection.5.2}
-\contentsline {paragraph}{Pearson product-moment correlation coefficient}{12}{section*.9}
-\contentsline {paragraph}{Spearman's rank correlation coefficient}{13}{section*.10}
+\contentsline {paragraph}{Pearson product-moment correlation coefficient}{13}{section*.9}
+\contentsline {paragraph}{Spearman's rank correlation coefficient}{14}{section*.10}
 \contentsline {paragraph}{Kendall rank correlation coefficient}{14}{section*.11}
 \contentsline {subsection}{\numberline {5.3}Fitness method in consumption variables}{14}{subsection.5.3}
-\contentsline {paragraph}{Industry Water Consumption}{14}{section*.12}
+\contentsline {paragraph}{Industry Water Consumption}{15}{section*.12}
 \contentsline {paragraph}{Agricultural Water Consumption}{15}{section*.13}
-\contentsline {paragraph}{Domestic Water Consumption}{16}{section*.14}
+\contentsline {paragraph}{Domestic Water Consumption}{15}{section*.14}
 \contentsline {subsection}{\numberline {5.4}Prediction of future water supply ability}{17}{subsection.5.4}
-\contentsline {section}{\numberline {6}Intervention plan designing}{18}{section.6}
-\contentsline {section}{\numberline {7}Prediction with Intervention plan}{18}{section.7}
-\contentsline {section}{\numberline {8}Conclusion}{18}{section.8}
+\contentsline {section}{\numberline {6}Intervention plan designing and prediction}{18}{section.6}
+\contentsline {subsection}{\numberline {6.1}Population Intervention}{18}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Water Distribution Intervention}{18}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Industrial Intervention}{19}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Overview}{20}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Climate and uncertainty evaluation}{20}{subsection.6.5}
+\contentsline {section}{\numberline {7}Executive Summary}{21}{section.7}
+\contentsline {subsection}{\numberline {7.1}Approach to the problem}{21}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Conclusion}{21}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Strengths and Weaknesses}{21}{subsection.7.3}
+\contentsline {paragraph}{Strengths}{21}{section*.15}
+\contentsline {paragraph}{Weaknesses}{22}{section*.16}
