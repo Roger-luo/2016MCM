@@ -21,6 +21,9 @@ class Population(object):
         y = [self.data[t] for t in years]
         return leastsq(self.err,[1950,0.01,160000],args=(x,y))[0]
 
+    def var(self):
+        np.mean([(self.data[i]-self.__call__(i))**2 for i in years])
+
     def __call__(self, time):
         return self.fitfunc(time, self.coefs)
 
@@ -35,6 +38,9 @@ class PCGDP(object):
         
     def err(self, p, x, y):
         return self.fitfunc(x,p)-y
+
+    def var(self):
+        np.mean([(self.data[i]-self.__call__(i))**2 for i in years])
 
     def para(self):
         x = years
@@ -61,6 +67,9 @@ class IrrArea(object):
         x = years
         y = [self.data[t] for t in years]
         return leastsq(self.err,[1000,100,1],args=(x,y))[0]
+
+    def var(self):
+        np.mean([(self.data[i]-self.__call__(i))**2 for i in years])
 
     def __call__(self, time):
         return self.fitfunc(time, self.coefs)
@@ -93,6 +102,9 @@ class SteelProduct(object):
         y = [self.data[t] for t in years]
         return leastsq(self.err,[1000,100,1],args=(x,y))[0]
 
+    def var(self):
+        np.mean([(self.data[i]-self.__call__(i))**2 for i in years])
+
     def __call__(self, time):
         return self.fitfunc(time, self.coefs)
 
@@ -113,6 +125,9 @@ class Electricity(object):
         x = years
         y = [self.data[t] for t in years]
         return leastsq(self.err,[30000,5000,1],args=(x,y))[0]
+
+    def var(self):
+        np.mean([(self.data[i]-self.__call__(i))**2 for i in years])
 
     def __call__(self, time):
         return self.fitfunc(time, self.coefs)
