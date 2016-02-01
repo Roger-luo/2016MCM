@@ -5,8 +5,6 @@ from scipy.optimize import leastsq
 import matplotlib.pyplot as plt
 from numpy import linspace
 import Fit
-import ResidentWater
-import IndustWater
 
 
 years=range(2004, 2015)
@@ -51,15 +49,32 @@ def AgricultureWater(time):
 def All(time):
     return (AgricultureWater(time)+ResidentWater.ResidentWater(time)+IndustWater.IndustWater(time))/Fit.PopulationFit(time)
 
-y = np.array(range(2004,2030))
+x = np.linspace(years[0],years[-1],100)
 
 plt.figure()
-plt.scatter(years,[(Data.WaterUseAgriculture[i]+Data.WaterUseResidential[i]+Data.WaterUseIndustry[i])/Data.Population[i] for i in years],marker="^",s=100)
-plt.plot(y,[All(i) for i in y],'b-')
+plt.xlabel("Population/ 10k people")
+plt.ylabel("Agreculture Water Usage/ 100m m^3")
+plt.scatter([Data.Population[t] for t in years],[Data.WaterUseAgriculture[t] for t in years],marker="^",s=50,label='Raw Data')
+plt.plot(Fit.PopulationFit(x),Expo(Fit.PopulationFit(x),pPara),'g-',label="Fit")
+plt.legend()
 plt.show()
 plt.close()
 
 
-print(pPara)
-print(gPara)
-print(iPara)
+plt.figure()
+plt.xlabel("PCGDP/ CNY")
+plt.ylabel("Agreculture Water Usage/ 100m m^3")
+plt.scatter([Data.PCGDP[t] for t in years],[Data.WaterUseAgriculture[t] for t in years],marker="^",s=50,label='Raw Data')
+plt.plot(Fit.PCGDPFit(x),Expo(Fit.PCGDPFit(x),gPara),'g-',label="Fit")
+plt.legend(loc=0)
+plt.show()
+plt.close()
+
+plt.figure()
+plt.xlabel("Irrigation Area/ kha" )
+plt.ylabel("Agreculture Water Usage/ 100m m^3")
+plt.scatter([Data.IrrigationArea[t] for t in years],[Data.WaterUseAgriculture[t] for t in years],marker="^",s=50,label='Raw Data')
+plt.plot(Fit.IrrigationAreaFit(x),Expo(Fit.IrrigationAreaFit(x),iPara),'g-',label="Fit")
+plt.legend(loc=0)
+plt.show()
+plt.close()
