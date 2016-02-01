@@ -30,3 +30,12 @@ In history, water scarcity also occurs when the climate changes. However, this p
 The sensitivity of a given region can be reduced by constructing infrastructure such as reservoirs and dams. As is shown in [fig] the ability curve become more steady after constructing infrastructures.
 
 ![](imag/sense.png) 
+
+### Disscussion
+Any intervention plan has its weakness and will inevitably impact the surrounding areas. To be specific, in our intervention plan, there are some disadvantages:
+- population control may cause population aging which may cause suppression to long-term economic development. And bad economic shape may lead to the lack of water conservancy facilities.
+- water distribution intervention will be likely to impact water source's ecosystem, which is possible to cause future disasters.
+
+Furthermore, the surrounding areas will suffer water scarcity or water stress by the result of:
+- export virtual water, such as iron and steel trading.
+- water conservancy facilities caused water scarcity for downstream regions, for instance, a dam on the upstream may cause lower water level in downstream.
