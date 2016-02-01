@@ -57,7 +57,9 @@ p[0]*np.exp(-p[1]*(x-p[2])**2)
 
 
 ## intervention plan
-As shown in our prediction. China will suffer water scarcity in 15 years.
+As shown in our prediction. China will suffer from water scarcity in 15 years. Therefore we designed an intervention plan to avoid this situation. 
 
+To introduce the natural uncertainty, a normal distributed random variable with variance of 
 
+### Industrial
 
