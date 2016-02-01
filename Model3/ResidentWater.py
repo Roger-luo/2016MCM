@@ -39,6 +39,28 @@ def ResidentWater(time):
     pcg = (Expo(Fit.PCGDPFit(time),gPara)/Expo(Fit.PCGDPFit(years[-1]),gPara))
     return Data.WaterUseResidential[years[-1]]*(pop/2+pcg/2)
 
+x = np.linspace(years[0],years[-1],100)
+
+plt.figure()
+plt.xlabel("Population /10k people")
+plt.ylabel("Resident Water Usage/ 100m m^3")
+plt.scatter([Data.Population[t] for t in years],[Data.WaterUseResidential[t] for t in years],marker="^",s=50,label='Raw Data')
+plt.plot(Fit.PopulationFit(x),Expo(Fit.PopulationFit(x),pPara),'g-',label="Fit")
+plt.legend()
+plt.show()
+plt.close()
+
+
+plt.figure()
+plt.xlabel("PCGDP /CNY")
+plt.ylabel("Resident Water Usage/ 100m m^3")
+plt.scatter([Data.PCGDP[t] for t in years],[Data.WaterUseResidential[t] for t in years],marker="^",s=50,label='Raw Data')
+plt.plot(Fit.PCGDPFit(x),Expo(Fit.PCGDPFit(x),gPara),'g-',label="Fit")
+plt.legend()
+plt.show()
+plt.close()
+
+
 # plt.figure()
 # plt.scatter(years,[Data.WaterUseResidential[t] for t in years],marker="^",s=100)
 # plt.plot(years,ResidentWater(years),'b-')
