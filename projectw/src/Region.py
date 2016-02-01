@@ -19,16 +19,16 @@ def AverSupply(time,intr=False):
     return (Wr(time,intr)+Wi(time,intr)+Wa(time,intr))/pop(time,intr)
 
 
-print(-AverSupply(2030)+AverSupply(2030,intr=True))
+# print(-AverSupply(2030)+AverSupply(2030,intr=True))
 
-# plt.figure()
-# plt.xlabel("years /yr")
-# plt.ylabel("Ability /per 10k person per yr 100m cubic meters")
-# plt.scatter(years,[Data.WaterUseTotal[t]/Data.Population[t] for t in years],marker="^",s=100,label='raw data')
-# plt.plot(range(2004,2030),[AverSupply(i) for i in range(2004,2030)],'b-',label="original")
-# plt.plot(range(2004,2030),[AverSupply(i,intr=True) for i in range(2004,2030)],'g-',label="comprehensive")
-# plt.legend(loc=0)
-# plt.show()
+plt.figure()
+plt.xlabel("years /yr")
+plt.ylabel("Ability /per 10k person per yr 100m cubic meters")
+plt.scatter(years,[Data.WaterUseTotal[t]/Data.Population[t] for t in years],marker="^",s=100,label='raw data')
+plt.plot(range(2004,2030),[AverSupply(i) for i in range(2004,2030)],'b-',label="original")
+plt.plot(range(2004,2030),[AverSupply(i,intr=True) for i in range(2004,2030)],'g-',label="infrastructure")
+plt.legend(loc=0)
+plt.show()
 
 # plt.figure()
 # plt.xlabel("years /yr")

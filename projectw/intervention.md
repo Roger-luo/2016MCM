@@ -26,3 +26,7 @@ By comprehensive implementing the intervention plans, the ability of China incre
 
 ### climate and uncertainty evaluation
 In history, water scarcity also occurs when the climate changes. However, this probability of drought that is affect the whole region is pretty low. To estimate climeate affects and other uncertain issues, normal distributed random variables is added to every prominent parameters with corresponding variances, which is fitted from raw data. The variance of Ability shows the sensitivity of a given region.
+
+The sensitivity of a given region can be reduced by constructing infrastructure such as reservoirs and dams. As is shown in [fig] the ability curve become more steady after constructing infrastructures.
+
+![](imag/sense.png) 

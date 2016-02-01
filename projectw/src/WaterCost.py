@@ -37,11 +37,11 @@ class IndustWater(object):
         return np.mean([(ob.data[i]-self.Gaussian(i,coeff))**2 for i in years])
 
     def __call__(self, time, intr=False):
-        # if time>2015:
-        #     pPara[1] *= np.exp(1e-1*(2015-time))
-        #     gPara[1] *= np.exp(1e-1*(2015-time))
-        #     ePara[1] *= np.exp(1e-1*(2015-time))
-        #     sPara[1] *= np.exp(1e-1*(2015-time))
+        if time>2015 and intr==True:
+            self.pcoeff[1] *= np.exp(1e-1*(2015-time))
+            self.gcoeff[1] *= np.exp(1e-1*(2015-time))
+            self.ecoeff[1] *= np.exp(1e-1*(2015-time))
+            self.scoeff[1] *= np.exp(1e-1*(2015-time))
         pass
         pop = (self.Gaussian(self.Pop(time,intr),self.pcoeff)/self.Gaussian(self.Pop(years[-1],intr),self.pcoeff))
         pcg = (self.Gaussian(self.PCGDP(time,intr),self.gcoeff)/self.Gaussian(self.PCGDP(years[-1],intr),self.gcoeff))
